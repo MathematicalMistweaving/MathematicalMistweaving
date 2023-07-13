@@ -12,19 +12,22 @@ namespace Mistweaver.SpellData.SpellModels
     {
         public RenewingMist()
         {
+            SpellId = 115151;
             Name = "Renewing Mist";
             Coefficient = 196.65m;
-            ManaCost = .018m;
+            ManaCost = 0.018m;
             MaxTargets = 1;
-            Cooldown = 9;
+            CastTime = 1.5m;
             MasteryTrigger = true;
-            HotInfoId = 2;
+            Cooldown = 9;
+            HotInfoId = (int)HotIds.RenewingMist;
             HotInfo = new HotInfo
             {
-                Id = 2,
+                Id = (int)HotIds.RenewingMist,
+                Name = "Renewing Mist",
                 Duration = 20,
                 TickRate = 2,
-                SpellBaseId = 2,
+                SpellBaseId = 3
             };
         }
 

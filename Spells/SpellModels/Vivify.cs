@@ -3,34 +3,36 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
-namespace MathematicalMistweaving.API.Models
+namespace Mistweaver.SpellData.SpellModels
 {
-    public class VivifyDto : BaseSpellDto
+    public class Vivify : HealBase
     {
-        public VivifyDto()
+        public Vivify()
         {
-            Id = 1;
-            Name = "Vivify";
+            SpellId = 116670;
+            CastTime = 1.5m;
             ManaCost = .034m;
             Cooldown = 1.5m;
-            Coefficient = TotalVivifyCoefficient();
         }
 
-        public class VivifyPrimary : BaseSpellDto
+        public class VivifyPrimary : Vivify
         {
             public VivifyPrimary()
             {
+                Name = "Vivify";
                 Coefficient = 141.00m;
                 MaxTargets = 1;
                 MasteryTrigger = true;
             }
         }
 
-        public class VivifyCleave : BaseSpellDto
+        public class VivifyCleave : Vivify
         {
             public VivifyCleave()
             {
+                Name = "Vivify Cleave";
                 Coefficient = 91.52m;
                 MaxTargets = 20;
                 MasteryTrigger = false;
@@ -39,12 +41,11 @@ namespace MathematicalMistweaving.API.Models
 
         public decimal TotalVivifyCoefficient()
         {
-            var spells = new List<BaseSpellDto> {
+            var spells = new List<HealBase> {
                new VivifyPrimary(),
                new VivifyCleave(),
             };
-            return GetTotalCoefficient(spells);
+            return 0.1m;//GetTotalCoefficient(spells);
         }
     }
-
 }
