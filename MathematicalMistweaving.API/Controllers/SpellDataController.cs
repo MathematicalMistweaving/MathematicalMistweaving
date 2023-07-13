@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Mistweaver.SpellData;
 using Mistweaver.SpellData.Helpers;
+using Mistweaver.SpellData.Interfaces;
 using Mistweaver.SpellData.SpellModels;
 using System.Runtime.Caching;
 
@@ -12,12 +13,11 @@ namespace MathematicalMistweaving.API.Controllers
     [ApiController]
     public class SpellDataController : ControllerBase
     {
-        private readonly SpellBook _spellBook;
-        
-        public SpellDataController()
+        private readonly ISpellBook _spellBook;
+
+        public SpellDataController(ISpellBook spellBook)
         {
-            CacheHelper cache = new CacheHelper();
-            _spellBook = cache.GetSpellBook();
+            _spellBook = spellBook;
         }
 
         [HttpGet("")]
