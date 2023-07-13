@@ -20,7 +20,7 @@ namespace Mistweaver.SpellData.SpellModels
         {
             public ChiCocoonChiJi()
             {
-                Name = "Chi Cocoon Chi'Ji";
+                Name = "Chi Cocoon (Chi-Ji)";
                 Coefficient = 0.10m;
                 MaxTargets = 5;
                 IsIndirect = true;
@@ -31,7 +31,7 @@ namespace Mistweaver.SpellData.SpellModels
         {
             public ChiCocoonYulon()
             {
-                Name = "Ch iCocoon Yu'lon";
+                Name = "Chi Cocoon (Yu'lon)";
                 Coefficient = 0.10m;
                 MaxTargets = 5;
                 IsIndirect = true;
