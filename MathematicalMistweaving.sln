@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33815.320
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mistweaver.SpellData", "Spells\Mistweaver.SpellData.csproj", "{AA057E5F-31D9-4164-9DA2-7BF4C3EF6B94}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MathematicalMistweaving.API", "MathematicalMistweaving.API\MathematicalMistweaving.API.csproj", "{92C92ABE-0C34-4D36-931D-0BE0CBB47632}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AA057E5F-31D9-4164-9DA2-7BF4C3EF6B94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA057E5F-31D9-4164-9DA2-7BF4C3EF6B94}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA057E5F-31D9-4164-9DA2-7BF4C3EF6B94}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA057E5F-31D9-4164-9DA2-7BF4C3EF6B94}.Release|Any CPU.Build.0 = Release|Any CPU
+		{92C92ABE-0C34-4D36-931D-0BE0CBB47632}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92C92ABE-0C34-4D36-931D-0BE0CBB47632}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92C92ABE-0C34-4D36-931D-0BE0CBB47632}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92C92ABE-0C34-4D36-931D-0BE0CBB47632}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FBAA68BE-2A9B-4DD3-A02B-0490E3689403}
+	EndGlobalSection
+EndGlobal
