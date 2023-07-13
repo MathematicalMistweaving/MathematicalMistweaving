@@ -21,6 +21,7 @@ namespace Mistweaver.SpellData
         {
 
             HealingSpells = new List<HealBase> {
+                // this is a test comment for checkin
                 /**
                 new HealBase { SpellId = 116670, Name = "Vivify", Coefficient = 141.00m, ManaCost = 0.034m, MaxTargets = 1, CastTime = 1.5m, MasteryTrigger = true },
                 new HealBase { SpellId = 116670, Name = "Vivify Cleave", Coefficient = 91.52m, MaxTargets = 20, CastTime = 1.5m, MasteryTrigger = false },
