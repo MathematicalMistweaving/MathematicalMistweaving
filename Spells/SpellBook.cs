@@ -6,35 +6,43 @@ namespace Mistweaver.SpellData
 {
     public class SpellBook : ISpellBook
     {
+        #region Properties
         public List<SpellBase> Spells { get; set; } = new List<SpellBase>();
         public List<HealBase> HealingSpells { get; set; } = new List<HealBase>();
         public List<DamageBase> DamageSpells { get; set; } = new List<DamageBase>();
         public List<HotInfo> Hots { get; set; } = new List<HotInfo>();
         public List<DotInfo> Dots { get; set; } = new List<DotInfo>();
+        #endregion
 
-        /* heals */
+        #region Heal Fetch Methods
+
         public HealBase? Vivify(bool cleave = false) => cleave ? GetSpellByName<HealBase>(SpellNames.VivifyCleave) : GetSpellByName<HealBase>(SpellNames.Vivify);
         public HealBase? RenewingMist() => GetSpellByName<HealBase>(SpellNames.RenewingMist);
-        public HealBase? EssenceFont(bool hot = false) => hot ? GetSpellByName<HealBase>("Essence Font (Hot)") : GetSpellByName<HealBase>("Essence Font");
+        public HealBase? EssenceFont(bool hot = false) => hot ? GetSpellByName<HealBase>(SpellNames.EssenceFontHoT) : GetSpellByName<HealBase>(SpellNames.EssenceFont);
         public HealBase? Revival(string activeTalent = "") => (activeTalent == "") ? GetSpellByName<HealBase>(SpellNames.Revival) : GetSpellByName<HealBase>(activeTalent);
-        public HealBase? EnvelopingMist() => GetSpellByName<HealBase>("Enveloping Mist");
-        public HealBase? SoothingMist(bool jadeSerpentStatue = false) => jadeSerpentStatue ? GetSpellByName<HealBase>("Soothing Mist (Jade Serpent Statue)") : GetSpellByName<HealBase>("Soothing Mist");
-        public HealBase? EnvelopingBreath() => GetSpellByName<HealBase>("Enveloping Breath");
+        public HealBase? EnvelopingMist() => GetSpellByName<HealBase>(SpellNames.EnvelopingMist);
+        public HealBase? SoothingMist(bool jadeSerpentStatue = false) => jadeSerpentStatue ? GetSpellByName<HealBase>(SpellNames.SoothingMist_Jss) : GetSpellByName<HealBase>(SpellNames.SoothingMist);
+        public HealBase? EnvelopingBreath() => GetSpellByName<HealBase>(SpellNames.EnvelopingBreath);
         public HealBase? ChiCocoon(string activeTalent = "") => (activeTalent == "") ? GetSpellByName<HealBase>(SpellNames.ChiCocoon_Yulon) : GetSpellByName<HealBase>(activeTalent);
-        public HealBase? LifeCocoon() => GetSpellByName<HealBase>("Life Cocoon");
-        public HealBase? SoothingBreath() => GetSpellByName<HealBase>("Soothing Breath");
-        public HealBase? GustOfMists(bool chiji = false) => chiji ? GetSpellByName<HealBase>("Gust of Mists (Chi-Ji)") : GetSpellByName<HealBase>("Gust of Mists");
-        public HealBase? SheilunsGift() => GetSpellByName<HealBase>("Sheilun's Gift");
-        public HealBase? RefreshingJadeWind() => GetSpellByName<HealBase>("Refreshing Jade Wind");
-        public HealBase? SummonJadeSerpentStatue() => GetSpellByName<HealBase>("Summon Jade Serpent Statue");
-        public HealBase? Unison() => GetSpellByName<HealBase>("Unison");
+        public HealBase? LifeCocoon() => GetSpellByName<HealBase>(SpellNames.LifeCocoon);
+        public HealBase? SoothingBreath() => GetSpellByName<HealBase>(SpellNames.SoothingBreath);
+        public HealBase? GustOfMists(bool chiji = false) => chiji ? GetSpellByName<HealBase>(SpellNames.GustofMists_ChiJi) : GetSpellByName<HealBase>(SpellNames.GustOfMists);
+        public HealBase? SheilunsGift() => GetSpellByName<HealBase>(SpellNames.SheilunsGift);
+        public HealBase? RefreshingJadeWind() => GetSpellByName<HealBase>(SpellNames.RefreshingJadeWind);
+        public HealBase? SummonJadeSerpentStatue() => GetSpellByName<HealBase>(SpellNames.SummonJadeSerpentStatue);
+        public HealBase? Unison() => GetSpellByName<HealBase>(SpellNames.Unison);
 
-        /* hurts */
-        public DamageBase? RisingSunKick() => GetSpellByName<DamageBase>("Rising Sun Kick");
-        public DamageBase? BlackoutKick() => GetSpellByName<DamageBase>("Blackout Kick");
-        public DamageBase? TigerPalm() => GetSpellByName<DamageBase>("Tiger Palm");
-        public DamageBase? SpinningCraneKick() => GetSpellByName<DamageBase>("Spinning Crane Kick");
-        public DamageBase? TouchOfDeath() => GetSpellByName<DamageBase>("Touch of Death");
+        #endregion
+
+        #region Damage Fetch Methods
+
+        public DamageBase? RisingSunKick() => GetSpellByName<DamageBase>(SpellNames.RisingSunKick);
+        public DamageBase? BlackoutKick() => GetSpellByName<DamageBase>(SpellNames.BlackoutKick);
+        public DamageBase? TigerPalm() => GetSpellByName<DamageBase>(SpellNames.TigerPalm);
+        public DamageBase? SpinningCraneKick() => GetSpellByName<DamageBase>(SpellNames.SpinningCraneKick);
+        public DamageBase? TouchOfDeath() => GetSpellByName<DamageBase>(SpellNames.TouchOfDeath);
+
+        #endregion
 
         /* hyrids */
         public object ChiBurst(bool damage = false)
