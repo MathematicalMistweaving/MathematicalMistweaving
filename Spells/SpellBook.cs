@@ -71,19 +71,23 @@ namespace Mistweaver.SpellData
                 new EssenceFont.EssenceFontHit(), 
                 new EssenceFont.EssenceFontHot(),
                 new Revival(),
-                new HealBase { SpellId = 124682, Name = "Enveloping Mist", Coefficient = 286.80m, ManaCost = 0.048m, MaxTargets = 1, CastTime = 2, MasteryTrigger = true, HotInfoId = (int)HotIds.EnvelopingMist, HotInfo = Hots.Where(x=> x.Id == (int)HotIds.EnvelopingMist).FirstOrDefault() },
-                new HealBase { SpellId = 115175, Name = "Soothing Mist", Coefficient = 440m, ManaCost = 0.032m, MaxTargets = 1, CastTime = 8, MasteryTrigger = true, IsChannel = true, HotInfoId = (int)HotIds.SoothingMist, HotInfo = Hots.Where(x=> x.Id == (int)HotIds.SoothingMist).FirstOrDefault() },
-                new HealBase { SpellId = 325209, Name = "Enveloping Breath", Coefficient = 162.00m, MaxTargets = 6, CastTime = 2, MasteryTrigger = false, IsIndirect = true, HotInfoId = (int)HotIds.EnvelopingBreath, HotInfo = Hots.Where(x=> x.Id == (int)HotIds.EnvelopingBreath).FirstOrDefault()},
-                //new HealBase { SpellId = 406220, Name = "Chi Cocoon (Chi-Ji)", Coefficient = 0.10m, MaxTargets = 5, CastTime = 0, IsIndirect = true },
-                //new HealBase { SpellId = 406139, Name = "Chi Cocoon (Yu'lon)", Coefficient = 0.10m, MaxTargets = 5, CastTime = 0, IsIndirect = true },
+                new EnvelopingMist(),
+                new EnvelopingBreath(),
+                new ChiCocoon.ChiCocoonChiJi(),
+                new ChiCocoon.ChiCocoonYulon(),
+                new SoothingMist(),
+                new SoothingMist_Jss(),
+                new RefreshingJadeWind(),
+                
+      
                 new HealBase { SpellId = 116849, Name = "Life Cocoon", Coefficient = 60.00m, ManaCost = 0.024m, MaxTargets = 1, CastTime = 0, MasteryTrigger = false, Cooldown = 120, IsHealthCoefficient = true, },
                 new HealBase { SpellId = 343737, Name = "Soothing Breath", Coefficient = 105, MaxTargets = 3, MasteryTrigger = false, Cooldown = 1.5m, CastTime = 4.5m, IsIndirect = true, HotInfoId = (int)HotIds.SoothingBreath, HotInfo = Hots.Where(x => x.Id == (int)HotIds.SoothingBreath).FirstOrDefault() },
                 new HealBase { SpellId = 343819, Name = "Gust of Mists (Chi-Ji)", Coefficient = 33.6m, MaxTargets = 2, CastTime = 0, MasteryTrigger = true, IsIndirect = true },
                 new HealBase { SpellId = 191894, Name = "Gust of Mists", Coefficient = 33.6m, MaxTargets = 1, IsIndirect = true, CastTime = 0, },
                 new HealBase { SpellId = 399491, Name = "Sheilun's Gift", Coefficient = 114, MaxTargets = 3, CastTime = 2, Cooldown = 8, ManaCost = 0.025m },
-                //new HealBase { SpellId = 196725, Name = "Refreshing Jade Wind", Coefficient = 277.704m, MaxTargets = 6, CastTime = 1.5m, Cooldown = 45, IsCooldownHasted = true, ManaCost = 0.05m, HotInfoId = (int)HotIds.RefreshingJadeWind, HotInfo = Hots.Where(x => x.Id == (int)HotIds.RefreshingJadeWind).FirstOrDefault() },
+                
                 new HealBase { SpellId = 115313, Name = "Summon Jade Serpent Statue", Coefficient = 0, CastTime = 1.5m, MaxTargets = 1},
-                new HealBase { SpellId = 198533, Name = "Soothing Mist (Summon Jade Serpent Statue)", Coefficient = 220, CastTime = 8, MaxTargets = 1, IsChannel = true, IsIndirect = true, HotInfoId = (int)HotIds.SoothingMist_Jss, HotInfo = Hots.Where(x => x.Id == (int)HotIds.SoothingMist_Jss).FirstOrDefault() },
+                
                 new HealBase { SpellId = 130654, Name = "Chi Burst", Coefficient = 94.5m, CastTime = 0.75m, MaxTargets = 6, IsSqrtScaling = true, IsAttackPower = true, Cooldown = 30, },
                 new HealBase { SpellId = 132463, Name = "Chi Wave", Coefficient = 42, CastTime = 1.5m, MaxTargets = 4, IsAttackPower = true, Cooldown = 15 },
                 new HealBase { SpellId = 388480, Name = "Unison", Coefficient = 100, CastTime = 0, MaxTargets = 1, IsIndirect = true }
@@ -120,16 +124,6 @@ namespace Mistweaver.SpellData
                     Dots.Add(spell.DotInfo);
                 }
             }
-
-
-
-
-
-
-            var bug = new HotInfo { Id = (int)HotIds.SoothingMist_Jss, Name = "Soothing Mist (Jade Serpent Statue)", Duration = 8, TickRate = 1, IsExtendable = false };
-            
-
-
         }
 
         public T GetSpellById<T>(int spellId)

@@ -1,5 +1,4 @@
 ﻿using Mistweaver.SpellData;
-using Mistweaver.SpellData.SpellModels;
 
 namespace MathematicalMistweavingTests.SpellDataTests
 {

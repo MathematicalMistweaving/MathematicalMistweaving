@@ -12,7 +12,7 @@ namespace Mistweaver.SpellData.SpellModels
         public SoothingMist()
         {
             SpellId = 115175;
-            Name = "Soothing Mist";
+            Name = SpellNames.SoothingMist;
             Coefficient = 440m;
             ManaCost = 0.032m;
             MaxTargets = 1;
@@ -23,11 +23,32 @@ namespace Mistweaver.SpellData.SpellModels
             HotInfo = new HotInfo()
             {
                 Id = (int)HotIds.SoothingMist,
-                Name = "Soothing Mist",
+                Name = SpellNames.SoothingMist,
                 Duration = 8,
                 TickRate = 1,
                 SpellBaseId = this.Id,
                 IsExtendable = false
+            };
+        }
+    }
+    public class SoothingMist_Jss : HealBase
+    {
+        public SoothingMist_Jss()
+        {
+            Name = SpellNames.SoothingMist_Jss;
+            Coefficient = 220m;
+            MaxTargets = 1;
+            CastTime = 8;
+            IsIndirect = true;
+            HotInfoId = (int)HotIds.SoothingMist_Jss;
+            HotInfo = new HotInfo()
+            {
+                Id = (int)HotIds.SoothingMist_Jss,
+                Name = SpellNames.SoothingMist_Jss,
+                Duration = 8,
+                TickRate = 1,
+                IsExtendable = false,
+                SpellBaseId = this.Id,
             };
         }
     }

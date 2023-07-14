@@ -24,7 +24,7 @@ namespace Mistweaver.SpellData.SpellModels
         {
             public EssenceFontHit()
             {
-                Name = "Essence Font";
+                Name = SpellNames.EssenceFont;
                 Coefficient = 46.4094m;
                 MaxTargets = 18;
             }
@@ -34,14 +34,14 @@ namespace Mistweaver.SpellData.SpellModels
         {
             public EssenceFontHot()
             {
-                Name = "Essence Font (Hot)";
+                Name = SpellNames.EssenceFontHoT;
                 Coefficient = 17.388m;
                 MaxTargets = 18;
                 HotInfoId = (int)HotIds.EssenceFont;
                 HotInfo = new HotInfo
                 {
                     Id = (int)HotIds.EssenceFont,
-                    Name = "Essence Font",
+                    Name = SpellNames.EssenceFont,
                     Duration = 8,
                     TickRate = 2,
                     SpellBaseId = this.Id,
