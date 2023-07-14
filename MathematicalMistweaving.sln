@@ -5,7 +5,9 @@ VisualStudioVersion = 17.6.33815.320
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mistweaver.SpellData", "Spells\Mistweaver.SpellData.csproj", "{AA057E5F-31D9-4164-9DA2-7BF4C3EF6B94}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MathematicalMistweaving.API", "MathematicalMistweaving.API\MathematicalMistweaving.API.csproj", "{92C92ABE-0C34-4D36-931D-0BE0CBB47632}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MathematicalMistweaving.API", "MathematicalMistweaving.API\MathematicalMistweaving.API.csproj", "{92C92ABE-0C34-4D36-931D-0BE0CBB47632}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MathematicalMistweavingTests", "MathematicalMistweavingTests\MathematicalMistweavingTests.csproj", "{37321BB8-63D1-4E95-B561-96970BED610C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{92C92ABE-0C34-4D36-931D-0BE0CBB47632}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{92C92ABE-0C34-4D36-931D-0BE0CBB47632}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{92C92ABE-0C34-4D36-931D-0BE0CBB47632}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37321BB8-63D1-4E95-B561-96970BED610C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37321BB8-63D1-4E95-B561-96970BED610C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37321BB8-63D1-4E95-B561-96970BED610C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37321BB8-63D1-4E95-B561-96970BED610C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,10 +1,12 @@
 using Microsoft.AspNetCore.Mvc.ApiExplorer;
 using Microsoft.AspNetCore.Mvc.Versioning;
 using Mistweaver.SpellData;
+using Mistweaver.SpellData.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddSingleton<ISpellBook>(new SpellBook());
 
 builder.Services.AddControllers();
 builder.Services.AddApiVersioning(delegate (ApiVersioningOptions options)
@@ -20,7 +22,6 @@ builder.Services.AddVersionedApiExplorer(delegate (ApiExplorerOptions options)
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddScoped<SpellBook>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
