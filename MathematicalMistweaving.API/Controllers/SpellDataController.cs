@@ -3,7 +3,6 @@ using Microsoft.AspNetCore.Mvc;
 using Mistweaver.SpellData;
 using Mistweaver.SpellData.Helpers;
 using Mistweaver.SpellData.Interfaces;
-using Mistweaver.SpellData.SpellModels;
 using System.Runtime.Caching;
 
 namespace MathematicalMistweaving.API.Controllers

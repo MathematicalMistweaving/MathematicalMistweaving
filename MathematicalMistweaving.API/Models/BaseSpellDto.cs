@@ -1,5 +1,4 @@
-﻿using Mistweaver.SpellData.SpellModels;
-
+﻿
 namespace MathematicalMistweaving.API.Models
 {
     public class BaseSpellDto
