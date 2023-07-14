@@ -17,7 +17,7 @@ namespace Mistweaver.SpellData.SpellModels.Base
         public const string EssenceFont = "Essence Font";
         public const string EssenceFontHoT = "Essence Font (Hot)";
         public const string Revival = "Revival";
-        public const string Restoral = "Revival";
+        public const string Restoral = "Restoral";
         public const string EnvelopingMist = "Enveloping Mist";
         public const string EnvelopingBreath = "Enveloping Breath";
         public const string SoothingMist = "Soothing Mist";

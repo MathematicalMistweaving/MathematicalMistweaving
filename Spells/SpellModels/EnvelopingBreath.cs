@@ -13,7 +13,7 @@ namespace Mistweaver.SpellData.SpellModels
         public EnvelopingBreath()
         {
             SpellId = 325209;
-            Name = "Enveloping Breath";
+            Name = SpellNames.EnvelopingBreath;
             Coefficient = 162.00m;
             MaxTargets = 6;
             CastTime = 2;
@@ -23,7 +23,7 @@ namespace Mistweaver.SpellData.SpellModels
             HotInfo = new HotInfo()
             {
                 Id = (int)HotIds.EnvelopingBreath,
-                Name = "Enveloping Breath",
+                Name = SpellNames.EnvelopingBreath,
                 Duration = 6,
                 TickRate = 1,
                 SpellBaseId = this.Id,

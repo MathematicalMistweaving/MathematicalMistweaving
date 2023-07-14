@@ -16,20 +16,11 @@ namespace Mistweaver.SpellData
         public HealBase? Vivify(bool cleave = false) => cleave ? GetSpellByName<HealBase>(SpellNames.VivifyCleave) : GetSpellByName<HealBase>(SpellNames.Vivify);
         public HealBase? RenewingMist() => GetSpellByName<HealBase>(SpellNames.RenewingMist);
         public HealBase? EssenceFont(bool hot = false) => hot ? GetSpellByName<HealBase>("Essence Font (Hot)") : GetSpellByName<HealBase>("Essence Font");
-        public HealBase? Revival() => GetSpellByName<HealBase>("Revival");
+        public HealBase? Revival(string activeTalent = "") => (activeTalent == "") ? GetSpellByName<HealBase>(SpellNames.Revival) : GetSpellByName<HealBase>(activeTalent);
         public HealBase? EnvelopingMist() => GetSpellByName<HealBase>("Enveloping Mist");
         public HealBase? SoothingMist(bool jadeSerpentStatue = false) => jadeSerpentStatue ? GetSpellByName<HealBase>("Soothing Mist (Jade Serpent Statue)") : GetSpellByName<HealBase>("Soothing Mist");
         public HealBase? EnvelopingBreath() => GetSpellByName<HealBase>("Enveloping Breath");
-        public HealBase? ChiCocoon(bool chiji = false, bool yulon = false)
-        {
-            if (chiji)
-                return GetSpellByName<HealBase>("Chi Cocoon (Chi-Ji)");
-
-            if (yulon)
-                return GetSpellByName<HealBase>("Chi Cocoon (Yu'lon)");
-
-            return new HealBase() { SpellId = -1, Name = "Please select Chi-Ji or Yu'lon" };
-        }
+        public HealBase? ChiCocoon(string activeTalent = "") => (activeTalent == "") ? GetSpellByName<HealBase>(SpellNames.ChiCocoon_Yulon) : GetSpellByName<HealBase>(activeTalent);
         public HealBase? LifeCocoon() => GetSpellByName<HealBase>("Life Cocoon");
         public HealBase? SoothingBreath() => GetSpellByName<HealBase>("Soothing Breath");
         public HealBase? GustOfMists(bool chiji = false) => chiji ? GetSpellByName<HealBase>("Gust of Mists (Chi-Ji)") : GetSpellByName<HealBase>("Gust of Mists");
@@ -71,6 +62,7 @@ namespace Mistweaver.SpellData
                 new EssenceFont.EssenceFontHit(), 
                 new EssenceFont.EssenceFontHot(),
                 new Revival(),
+                new Restoral(),
                 new EnvelopingMist(),
                 new EnvelopingBreath(),
                 new ChiCocoon.ChiCocoonChiJi(),
@@ -78,9 +70,10 @@ namespace Mistweaver.SpellData
                 new SoothingMist(),
                 new SoothingMist_Jss(),
                 new RefreshingJadeWind(),
-                
+                new LifeCocoon(),
+
       
-                new HealBase { SpellId = 116849, Name = "Life Cocoon", Coefficient = 60.00m, ManaCost = 0.024m, MaxTargets = 1, CastTime = 0, MasteryTrigger = false, Cooldown = 120, IsHealthCoefficient = true, },
+                
                 new HealBase { SpellId = 343737, Name = "Soothing Breath", Coefficient = 105, MaxTargets = 3, MasteryTrigger = false, Cooldown = 1.5m, CastTime = 4.5m, IsIndirect = true, HotInfoId = (int)HotIds.SoothingBreath, HotInfo = Hots.Where(x => x.Id == (int)HotIds.SoothingBreath).FirstOrDefault() },
                 new HealBase { SpellId = 343819, Name = "Gust of Mists (Chi-Ji)", Coefficient = 33.6m, MaxTargets = 2, CastTime = 0, MasteryTrigger = true, IsIndirect = true },
                 new HealBase { SpellId = 191894, Name = "Gust of Mists", Coefficient = 33.6m, MaxTargets = 1, IsIndirect = true, CastTime = 0, },

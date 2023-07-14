@@ -21,7 +21,7 @@ namespace Mistweaver.SpellData.SpellModels
         {
             public ChiCocoonChiJi()
             {
-                Name = "Chi Cocoon (Chi-Ji)";
+                Name = SpellNames.ChiCocoon_ChiJi;
                 SpellId = 406220;
             }
         }
@@ -30,7 +30,7 @@ namespace Mistweaver.SpellData.SpellModels
         {
             public ChiCocoonYulon()
             {
-                Name = "Chi Cocoon (Yu'lon)";
+                Name = SpellNames.ChiCocoon_Yulon;
                 SpellId = 406139;
             }
         }

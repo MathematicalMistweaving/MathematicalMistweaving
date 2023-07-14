@@ -12,8 +12,8 @@ namespace Mistweaver.SpellData.SpellModels
     {
         public EnvelopingMist() 
         {
-            SpellId = 124682; 
-            Name = "Enveloping Mist"; 
+            SpellId = 124682;
+            Name = SpellNames.EnvelopingMist;
             Coefficient = 286.80m; 
             ManaCost = 0.048m;
             MaxTargets = 1;
@@ -23,7 +23,7 @@ namespace Mistweaver.SpellData.SpellModels
             HotInfo = new HotInfo()
             {
                 Id = (int)HotIds.EnvelopingMist,
-                Name = "Enveloping Mist",
+                Name = SpellNames.EnvelopingMist,
                 Duration = 6,
                 TickRate = 1,
                 SpellBaseId = this.Id

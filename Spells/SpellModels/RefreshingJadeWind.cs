@@ -12,7 +12,7 @@ namespace Mistweaver.SpellData.SpellModels
         public RefreshingJadeWind()
         {
             SpellId = 196725;
-            Name = "Refreshing Jade Wind";
+            Name = SpellNames.RefreshingJadeWind;
             Coefficient = 277.704m;
             MaxTargets = 6;
             CastTime = 1.5m;
@@ -23,7 +23,7 @@ namespace Mistweaver.SpellData.SpellModels
             HotInfo = new HotInfo()
             {
                 Id = (int)HotIds.RefreshingJadeWind,
-                Name = "Refreshing Jade Wind",
+                Name = SpellNames.RefreshingJadeWind,
                 Duration = 15,
                 TickRate = .75m,
                 IsExtendable = false,

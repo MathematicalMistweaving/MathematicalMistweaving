@@ -22,7 +22,7 @@ namespace Mistweaver.SpellData.SpellModels
         {
             public VivifyPrimary()
             {
-                Name = "Vivify";
+                Name = SpellNames.Vivify;
                 Coefficient = 141.00m;
                 MaxTargets = 1;
                 MasteryTrigger = true;
@@ -33,7 +33,7 @@ namespace Mistweaver.SpellData.SpellModels
         {
             public VivifyCleave()
             {
-                Name = "Vivify Cleave";
+                Name = SpellNames.VivifyCleave;
                 Coefficient = 91.52m;
                 MaxTargets = 20;
                 MasteryTrigger = false;
