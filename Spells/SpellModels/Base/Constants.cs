@@ -16,6 +16,7 @@ namespace Mistweaver.SpellData.SpellModels.Base
         public const string RenewingMist = "Renewing Mist";
         public const string EssenceFont = "Essence Font";
         public const string EssenceFontHoT = "Essence Font (Hot)";
+        public const string EssenceFontFLS = "Essence Font (FLS)";
         public const string Revival = "Revival";
         public const string Restoral = "Restoral";
         public const string EnvelopingMist = "Enveloping Mist";
@@ -29,7 +30,8 @@ namespace Mistweaver.SpellData.SpellModels.Base
         public const string GustOfMists = "Gust of Mists";
         public const string GustofMists_ChiJi = "Gusts of Mists (Chi-Ji)";
         public const string SheilunsGift = "Sheilun's Gift";
-        public const string RefreshingJadeWind = "RefreshingJadeWind";
+        public const string RefreshingJadeWind = "Refreshing Jade Wind";
+        public const string FaelineStomp = "Faeline Stomp";
         public const string SummonJadeSerpentStatue = "Summon Jade Serpent Statue";
         public const string Unison = "Unison";
 
@@ -50,11 +52,21 @@ namespace Mistweaver.SpellData.SpellModels.Base
 
         #region Hybrid
 
-        public const string ChiWave = "";
+        public const string ChiWave = "Chi Wave";
+        public const string ChiBurst = "Chi Burst";
+        public const string ZenPulse = "Zen Pulse";
+        public const string LessonOfAnger = "Lesson of Anger";
 
         #endregion
 
 
+    }
+
+    public enum AbilityType
+    {
+        Physical = 1,
+        Nature = 2,
+        Other = 3,
     }
     public enum HotIds
     {
@@ -64,7 +76,7 @@ namespace Mistweaver.SpellData.SpellModels.Base
         SoothingMist = 4,
         EnvelopingBreath = 5,
         SoothingBreath = 6,
-        EssenceFont_Faelinestomp = 7,
+        EssenceFont_FLS = 7,
         RefreshingJadeWind = 8,
         SoothingMist_Jss = 9,
     }

@@ -8,6 +8,7 @@ namespace Mistweaver.SpellData.SpellModels
 {
     public class LifeCocoon : HealBase
     {
+        public const decimal HealingIncrease_Hots = 0.50m;
         public LifeCocoon() 
         {
             SpellId = 116849;

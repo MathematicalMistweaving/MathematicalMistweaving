@@ -11,6 +11,7 @@ namespace Mistweaver.SpellData.SpellModels
     {
         public SoothingMist()
         {
+            
             SpellId = 115175;
             Name = SpellNames.SoothingMist;
             Coefficient = 440m;

@@ -1,4 +1,5 @@
 ﻿using Mistweaver.SpellData;
+using Mistweaver.SpellData.Interfaces;
 using Mistweaver.SpellData.SpellModels;
 using static MathematicalMistweaving.API.Models.RevivalRestoralDto;
 
@@ -7,12 +8,7 @@ namespace MathematicalMistweavingTests.SpellDataTests
     [TestClass]
     public class SpellBookTests
     {
-        SpellBook _spellBook;
-        [TestInitialize]
-        public void Setup()
-        {
-            _spellBook = new SpellBook();
-        }
+        ISpellBook _spellBook = new SpellBook();
 
         [TestMethod]
         public void SpellBookReturns_UsableSpells_Vivify()
@@ -25,6 +21,8 @@ namespace MathematicalMistweavingTests.SpellDataTests
         public void SpellBookReturns_UsableSpells_RisingSunKick()
         {
             var rsk = _spellBook.RisingSunKick();
+            Assert.IsTrue(rsk is DamageBase);
+            Assert.AreEqual(typeof(RisingSunKick), rsk.GetType());
             Assert.AreEqual(107428, rsk?.SpellId);
         }
 
@@ -32,19 +30,19 @@ namespace MathematicalMistweavingTests.SpellDataTests
         public void SpellBook_TigerPalm()
         {
             var retVal = _spellBook.TigerPalm();
-            Assert.AreEqual(typeof(DamageBase), retVal.GetType());
+            Assert.AreEqual(typeof(DamageBase), retVal?.GetType());
         }
 
         [TestMethod]
         public void SpellBookworks_Generics_Implemented()
         {
-            var sg = _spellBook.SheilunsGift();
             var cbd = _spellBook.ChiBurst(damage: true);
             var cbh = _spellBook.ChiBurst();
-            var bok = _spellBook.BlackoutKick();
 
-            Assert.AreEqual(typeof(DamageBase), cbd.GetType());
-            Assert.AreEqual(typeof(HealBase), cbh.GetType());
+            Assert.IsTrue(cbd is DamageBase);
+            Assert.AreEqual(typeof(ChiBurstDmg), cbd.GetType());
+            Assert.IsTrue(cbh is HealBase);
+            Assert.AreEqual(typeof(ChiBurstHeal), cbh.GetType());
 
         }
 
@@ -53,7 +51,6 @@ namespace MathematicalMistweavingTests.SpellDataTests
         {
             var ccchiji = _spellBook.ChiCocoon(SpellNames.ChiCocoon_ChiJi);
             var ccyulon = _spellBook.ChiCocoon();
-            
             
             Assert.IsNotNull(ccchiji);
             Assert.IsNotNull(ccyulon);

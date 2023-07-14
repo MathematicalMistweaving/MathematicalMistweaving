@@ -10,6 +10,7 @@ namespace Mistweaver.SpellData.SpellModels
 {
     public class EnvelopingBreath : HealBase
     {
+        public const decimal HealingIncrease = 0.10m;
         public EnvelopingBreath()
         {
             SpellId = 325209;

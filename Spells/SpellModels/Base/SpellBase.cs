@@ -14,13 +14,14 @@ namespace Mistweaver.SpellData.SpellModels.Base
         }
 
         #region Required Properties
-
+        /** what type of damage/healing does the spell do**/
+        public AbilityType Type { get; set; }
         /**internal id**/
         public int Id { get; set; }
         /**Game SpellId**/
         public int SpellId { get; set; }
         /**Spell Name**/
-        public string? Name { get; set; }
+        public string Name { get; set; }
         /**Spellpower/Max HP Coefficient**/
         public decimal Coefficient { get; set; }
         /**Max number of Targets (default 1)**/
