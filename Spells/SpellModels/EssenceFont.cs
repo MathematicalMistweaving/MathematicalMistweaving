@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
+using Mistweaver.SpellData.SpellModels.Base;
 
 namespace Mistweaver.SpellData.SpellModels
 {
@@ -26,7 +27,6 @@ namespace Mistweaver.SpellData.SpellModels
                 Name = "Essence Font";
                 Coefficient = 46.4094m;
                 MaxTargets = 18;
-                
             }
         }
 
@@ -44,7 +44,7 @@ namespace Mistweaver.SpellData.SpellModels
                     Name = "Essence Font",
                     Duration = 8,
                     TickRate = 2,
-                    SpellBaseId = 5,
+                    SpellBaseId = this.Id,
                 };
             }
         }

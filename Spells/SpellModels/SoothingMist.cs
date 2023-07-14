@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Mistweaver.SpellData.SpellModels.Base;
 
 namespace Mistweaver.SpellData.SpellModels
 {
@@ -21,8 +22,13 @@ namespace Mistweaver.SpellData.SpellModels
             HotInfoId = (int)HotIds.SoothingMist;
             HotInfo = new HotInfo()
             {
-
-            };// Hots.Where(x => x.Id == (int)HotIds.SoothingMist).FirstOrDefault();
+                Id = (int)HotIds.SoothingMist,
+                Name = "Soothing Mist",
+                Duration = 8,
+                TickRate = 1,
+                SpellBaseId = this.Id,
+                IsExtendable = false
+            };
         }
     }
 }

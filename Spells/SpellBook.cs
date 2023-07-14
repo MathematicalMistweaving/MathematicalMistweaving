@@ -1,14 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection.Metadata.Ecma335;
-using System.Runtime.Caching;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml.Linq;
-using Mistweaver.SpellData.Interfaces;
+﻿using Mistweaver.SpellData.Interfaces;
 using Mistweaver.SpellData.SpellModels;
+
 
 namespace Mistweaver.SpellData
 {
@@ -21,12 +13,12 @@ namespace Mistweaver.SpellData
         public List<DotInfo> Dots { get; set; } = new List<DotInfo>();
 
         /* heals */
-        public HealBase? Vivify(bool cleave = false) => cleave ? GetSpellByName<HealBase>("Vivify Cleave") : GetSpellByName<HealBase>("Vivify");
-        public HealBase? RenewingMist() => GetSpellByName<HealBase>("Renewing Mist");
+        public HealBase? Vivify(bool cleave = false) => cleave ? GetSpellByName<HealBase>(SpellNames.VivifyCleave) : GetSpellByName<HealBase>(SpellNames.Vivify);
+        public HealBase? RenewingMist() => GetSpellByName<HealBase>(SpellNames.RenewingMist);
         public HealBase? EssenceFont(bool hot = false) => hot ? GetSpellByName<HealBase>("Essence Font (Hot)") : GetSpellByName<HealBase>("Essence Font");
         public HealBase? Revival() => GetSpellByName<HealBase>("Revival");
         public HealBase? EnvelopingMist() => GetSpellByName<HealBase>("Enveloping Mist");
-        public HealBase? SoothingMist(bool jadeSerpentStatue = false) => jadeSerpentStatue ? GetSpellByName<HealBase>("Soothing Mist (Summon Jade Serpent Statue)") : GetSpellByName<HealBase>("Soothing Mist");
+        public HealBase? SoothingMist(bool jadeSerpentStatue = false) => jadeSerpentStatue ? GetSpellByName<HealBase>("Soothing Mist (Jade Serpent Statue)") : GetSpellByName<HealBase>("Soothing Mist");
         public HealBase? EnvelopingBreath() => GetSpellByName<HealBase>("Enveloping Breath");
         public HealBase? ChiCocoon(bool chiji = false, bool yulon = false)
         {
@@ -73,23 +65,23 @@ namespace Mistweaver.SpellData
         public SpellBook()
         {
             HealingSpells = new List<HealBase> {
-                new HealBase { SpellId = 116670, Name = "Vivify", Coefficient = 141.00m, ManaCost = 0.034m, MaxTargets = 1, CastTime = 1.5m, MasteryTrigger = true },
-                new HealBase { SpellId = 116670, Name = "Vivify Cleave", Coefficient = 91.52m, MaxTargets = 20, CastTime = 1.5m, MasteryTrigger = false },
-                new HealBase { SpellId = 115151, Name = "Renewing Mist", Coefficient = 196.65m, ManaCost = 0.018m, MaxTargets = 1, CastTime = 1.5m, MasteryTrigger = true, Cooldown = 9, HotInfoId = (int)HotIds.RenewingMist, HotInfo = Hots.Where(x=> x.Id == (int)HotIds.RenewingMist).FirstOrDefault() },
-                new HealBase { SpellId = 191837, Name = "Essence Font", Coefficient = 46.4094m, ManaCost = 0.072m, MaxTargets = 18, CastTime = 3.0m, MasteryTrigger = false, Cooldown = 12, IsChannel = true },
-                new HealBase { SpellId = 191837, Name = "Essence Font (Hot)", Coefficient = 17.388m, MaxTargets = 18, CastTime = 3.0m, MasteryTrigger = false, Cooldown = 12, HotInfoId = (int)HotIds.EssenceFont, HotInfo = Hots.Where(x=> x.Id == (int)HotIds.EssenceFont).FirstOrDefault() },
-                new HealBase { SpellId = 115310, Name = "Revival", Coefficient = 325.45m, ManaCost = 0.04374m, MaxTargets = 20, CastTime = 1.5m, MasteryTrigger = true, Cooldown = 180 },
+                new Vivify.VivifyPrimary(), 
+                new Vivify.VivifyCleave(), 
+                new RenewingMist(),
+                new EssenceFont.EssenceFontHit(), 
+                new EssenceFont.EssenceFontHot(),
+                new Revival(),
                 new HealBase { SpellId = 124682, Name = "Enveloping Mist", Coefficient = 286.80m, ManaCost = 0.048m, MaxTargets = 1, CastTime = 2, MasteryTrigger = true, HotInfoId = (int)HotIds.EnvelopingMist, HotInfo = Hots.Where(x=> x.Id == (int)HotIds.EnvelopingMist).FirstOrDefault() },
                 new HealBase { SpellId = 115175, Name = "Soothing Mist", Coefficient = 440m, ManaCost = 0.032m, MaxTargets = 1, CastTime = 8, MasteryTrigger = true, IsChannel = true, HotInfoId = (int)HotIds.SoothingMist, HotInfo = Hots.Where(x=> x.Id == (int)HotIds.SoothingMist).FirstOrDefault() },
                 new HealBase { SpellId = 325209, Name = "Enveloping Breath", Coefficient = 162.00m, MaxTargets = 6, CastTime = 2, MasteryTrigger = false, IsIndirect = true, HotInfoId = (int)HotIds.EnvelopingBreath, HotInfo = Hots.Where(x=> x.Id == (int)HotIds.EnvelopingBreath).FirstOrDefault()},
-                new HealBase { SpellId = 406220, Name = "Chi Cocoon (Chi-Ji)", Coefficient = 0.10m, MaxTargets = 5, CastTime = 0, IsIndirect = true },
-                new HealBase { SpellId = 406139, Name = "Chi Cocoon (Yu'lon)", Coefficient = 0.10m, MaxTargets = 5, CastTime = 0, IsIndirect = true },
+                //new HealBase { SpellId = 406220, Name = "Chi Cocoon (Chi-Ji)", Coefficient = 0.10m, MaxTargets = 5, CastTime = 0, IsIndirect = true },
+                //new HealBase { SpellId = 406139, Name = "Chi Cocoon (Yu'lon)", Coefficient = 0.10m, MaxTargets = 5, CastTime = 0, IsIndirect = true },
                 new HealBase { SpellId = 116849, Name = "Life Cocoon", Coefficient = 60.00m, ManaCost = 0.024m, MaxTargets = 1, CastTime = 0, MasteryTrigger = false, Cooldown = 120, IsHealthCoefficient = true, },
                 new HealBase { SpellId = 343737, Name = "Soothing Breath", Coefficient = 105, MaxTargets = 3, MasteryTrigger = false, Cooldown = 1.5m, CastTime = 4.5m, IsIndirect = true, HotInfoId = (int)HotIds.SoothingBreath, HotInfo = Hots.Where(x => x.Id == (int)HotIds.SoothingBreath).FirstOrDefault() },
                 new HealBase { SpellId = 343819, Name = "Gust of Mists (Chi-Ji)", Coefficient = 33.6m, MaxTargets = 2, CastTime = 0, MasteryTrigger = true, IsIndirect = true },
                 new HealBase { SpellId = 191894, Name = "Gust of Mists", Coefficient = 33.6m, MaxTargets = 1, IsIndirect = true, CastTime = 0, },
                 new HealBase { SpellId = 399491, Name = "Sheilun's Gift", Coefficient = 114, MaxTargets = 3, CastTime = 2, Cooldown = 8, ManaCost = 0.025m },
-                new HealBase { SpellId = 196725, Name = "Refreshing Jade Wind", Coefficient = 277.704m, MaxTargets = 6, CastTime = 1.5m, Cooldown = 45, IsCooldownHasted = true, ManaCost = 0.05m, HotInfoId = (int)HotIds.RefreshingJadeWind, HotInfo = Hots.Where(x => x.Id == (int)HotIds.RefreshingJadeWind).FirstOrDefault() },
+                //new HealBase { SpellId = 196725, Name = "Refreshing Jade Wind", Coefficient = 277.704m, MaxTargets = 6, CastTime = 1.5m, Cooldown = 45, IsCooldownHasted = true, ManaCost = 0.05m, HotInfoId = (int)HotIds.RefreshingJadeWind, HotInfo = Hots.Where(x => x.Id == (int)HotIds.RefreshingJadeWind).FirstOrDefault() },
                 new HealBase { SpellId = 115313, Name = "Summon Jade Serpent Statue", Coefficient = 0, CastTime = 1.5m, MaxTargets = 1},
                 new HealBase { SpellId = 198533, Name = "Soothing Mist (Summon Jade Serpent Statue)", Coefficient = 220, CastTime = 8, MaxTargets = 1, IsChannel = true, IsIndirect = true, HotInfoId = (int)HotIds.SoothingMist_Jss, HotInfo = Hots.Where(x => x.Id == (int)HotIds.SoothingMist_Jss).FirstOrDefault() },
                 new HealBase { SpellId = 130654, Name = "Chi Burst", Coefficient = 94.5m, CastTime = 0.75m, MaxTargets = 6, IsSqrtScaling = true, IsAttackPower = true, Cooldown = 30, },
@@ -128,15 +120,14 @@ namespace Mistweaver.SpellData
                     Dots.Add(spell.DotInfo);
                 }
             }
-            /*
-                // new HotInfo { Id = (int)HotIds.RenewingMist, Name = "Renewing Mist", Duration = 20, TickRate = 2, SpellBaseId = 3 },
-                new HotInfo { Id = (int)HotIds.EssenceFont, Name = "Essence Font", Duration = 8, TickRate = 2, SpellBaseId = 5 },
-                new HotInfo { Id = (int)HotIds.EnvelopingMist, Name = "Enveloping Mist", Duration = 6, TickRate = 1, SpellBaseId = 7 },
-                new HotInfo { Id = (int)HotIds.SoothingMist, Name = "Soothing Mist", Duration = 8, TickRate = 1, SpellBaseId = 8, IsExtendable = false, },
-                new HotInfo { Id = (int)HotIds.EnvelopingBreath, Name = "Enveloping Breath", Duration = 6, TickRate = 1, SpellBaseId = 9, IsExtendable = false },
-                new HotInfo { Id = (int)HotIds.RefreshingJadeWind, Name = "Refreshing Jade Wind", Duration = 15, TickRate = .75m, IsExtendable = false, IsPandemic = false },
-                new HotInfo { Id = (int)HotIds.SoothingMist_Jss, Name = "Soothing Mist (Jade Serpent Statue)", Duration = 8, TickRate = 1, IsExtendable = false }
-            };*/
+
+
+
+
+
+
+            var bug = new HotInfo { Id = (int)HotIds.SoothingMist_Jss, Name = "Soothing Mist (Jade Serpent Statue)", Duration = 8, TickRate = 1, IsExtendable = false };
+            
 
 
         }

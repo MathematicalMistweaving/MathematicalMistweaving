@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
+using Mistweaver.SpellData.SpellModels.Base;
 
 namespace Mistweaver.SpellData.SpellModels
 {
@@ -21,8 +22,12 @@ namespace Mistweaver.SpellData.SpellModels
             HotInfoId = (int)HotIds.EnvelopingMist;
             HotInfo = new HotInfo()
             {
-
-            };// Hots.Where(x => x.Id == (int)HotIds.EnvelopingMist).FirstOrDefault() 
+                Id = (int)HotIds.EnvelopingMist,
+                Name = "Enveloping Mist",
+                Duration = 6,
+                TickRate = 1,
+                SpellBaseId = this.Id
+            };
         }
     }
 }

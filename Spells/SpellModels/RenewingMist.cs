@@ -5,6 +5,7 @@ using System.Text;
 using System.Text.Json.Nodes;
 using System.Threading.Tasks;
 using System.Xml.Linq;
+using Mistweaver.SpellData.SpellModels.Base;
 
 namespace Mistweaver.SpellData.SpellModels
 {
@@ -27,7 +28,7 @@ namespace Mistweaver.SpellData.SpellModels
                 Name = "Renewing Mist",
                 Duration = 20,
                 TickRate = 2,
-                SpellBaseId = 3
+                SpellBaseId = this.Id
             };
         }
 
