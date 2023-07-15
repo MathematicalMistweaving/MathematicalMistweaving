@@ -1,11 +1,11 @@
-﻿using Mistweaver.SpellData.SpellModels.Base;
+﻿using Mistweaver.Data.SpellModels.Base;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Mistweaver.SpellData.SpellModels
+namespace Mistweaver.Data.SpellModels
 {
     public class RefreshingJadeWind : HealBase
     {

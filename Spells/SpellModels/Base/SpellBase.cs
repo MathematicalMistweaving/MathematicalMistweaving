@@ -3,7 +3,7 @@ using System.Diagnostics.Metrics;
 using System.Drawing;
 using System.Text.Json.Serialization;
 
-namespace Mistweaver.SpellData.SpellModels.Base
+namespace Mistweaver.Data.SpellModels.Base
 {
     public class SpellBase
     {

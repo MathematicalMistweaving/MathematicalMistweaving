@@ -1,4 +1,4 @@
-﻿namespace Mistweaver.SpellData.SpellModels
+﻿namespace Mistweaver.Data.SpellModels
 {
     public class ZenPulseHeal : HealBase
     {

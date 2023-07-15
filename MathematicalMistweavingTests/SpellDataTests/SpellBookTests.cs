@@ -1,6 +1,7 @@
-﻿using Mistweaver.SpellData;
-using Mistweaver.SpellData.Interfaces;
-using Mistweaver.SpellData.SpellModels;
+﻿using Mistweaver.Data;
+using Mistweaver.Data.Interfaces;
+using Mistweaver.Data.SpellModels;
+using Mistweaver.Data.Common;
 using static MathematicalMistweaving.API.Models.RevivalRestoralDto;
 
 namespace MathematicalMistweavingTests.SpellDataTests

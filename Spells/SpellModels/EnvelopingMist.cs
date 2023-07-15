@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
-using Mistweaver.SpellData.SpellModels.Base;
+using Mistweaver.Data.SpellModels.Base;
 
-namespace Mistweaver.SpellData.SpellModels
+namespace Mistweaver.Data.SpellModels
 {
     public class EnvelopingMist : HealBase
     {

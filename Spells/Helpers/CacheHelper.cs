@@ -6,7 +6,7 @@ using System.Runtime.Caching;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Mistweaver.SpellData.Helpers
+namespace Mistweaver.Data.Helpers
 {
     public class CacheHelper
     {

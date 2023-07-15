@@ -1,2 +1,2 @@
-﻿global using Mistweaver.SpellData.SpellModels.Base;
-global using Mistweaver.SpellData.SpellModels;
+﻿global using Mistweaver.Data.SpellModels.Base;
+global using Mistweaver.Data.SpellModels;

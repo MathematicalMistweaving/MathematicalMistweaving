@@ -2,8 +2,8 @@ using Microsoft.AspNetCore.Mvc.ApiExplorer;
 using Microsoft.AspNetCore.Mvc.Versioning;
 using Mistweaver.Math.Interfaces;
 using Mistweaver.Math.Models;
-using Mistweaver.SpellData;
-using Mistweaver.SpellData.Interfaces;
+using Mistweaver.Data;
+using Mistweaver.Data.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 

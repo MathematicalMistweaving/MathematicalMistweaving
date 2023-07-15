@@ -23,7 +23,7 @@
   <ItemGroup>
     <ProjectReference Include="..\MathematicalMistweaving.API\MathematicalMistweaving.API.csproj" />
     <ProjectReference Include="..\Mistweaver.Math\Mistweaver.Math.csproj" />
-    <ProjectReference Include="..\Spells\Mistweaver.SpellData.csproj" />
+    <ProjectReference Include="..\Spells\Mistweaver.Data.csproj" />
   </ItemGroup>
 
 </Project>
