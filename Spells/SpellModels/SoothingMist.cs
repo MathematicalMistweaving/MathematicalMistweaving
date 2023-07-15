@@ -23,8 +23,8 @@ namespace Mistweaver.SpellData.SpellModels
             HotInfoId = (int)HotIds.SoothingMist;
             HotInfo = new HotInfo()
             {
-                Id = (int)HotIds.SoothingMist,
-                Name = SpellNames.SoothingMist,
+                Id = (int)this.HotInfoId,
+                Name = this.Name,
                 Duration = 8,
                 TickRate = 1,
                 SpellBaseId = this.Id,
@@ -51,8 +51,8 @@ namespace Mistweaver.SpellData.SpellModels
             HotInfoId = (int)HotIds.SoothingMist_Jss;
             HotInfo = new HotInfo()
             {
-                Id = (int)HotIds.SoothingMist_Jss,
-                Name = SpellNames.SoothingMist_Jss,
+                Id = (int)this.HotInfoId,
+                Name = this.Name,
                 Duration = 8,
                 TickRate = 1,
                 IsExtendable = false,

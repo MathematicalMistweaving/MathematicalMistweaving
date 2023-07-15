@@ -23,8 +23,8 @@ namespace Mistweaver.SpellData.SpellModels
             HotInfoId = (int)HotIds.RefreshingJadeWind;
             HotInfo = new HotInfo()
             {
-                Id = (int)HotIds.RefreshingJadeWind,
-                Name = SpellNames.RefreshingJadeWind,
+                Id = (int)this.HotInfoId,
+                Name = this.Name,
                 Duration = 15,
                 TickRate = .75m,
                 IsExtendable = false,

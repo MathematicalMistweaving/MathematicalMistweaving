@@ -21,11 +21,13 @@ namespace Mistweaver.SpellData.SpellModels
             HotInfoId = (int)HotIds.SoothingBreath;
             HotInfo = new HotInfo()
             {
-                Id = (int)HotIds.SoothingBreath,
-                Name = SpellNames.SoothingBreath,
+                Id = (int)this.HotInfoId,
+                Name = this.Name,
                 Duration = 4.5m,
                 TickRate = 1,
-                SpellBaseId = this.Id
+                SpellBaseId = this.Id,
+                IsExtendable = false,
+                IsPandemic = false,
             };
             StatScaling = new StatScaling()
             {

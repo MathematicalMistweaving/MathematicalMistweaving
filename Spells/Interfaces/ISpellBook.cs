@@ -26,7 +26,11 @@ namespace Mistweaver.SpellData.Interfaces
         public HealBase? SheilunsGift();
         public HealBase? RefreshingJadeWind();
         public HealBase? SummonJadeSerpentStatue();
-        public HealBase? Unison();
+
+        public HealBase? FaelineStomp_EF(bool hot = false);
+        public HealBase? YulonsWhisper();
+        public HealBase? RisingMist();
+        public HealBase? HealingElixir();
 
         #endregion
 
@@ -37,8 +41,15 @@ namespace Mistweaver.SpellData.Interfaces
         public DamageBase? TigerPalm();
         public DamageBase? SpinningCraneKick();
         public DamageBase? TouchOfDeath();
+        public DamageBase? CracklingJadeLightning();
+        public DamageBase? ResonantFists();
         #endregion
+
+        #region Hybrid Fetches
         public object ChiBurst(bool damage = false);
         public object ChiWave(bool damage = false);
+        public object FaelineStomp(bool damage = false);
+        public object EyeOfTheTiger(bool damage = false);
+        #endregion
     }
 }

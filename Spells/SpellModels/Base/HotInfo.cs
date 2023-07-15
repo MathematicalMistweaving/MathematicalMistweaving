@@ -14,6 +14,7 @@ namespace Mistweaver.SpellData.SpellModels.Base
         public decimal Duration { get; set; }
         /**Frequency of Hot Tick in Seconds**/
         public decimal TickRate { get; set; }
+        public bool TickRateHasted { get; set; } = true;
 
         public int SpellBaseId { get; set; }
         public bool IsExtendable { get; set; } = true;

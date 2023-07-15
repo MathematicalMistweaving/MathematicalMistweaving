@@ -16,7 +16,8 @@ namespace Mistweaver.SpellData.SpellModels.Base
         public const string RenewingMist = "Renewing Mist";
         public const string EssenceFont = "Essence Font";
         public const string EssenceFontHoT = "Essence Font (Hot)";
-        public const string EssenceFontFLS = "Essence Font (FLS)";
+        public const string EssenceFont_FLS = "Essence Font - Faeline Stomp";
+        public const string EssenceFont_FLS_HoT = "Essence Font - Faeline Stomp (Hot)";
         public const string Revival = "Revival";
         public const string Restoral = "Restoral";
         public const string EnvelopingMist = "Enveloping Mist";
@@ -31,8 +32,6 @@ namespace Mistweaver.SpellData.SpellModels.Base
         public const string GustofMists_ChiJi = "Gusts of Mists (Chi-Ji)";
         public const string SheilunsGift = "Sheilun's Gift";
         public const string RefreshingJadeWind = "Refreshing Jade Wind";
-        public const string Unison = "Unison";
-        public const string HealingElixir = "Healing Elixir";
         public const string YulonsWhisper = "Yu'lon's Whisper";
         public const string ExpelHarm = "Expel Harm";
         #endregion
@@ -45,7 +44,6 @@ namespace Mistweaver.SpellData.SpellModels.Base
         public const string SpinningCraneKick = "Spinning Crane Kick";
         public const string TouchOfDeath = "Touch of Death";
         public const string CracklingJadeLightning = "Crackling Jade Lightning";
-        public const string EyeOfTheTiger = "Eye of the Tiger";
         public const string Melee = "Melee";
 
         #endregion
@@ -61,27 +59,35 @@ namespace Mistweaver.SpellData.SpellModels.Base
 
         #endregion
 
+        
+
+    }
+
+    public class TalentNames
+    {
         #region Casted Spells
         public const string ManaTea = "Mana Tea";
         public const string ThunderFocusTea = "Mana Tea";
         public const string InvokeChiji = "Invoke Chi-Ji, the Red Crane";
         public const string InvokeYulon = "Invoke Yu'lon, the Jade Serpent";
         public const string SummonJadeSerpentStatue = "Summon Jade Serpent Statue";
+        public const string SummonWhiteTigerStatue = " Summon White Tiger Statue";
+        public const string HealingElixir = "Healing Elixir";
         #endregion
 
-    }
-
-    public class TalentNames
-    {
+        #region Effects / Buffs
         public const string AwakenedFaeline = "Awakened Faeline";
         public const string AncientTeachings = "Ancient Teachings";
         public const string RisingMist = "Rising Mist";
-        
+        public const string Unison = "Unison";
         public const string AncientConcordance = "Ancient Concordance";
         public const string ShaohaosLessons = "Shaohao's Lessons";
         public const string LegacyOfWisdom = "Legacy of Wisdom";
         public const string SpiritOfTheCrane = "Spirit of the Crane";
         public const string TeachingsOfTheMonastery = "Teachings of the Monastery";
+        public const string EyeOfTheTiger = "Eye of the Tiger";
+        public const string ResonantFists = "Resonant Fists";
+        #endregion
     }
 
     public enum AbilityType
@@ -101,6 +107,13 @@ namespace Mistweaver.SpellData.SpellModels.Base
         EssenceFont_FLS = 7,
         RefreshingJadeWind = 8,
         SoothingMist_Jss = 9,
+        EyeOfTheTiger = 10,
+    }
+
+    public enum DotIds
+    {
+        EyeOfTheTiger = 1,
+        CracklingJadeLightning = 2,
     }
 
 }

@@ -31,7 +31,7 @@ namespace Mistweaver.SpellData.SpellModels
             public FaelineStompEssenceFontHit()
             {
                 SpellId = 344006;
-                Name = SpellNames.EssenceFontFLS;
+                Name = SpellNames.EssenceFont_FLS;
                 MaxTargets = 5;
                 ManaCost = 0.04m;
             }
@@ -41,14 +41,14 @@ namespace Mistweaver.SpellData.SpellModels
             public FaelineStompEssenceFontHot() 
             {
                 SpellId = 344006;
-                Name = SpellNames.EssenceFontFLS;
+                Name = SpellNames.EssenceFont_FLS_HoT;
                 MaxTargets = 5;
                 ManaCost = 0.04m;
                 HotInfoId = (int)HotIds.EssenceFont_FLS;
                 HotInfo = new HotInfo
                 {
-                    Id = (int)HotIds.EssenceFont_FLS,
-                    Name = SpellNames.EssenceFontFLS,
+                    Id = (int)this.HotInfoId,
+                    Name = this.Name,
                     Duration = 8,
                     TickRate = 2,
                     SpellBaseId = this.Id,

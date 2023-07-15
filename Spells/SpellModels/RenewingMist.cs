@@ -21,11 +21,12 @@ namespace Mistweaver.SpellData.SpellModels
             CastTime = 1.5m;
             MasteryTrigger = true;
             Cooldown = 9;
+            Charges = 2;
             HotInfoId = (int)HotIds.RenewingMist;
             HotInfo = new HotInfo
             {
-                Id = (int)HotIds.RenewingMist,
-                Name = SpellNames.RenewingMist,
+                Id = (int)this.HotInfoId,
+                Name = this.Name,
                 Duration = 20,
                 TickRate = 2,
                 SpellBaseId = this.Id

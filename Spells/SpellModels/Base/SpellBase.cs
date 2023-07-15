@@ -11,6 +11,8 @@ namespace Mistweaver.SpellData.SpellModels.Base
         public SpellBase()
         {
             Id = Interlocked.Increment(ref _counter);
+            Name = "";
+            StatScaling = new StatScaling();
         }
 
         #region Required Properties
@@ -34,7 +36,7 @@ namespace Mistweaver.SpellData.SpellModels.Base
         #endregion
 
         #region Optional Properties
-
+        public int Charges { get; set; } = 1;
         /**Cooldown in Seconds**/
         public decimal? Cooldown { get; set; }
         /**Mana cost in Percent of Base Mana**/

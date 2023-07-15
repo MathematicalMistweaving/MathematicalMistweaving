@@ -47,8 +47,8 @@ namespace Mistweaver.SpellData.SpellModels
                 HotInfoId = (int)HotIds.EssenceFont;
                 HotInfo = new HotInfo
                 {
-                    Id = (int)HotIds.EssenceFont,
-                    Name = SpellNames.EssenceFont,
+                    Id = (int)this.HotInfoId,
+                    Name = this.Name,
                     Duration = 8,
                     TickRate = 2,
                     SpellBaseId = this.Id,

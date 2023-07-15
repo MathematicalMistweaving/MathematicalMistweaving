@@ -23,8 +23,8 @@ namespace Mistweaver.SpellData.SpellModels
             HotInfoId = (int)HotIds.EnvelopingMist;
             HotInfo = new HotInfo()
             {
-                Id = (int)HotIds.EnvelopingMist,
-                Name = SpellNames.EnvelopingMist,
+                Id = (int)this.HotInfoId,
+                Name = this.Name,
                 Duration = 6,
                 TickRate = 1,
                 SpellBaseId = this.Id

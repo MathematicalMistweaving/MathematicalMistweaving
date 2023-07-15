@@ -29,9 +29,11 @@ namespace Mistweaver.SpellData
         public HealBase? GustOfMists(bool chiji = false) => chiji ? GetSpellByName<HealBase>(SpellNames.GustofMists_ChiJi) : GetSpellByName<HealBase>(SpellNames.GustOfMists);
         public HealBase? SheilunsGift() => GetSpellByName<HealBase>(SpellNames.SheilunsGift);
         public HealBase? RefreshingJadeWind() => GetSpellByName<HealBase>(SpellNames.RefreshingJadeWind);
-        public HealBase? SummonJadeSerpentStatue() => GetSpellByName<HealBase>(SpellNames.SummonJadeSerpentStatue);
-        public HealBase? Unison() => GetSpellByName<HealBase>(SpellNames.Unison);
-
+        public HealBase? SummonJadeSerpentStatue() => GetSpellByName<HealBase>(TalentNames.SummonJadeSerpentStatue);
+        public HealBase? FaelineStomp_EF(bool hot = false) => hot ? GetSpellByName<HealBase>(SpellNames.EssenceFont_FLS_HoT) : GetSpellByName<HealBase>(SpellNames.EssenceFont_FLS);
+        public HealBase? YulonsWhisper() => GetSpellByName<HealBase>(SpellNames.YulonsWhisper);
+        public HealBase? RisingMist() => GetSpellByName<HealBase>(TalentNames.RisingMist);
+        public HealBase? HealingElixir() => GetSpellByName<HealBase>(TalentNames.HealingElixir);
         #endregion
 
         #region Damage Fetch Methods
@@ -41,6 +43,8 @@ namespace Mistweaver.SpellData
         public DamageBase? TigerPalm() => GetSpellByName<DamageBase>(SpellNames.TigerPalm);
         public DamageBase? SpinningCraneKick() => GetSpellByName<DamageBase>(SpellNames.SpinningCraneKick);
         public DamageBase? TouchOfDeath() => GetSpellByName<DamageBase>(SpellNames.TouchOfDeath);
+        public DamageBase? CracklingJadeLightning() => GetSpellByName<DamageBase>(SpellNames.CracklingJadeLightning);
+        public DamageBase? ResonantFists() => GetSpellByName<DamageBase>(TalentNames.ResonantFists);
 
         #endregion
 
@@ -58,6 +62,27 @@ namespace Mistweaver.SpellData
                 return GetSpellByName<DamageBase>(SpellNames.ChiWave);
 
             return GetSpellByName<HealBase>(SpellNames.ChiWave);
+        }
+        public object ZenPulse(bool damage = false)
+        {
+            if (damage)
+                return GetSpellByName<DamageBase>(SpellNames.ZenPulse);
+
+            return GetSpellByName<HealBase>(SpellNames.ZenPulse);
+        }
+        public object FaelineStomp(bool damage = false)
+        {
+            if (damage)
+                return GetSpellByName<DamageBase>(SpellNames.FaelineStomp);
+
+            return GetSpellByName<HealBase>(SpellNames.FaelineStomp);
+        }
+        public object EyeOfTheTiger(bool damage = false)
+        {
+            if (damage)
+                return GetSpellByName<DamageBase>(TalentNames.EyeOfTheTiger);
+
+            return GetSpellByName<HealBase>(TalentNames.EyeOfTheTiger);
         }
 
 
@@ -91,6 +116,8 @@ namespace Mistweaver.SpellData
                 new FaelineStompHeal.FaelineStompEssenceFontHot(),
                 new YulonsWhisper(),
                 new RisingMist(),
+                new EyeOfTheTigerHeal(),
+                new HealingElixir(),
 
                 //TODO: Break out spell casts/Talent effects that don't do healing 
                 new HealBase { SpellId = 388480, Name = "Unison", Coefficient = 100, CastTime = 0, MaxTargets = 1, IsIndirect = true },
@@ -107,6 +134,9 @@ namespace Mistweaver.SpellData
                 new TouchOfDeath(),
                 new ZenPulseDmg(),
                 new FaelineStompDmg(),
+                new EyeOfTheTigerDmg(),
+                new CracklingJadeLightning(),
+                new ResonantFists(),
                 
             };
             Spells.AddRange(DamageSpells);
