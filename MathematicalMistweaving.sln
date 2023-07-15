@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33815.320
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mistweaver.SpellData", "Spells\Mistweaver.SpellData.csproj", "{AA057E5F-31D9-4164-9DA2-7BF4C3EF6B94}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mistweaver.Data", "Spells\Mistweaver.Data.csproj", "{AA057E5F-31D9-4164-9DA2-7BF4C3EF6B94}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MathematicalMistweaving.API", "MathematicalMistweaving.API\MathematicalMistweaving.API.csproj", "{92C92ABE-0C34-4D36-931D-0BE0CBB47632}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MathematicalMistweavingTests", "MathematicalMistweavingTests\MathematicalMistweavingTests.csproj", "{37321BB8-63D1-4E95-B561-96970BED610C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mistweaver.Math", "Mistweaver.Math\Mistweaver.Math.csproj", "{E747FFA5-2D44-4E10-9629-F005E8EDF9BD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mistweaver.Math", "Mistweaver.Math\Mistweaver.Math.csproj", "{E747FFA5-2D44-4E10-9629-F005E8EDF9BD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
