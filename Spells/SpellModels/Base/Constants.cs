@@ -31,10 +31,9 @@ namespace Mistweaver.SpellData.SpellModels.Base
         public const string GustofMists_ChiJi = "Gusts of Mists (Chi-Ji)";
         public const string SheilunsGift = "Sheilun's Gift";
         public const string RefreshingJadeWind = "Refreshing Jade Wind";
-        public const string FaelineStomp = "Faeline Stomp";
-        public const string SummonJadeSerpentStatue = "Summon Jade Serpent Statue";
         public const string Unison = "Unison";
-
+        public const string HealingElixir = "Healing Elixir";
+        public const string AwakenedFaeline = "Awakened Faeline";
         #endregion
 
         #region Damage
@@ -56,9 +55,18 @@ namespace Mistweaver.SpellData.SpellModels.Base
         public const string ChiBurst = "Chi Burst";
         public const string ZenPulse = "Zen Pulse";
         public const string LessonOfAnger = "Lesson of Anger";
+        public const string FaelineStomp = "Faeline Stomp";
+
 
         #endregion
 
+        #region Casted Spells
+        public const string ManaTea = "Mana Tea";
+        public const string ThunderFocusTea = "Mana Tea";
+        public const string InvokeChiji = "Invoke Chi-Ji, the Red Crane";
+        public const string InvokeYulon = "Invoke Yu'lon, the Jade Serpent";
+        public const string SummonJadeSerpentStatue = "Summon Jade Serpent Statue";
+        #endregion
 
     }
 
@@ -80,5 +88,5 @@ namespace Mistweaver.SpellData.SpellModels.Base
         RefreshingJadeWind = 8,
         SoothingMist_Jss = 9,
     }
-    
+
 }
