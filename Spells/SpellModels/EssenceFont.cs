@@ -27,6 +27,13 @@ namespace Mistweaver.SpellData.SpellModels
                 Name = SpellNames.EssenceFont;
                 Coefficient = 46.4094m;
                 MaxTargets = 18;
+                StatScaling = new StatScaling()
+                {
+                    CriticalStrike = true,
+                    Haste = false,
+                    Mastery = false,
+                    Versatility = true
+                };
             }
         }
 
@@ -45,6 +52,13 @@ namespace Mistweaver.SpellData.SpellModels
                     Duration = 8,
                     TickRate = 2,
                     SpellBaseId = this.Id,
+                };
+                StatScaling = new StatScaling()
+                {
+                    CriticalStrike = true,
+                    Haste = true,
+                    Mastery = false,
+                    Versatility = true
                 };
             }
         }

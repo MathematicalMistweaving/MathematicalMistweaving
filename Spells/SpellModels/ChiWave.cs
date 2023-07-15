@@ -18,6 +18,7 @@ namespace Mistweaver.SpellData.SpellModels
             MaxTargets = 4;
             IsAttackPower = true;
             Cooldown = 15;
+            StatScaling = new StatScaling() { CriticalStrike = true, Haste = false, Mastery = false, Versatility = true };
         }
     }
 

@@ -18,7 +18,13 @@ namespace Mistweaver.SpellData.SpellModels
             Cooldown = 30;
             CastTime = 1.5m;
             MaxTargets = 5;
-
+            StatScaling = new StatScaling()
+            {
+                CriticalStrike = true,
+                Haste = false,
+                Mastery = false,
+                Versatility = true
+            };
         }
         public class FaelineStompEssenceFontHit : EssenceFont.EssenceFontHit
         {

@@ -89,7 +89,9 @@ namespace Mistweaver.SpellData
                 new FaelineStompHeal(),
                 new FaelineStompHeal.FaelineStompEssenceFontHit(),
                 new FaelineStompHeal.FaelineStompEssenceFontHot(),
-                
+                new YulonsWhisper(),
+                new RisingMist(),
+
                 //TODO: Break out spell casts/Talent effects that don't do healing 
                 new HealBase { SpellId = 388480, Name = "Unison", Coefficient = 100, CastTime = 0, MaxTargets = 1, IsIndirect = true },
                 new HealBase { SpellId = 115313, Name = "Summon Jade Serpent Statue", Coefficient = 0, CastTime = 1.5m, MaxTargets = 1},

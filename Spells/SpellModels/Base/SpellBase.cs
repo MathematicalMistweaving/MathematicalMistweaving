@@ -26,6 +26,8 @@ namespace Mistweaver.SpellData.SpellModels.Base
         public decimal Coefficient { get; set; }
         /**Max number of Targets (default 1)**/
         public int MaxTargets { get; set; }
+
+        public StatScaling StatScaling { get; set; }
         /**Time to Cast Spell in Seconds (default to 1.5s for the global cooldown and for instant casts)**/
         public decimal CastTime { get; set; }
 
@@ -53,5 +55,13 @@ namespace Mistweaver.SpellData.SpellModels.Base
         public List<int>? SourceIds { get; set; }
 
         #endregion
+    }
+
+    public class StatScaling
+    {
+        public bool CriticalStrike { get; set; }
+        public bool Haste { get; set; }
+        public bool Mastery { get; set; }
+        public bool Versatility { get; set; }
     }
 }

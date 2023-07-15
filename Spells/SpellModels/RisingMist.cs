@@ -6,18 +6,16 @@ using System.Threading.Tasks;
 
 namespace Mistweaver.SpellData.SpellModels
 {
-    public class SheilunsGift : HealBase
+    public class RisingMist : HealBase
     {
-        public const int MaxStacks = 10;
-        public SheilunsGift() 
+        public RisingMist() 
         {
-            SpellId = 399491; 
-            Name = SpellNames.SheilunsGift; 
-            Coefficient = 114;
-            MaxTargets = 3; 
-            CastTime = 2; 
-            Cooldown = 8; 
-            ManaCost = 0.025m;
+            SpellId = 274909;
+            Name = TalentNames.RisingMist;
+            Coefficient = 23.94m;
+            MaxTargets = 30;
+            CastTime = 0;
+            IsIndirect = true;
             StatScaling = new StatScaling()
             {
                 CriticalStrike = true,
@@ -26,5 +24,6 @@ namespace Mistweaver.SpellData.SpellModels
                 Versatility = true
             };
         }
+
     }
 }

@@ -29,8 +29,9 @@ namespace MathematicalMistweavingTests.SpellDataTests
         [TestMethod]
         public void SpellBook_TigerPalm()
         {
-            var retVal = _spellBook.TigerPalm();
-            Assert.AreEqual(typeof(DamageBase), retVal?.GetType());
+            var tp = _spellBook.TigerPalm();
+            Assert.IsTrue(tp is DamageBase);
+            Assert.AreEqual(typeof(TigerPalm), tp?.GetType());
         }
 
         [TestMethod]
@@ -70,6 +71,17 @@ namespace MathematicalMistweavingTests.SpellDataTests
             Assert.IsNotNull(restoral);
             Assert.AreEqual(115310, revival?.SpellId);
             Assert.AreEqual(388615, restoral?.SpellId);
+        }
+
+        [TestMethod]
+        public void SpellBook_StatScaling_Attributes()
+        {
+            var rsk = _spellBook.RisingSunKick();
+            var vivifyCleave = _spellBook.Vivify(cleave: true);
+
+            Assert.AreEqual(true, vivifyCleave?.StatScaling.CriticalStrike);
+            Assert.AreNotEqual(true, vivifyCleave?.StatScaling.Haste);
+            Assert.AreEqual(true, rsk?.StatScaling.Versatility);
         }
     }
 }

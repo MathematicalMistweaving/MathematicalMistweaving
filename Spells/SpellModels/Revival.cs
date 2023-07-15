@@ -19,6 +19,13 @@ namespace Mistweaver.SpellData.SpellModels
             CastTime = 1.5m; 
             MasteryTrigger = true; 
             Cooldown = 180;
+            StatScaling = new StatScaling()
+            {
+                CriticalStrike = true,
+                Haste = false,
+                Mastery = false,
+                Versatility = true
+            };
         }
     }
     public class Restoral : HealBase
@@ -33,6 +40,13 @@ namespace Mistweaver.SpellData.SpellModels
             CastTime = 1.5m;
             MasteryTrigger = true;
             Cooldown = 180;
+            StatScaling = new StatScaling()
+            {
+                CriticalStrike = true,
+                Haste = false,
+                Mastery = false,
+                Versatility = true
+            };
         }
     }
 }

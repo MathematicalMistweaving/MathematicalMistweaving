@@ -16,6 +16,13 @@ namespace Mistweaver.SpellData.SpellModels
             CastTime = 1.5m;
             ManaCost = .034m;
             Cooldown = 1.5m;
+            StatScaling = new StatScaling()
+            {
+                CriticalStrike = true,
+                Haste = false,
+                Mastery = false,
+                Versatility = true
+            };
         }
 
         public class VivifyPrimary : Vivify

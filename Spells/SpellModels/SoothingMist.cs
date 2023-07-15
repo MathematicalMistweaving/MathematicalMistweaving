@@ -30,6 +30,13 @@ namespace Mistweaver.SpellData.SpellModels
                 SpellBaseId = this.Id,
                 IsExtendable = false
             };
+            StatScaling = new StatScaling()
+            {
+                CriticalStrike = true,
+                Haste = true,
+                Mastery = false,
+                Versatility = true
+            };
         }
     }
     public class SoothingMist_Jss : HealBase
@@ -50,6 +57,13 @@ namespace Mistweaver.SpellData.SpellModels
                 TickRate = 1,
                 IsExtendable = false,
                 SpellBaseId = this.Id,
+            };
+            StatScaling = new StatScaling()
+            {
+                CriticalStrike = true,
+                Haste = true,
+                Mastery = false,
+                Versatility = true
             };
         }
     }

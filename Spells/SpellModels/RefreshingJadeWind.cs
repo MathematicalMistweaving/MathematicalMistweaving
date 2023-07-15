@@ -18,6 +18,7 @@ namespace Mistweaver.SpellData.SpellModels
             CastTime = 1.5m;
             Cooldown = 45;
             IsCooldownHasted = true;
+            IsChannel = true;
             ManaCost = 0.05m;
             HotInfoId = (int)HotIds.RefreshingJadeWind;
             HotInfo = new HotInfo()
@@ -28,6 +29,13 @@ namespace Mistweaver.SpellData.SpellModels
                 TickRate = .75m,
                 IsExtendable = false,
                 IsPandemic = false
+            };
+            StatScaling = new StatScaling()
+            {
+                CriticalStrike = true,
+                Haste = true,
+                Mastery = false,
+                Versatility = true
             };
         }
 

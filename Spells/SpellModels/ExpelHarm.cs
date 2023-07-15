@@ -6,18 +6,18 @@ using System.Threading.Tasks;
 
 namespace Mistweaver.SpellData.SpellModels
 {
-    public class SheilunsGift : HealBase
+    public class ExpelHarm : HealBase
     {
-        public const int MaxStacks = 10;
-        public SheilunsGift() 
+        public ExpelHarm(bool target) 
         {
-            SpellId = 399491; 
-            Name = SpellNames.SheilunsGift; 
-            Coefficient = 114;
-            MaxTargets = 3; 
-            CastTime = 2; 
-            Cooldown = 8; 
-            ManaCost = 0.025m;
+            SpellId = target ? 325214 : 322101;
+            Name = SpellNames.ExpelHarm;
+            Coefficient = 120;
+            MaxTargets = target ? 2 : 1;
+            CastTime = 0;
+            Cooldown = 15m;
+            ManaCost = 0.30m;
+            MasteryTrigger = true;
             StatScaling = new StatScaling()
             {
                 CriticalStrike = true,
@@ -26,5 +26,6 @@ namespace Mistweaver.SpellData.SpellModels
                 Versatility = true
             };
         }
+
     }
 }

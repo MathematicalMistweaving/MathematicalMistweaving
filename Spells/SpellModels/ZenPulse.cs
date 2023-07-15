@@ -12,6 +12,13 @@
             ManaCost = 0.01m;
             Cooldown = 30;
             MaxTargets = 1;
+            StatScaling = new StatScaling()
+            {
+                CriticalStrike = true,
+                Haste = false,
+                Mastery = false,
+                Versatility = true
+            };
         }
     }
     public class ZenPulseDmg : DamageBase

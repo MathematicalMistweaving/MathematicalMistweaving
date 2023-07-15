@@ -18,6 +18,7 @@ namespace Mistweaver.SpellData.SpellModels
             IsSqrtScaling = true;
             Cooldown = 30;
             IsAttackPower = true;
+            StatScaling = new StatScaling() { CriticalStrike = true, Haste = false, Mastery = false, Versatility = true };
         } 
     }
     public class ChiBurstDmg : DamageBase

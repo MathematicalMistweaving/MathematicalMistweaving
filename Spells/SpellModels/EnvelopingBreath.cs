@@ -30,6 +30,13 @@ namespace Mistweaver.SpellData.SpellModels
                 SpellBaseId = this.Id,
                 IsExtendable = false
             };
-    }
+            StatScaling = new StatScaling() 
+            { 
+                CriticalStrike = true, 
+                Haste = true, 
+                Mastery = false, 
+                Versatility = true 
+            };
+        }
     }
 }

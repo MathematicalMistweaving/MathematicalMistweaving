@@ -30,6 +30,13 @@ namespace Mistweaver.SpellData.SpellModels
                 TickRate = 2,
                 SpellBaseId = this.Id
             };
+            StatScaling = new StatScaling()
+            {
+                CriticalStrike = true,
+                Haste = true,
+                Mastery = false,
+                Versatility = true
+            };
         }
 
         public JsonArray Serialize()

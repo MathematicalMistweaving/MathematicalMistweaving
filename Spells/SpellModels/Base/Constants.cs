@@ -33,7 +33,8 @@ namespace Mistweaver.SpellData.SpellModels.Base
         public const string RefreshingJadeWind = "Refreshing Jade Wind";
         public const string Unison = "Unison";
         public const string HealingElixir = "Healing Elixir";
-        public const string AwakenedFaeline = "Awakened Faeline";
+        public const string YulonsWhisper = "Yu'lon's Whisper";
+        public const string ExpelHarm = "Expel Harm";
         #endregion
 
         #region Damage
@@ -68,6 +69,19 @@ namespace Mistweaver.SpellData.SpellModels.Base
         public const string SummonJadeSerpentStatue = "Summon Jade Serpent Statue";
         #endregion
 
+    }
+
+    public class TalentNames
+    {
+        public const string AwakenedFaeline = "Awakened Faeline";
+        public const string AncientTeachings = "Ancient Teachings";
+        public const string RisingMist = "Rising Mist";
+        
+        public const string AncientConcordance = "Ancient Concordance";
+        public const string ShaohaosLessons = "Shaohao's Lessons";
+        public const string LegacyOfWisdom = "Legacy of Wisdom";
+        public const string SpiritOfTheCrane = "Spirit of the Crane";
+        public const string TeachingsOfTheMonastery = "Teachings of the Monastery";
     }
 
     public enum AbilityType

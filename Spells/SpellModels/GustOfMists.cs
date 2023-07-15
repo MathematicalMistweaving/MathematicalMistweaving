@@ -15,7 +15,14 @@ namespace Mistweaver.SpellData.SpellModels
             Coefficient = 33.6m;
             MaxTargets = 1; 
             IsIndirect = true; 
-            CastTime = 0; 
+            CastTime = 0;
+            StatScaling = new StatScaling()
+            {
+                CriticalStrike = true,
+                Haste = false,
+                Mastery = true,
+                Versatility = true
+            };
         }
     }
 
@@ -28,8 +35,14 @@ namespace Mistweaver.SpellData.SpellModels
             Coefficient = 33.6m;
             MaxTargets = 2; 
             CastTime = 0; 
-            MasteryTrigger = true;
             IsIndirect = true;
+            StatScaling = new StatScaling()
+            {
+                CriticalStrike = true,
+                Haste = false,
+                Mastery = true,
+                Versatility = true
+            };
         }
     }
 }

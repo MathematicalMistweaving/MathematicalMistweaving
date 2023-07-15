@@ -20,6 +20,13 @@ namespace Mistweaver.SpellData.SpellModels
             MasteryTrigger = false;
             Cooldown = 120;
             IsHealthCoefficient = true;
+            StatScaling = new StatScaling()
+            {
+                CriticalStrike = false,
+                Haste = false,
+                Mastery = false,
+                Versatility = true
+            };
         }
     }
 }

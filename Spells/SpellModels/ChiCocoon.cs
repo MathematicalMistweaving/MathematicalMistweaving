@@ -15,6 +15,7 @@ namespace Mistweaver.SpellData.SpellModels
             Coefficient = 0.10m;
             MaxTargets = 5;
             IsIndirect = true;
+            StatScaling = new StatScaling() { CriticalStrike = false, Haste = false, Mastery = false, Versatility = true };
         }
 
         public class ChiCocoonChiJi : ChiCocoon
