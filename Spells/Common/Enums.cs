@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Mistweaver.SpellData.Common
+namespace Mistweaver.Data.Common
 {
     public enum AbilityType
     {
@@ -37,6 +37,13 @@ namespace Mistweaver.SpellData.Common
         AeratedManaPotion = 1,
         PotionOfFrozenFocus = 2,
         None = 3,
+    }
+
+    public enum TalentTier
+    {
+        Tier1 = 1,
+        Tier2 = 2, 
+        Tier3 = 3,
     }
 
 }

@@ -2,9 +2,9 @@
 using Microsoft.AspNetCore.Mvc;
 using Mistweaver.Math.Interfaces;
 using Mistweaver.Math.Models;
-using Mistweaver.SpellData;
-using Mistweaver.SpellData.Helpers;
-using Mistweaver.SpellData.Interfaces;
+using Mistweaver.Data;
+using Mistweaver.Data.Helpers;
+using Mistweaver.Data.Interfaces;
 using System.Runtime.Caching;
 
 namespace MathematicalMistweaving.API.Controllers

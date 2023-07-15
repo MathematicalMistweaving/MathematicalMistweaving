@@ -1,15 +1,18 @@
-﻿using Mistweaver.SpellData.Profile;
+﻿using Mistweaver.Data.Profile;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Mistweaver.SpellData.Interfaces
+namespace Mistweaver.Data.Interfaces
 {
     public interface IProfile
     {
         public PlayerStats Stats { get; }
-        public PlayerExternalMana Mana { get; }
+        public PlayerTalents Talents { get; }
+        public PlayerExternalMana ExternalMana { get; }
+        public ProfileOptions Options { get; }
+        
     }
 }

@@ -1,5 +1,5 @@
 ﻿
-namespace Mistweaver.SpellData.Interfaces
+namespace Mistweaver.Data.Interfaces
 {
     public interface ISpellBook
     {

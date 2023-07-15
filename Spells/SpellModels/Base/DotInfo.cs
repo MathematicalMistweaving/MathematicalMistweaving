@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Mistweaver.SpellData.SpellModels.Base
+namespace Mistweaver.Data.SpellModels.Base
 {
     public class DotInfo
     {

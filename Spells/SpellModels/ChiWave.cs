@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 
-namespace Mistweaver.SpellData.SpellModels
+namespace Mistweaver.Data.SpellModels
 {
     public class ChiWaveHeal : HealBase
     { 

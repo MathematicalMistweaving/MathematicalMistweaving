@@ -1,4 +1,4 @@
-﻿using Mistweaver.SpellData.SpellModels;
+﻿using Mistweaver.Data.SpellModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;

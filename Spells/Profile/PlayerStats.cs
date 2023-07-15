@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Mistweaver.SpellData.Profile
+namespace Mistweaver.Data.Profile
 {
     public class PlayerStats
     {

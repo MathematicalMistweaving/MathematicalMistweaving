@@ -5,7 +5,7 @@ using System.Reflection.Metadata;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Mistweaver.SpellData.Common
+namespace Mistweaver.Data.Common
 {
     public class SpellNames
     {

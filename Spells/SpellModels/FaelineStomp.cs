@@ -5,7 +5,7 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Mistweaver.SpellData.SpellModels
+namespace Mistweaver.Data.SpellModels
 {
     public class FaelineStompHeal : HealBase
     {

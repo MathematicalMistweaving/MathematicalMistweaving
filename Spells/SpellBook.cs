@@ -1,8 +1,8 @@
-﻿using Mistweaver.SpellData.Interfaces;
-using Mistweaver.SpellData.SpellModels;
+﻿using Mistweaver.Data.Interfaces;
+using Mistweaver.Data.SpellModels;
 
 
-namespace Mistweaver.SpellData
+namespace Mistweaver.Data
 {
     public class SpellBook : ISpellBook
     {
