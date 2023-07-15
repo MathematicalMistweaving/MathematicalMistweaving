@@ -16,6 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Mistweaver.Math\Mistweaver.Math.csproj" />
     <ProjectReference Include="..\Spells\Mistweaver.SpellData.csproj" />
   </ItemGroup>
 
