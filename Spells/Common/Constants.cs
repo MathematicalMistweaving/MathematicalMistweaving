@@ -5,7 +5,7 @@ using System.Reflection.Metadata;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Mistweaver.SpellData.SpellModels.Base
+namespace Mistweaver.SpellData.Common
 {
     public class SpellNames
     {
@@ -59,7 +59,7 @@ namespace Mistweaver.SpellData.SpellModels.Base
 
         #endregion
 
-        
+
 
     }
 
@@ -89,31 +89,4 @@ namespace Mistweaver.SpellData.SpellModels.Base
         public const string ResonantFists = "Resonant Fists";
         #endregion
     }
-
-    public enum AbilityType
-    {
-        Physical = 1,
-        Nature = 2,
-        Other = 3,
-    }
-    public enum HotIds
-    {
-        RenewingMist = 1,
-        EssenceFont = 2,
-        EnvelopingMist = 3,
-        SoothingMist = 4,
-        EnvelopingBreath = 5,
-        SoothingBreath = 6,
-        EssenceFont_FLS = 7,
-        RefreshingJadeWind = 8,
-        SoothingMist_Jss = 9,
-        EyeOfTheTiger = 10,
-    }
-
-    public enum DotIds
-    {
-        EyeOfTheTiger = 1,
-        CracklingJadeLightning = 2,
-    }
-
 }
