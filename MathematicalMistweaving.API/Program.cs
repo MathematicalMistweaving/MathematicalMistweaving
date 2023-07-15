@@ -1,5 +1,7 @@
 using Microsoft.AspNetCore.Mvc.ApiExplorer;
 using Microsoft.AspNetCore.Mvc.Versioning;
+using Mistweaver.Math.Interfaces;
+using Mistweaver.Math.Models;
 using Mistweaver.SpellData;
 using Mistweaver.SpellData.Interfaces;
 
@@ -7,7 +9,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddSingleton<ISpellBook>(new SpellBook());
-
+builder.Services.AddSingleton<IMistweaverMath>(new MistweaverMath());
 builder.Services.AddControllers();
 builder.Services.AddApiVersioning(delegate (ApiVersioningOptions options)
 {

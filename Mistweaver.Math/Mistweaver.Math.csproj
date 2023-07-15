@@ -10,8 +10,4 @@
     <ProjectReference Include="..\Spells\Mistweaver.SpellData.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="NewFolder\" />
-  </ItemGroup>
-
 </Project>

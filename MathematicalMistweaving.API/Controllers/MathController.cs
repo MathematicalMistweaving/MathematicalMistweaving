@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Mistweaver.Math.Interfaces;
+using Mistweaver.Math.Models;
 using Mistweaver.SpellData;
 using Mistweaver.SpellData.Helpers;
 using Mistweaver.SpellData.Interfaces;
@@ -12,17 +14,19 @@ namespace MathematicalMistweaving.API.Controllers
     [ApiController]
     public class MathController : ControllerBase
     {
-        private readonly ISpellBook spellBook;
+        private readonly ISpellBook _spellBook;
+        private readonly IMistweaverMath _math;
 
-        public MathController(ISpellBook spellBook)
+        public MathController(ISpellBook spellBook, IMistweaverMath math)
         {
-            this.spellBook = spellBook;
+            _spellBook = spellBook;
+            _math = math;
         }
 
         [HttpGet("")]
-        public ActionResult<HealBase> GetModifiedSpell()
+        public ActionResult<SpellResult> GetModifiedSpell(string name)
         {
-            return NotFound();
+            return _math.GetSpellWithModifiers(name);
         }
     }
 
