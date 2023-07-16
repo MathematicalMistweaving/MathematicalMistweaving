@@ -34,7 +34,7 @@ namespace MathematicalMistweaving.API.Controllers
         [HttpGet("healing/{name}")]
         public ActionResult<HealBase> GetHealingSpell(string name)
         {
-            var spells = _spellBook.HealingSpells.Where(s => s.Name!.ToLower().Contains(name.ToLower())).ToList();
+            var spells = _spellBook.HealingSpells.Where(s => StringHelper.Like(s.Name, name)).ToList();
             return (spells == null) ? NotFound() : Ok(spells);
         }
 
@@ -53,7 +53,7 @@ namespace MathematicalMistweaving.API.Controllers
         [HttpGet("damage/{name}")]
         public ActionResult<DamageBase> GetDamageSpell(string name)
         {
-            var spells = _spellBook.DamageSpells.Where(s => s.Name!.ToLower().Contains(name.ToLower())).ToList();
+            var spells = _spellBook.DamageSpells.Where(s => StringHelper.Like(s.Name, name)).ToList();
             return (spells == null) ? NotFound() : Ok(spells);
         }
 
@@ -66,7 +66,7 @@ namespace MathematicalMistweaving.API.Controllers
         [HttpGet("{name}")]
         public  ActionResult<SpellBook> GetSpell(string name)
         {
-            var spells = _spellBook.Spells.Where(s => s.Name!.ToLower().Contains(name.ToLower())).ToList();
+            var spells = _spellBook.Spells.Where(s => StringHelper.Like(s.Name, name)).ToList();
             return (spells == null) ? NotFound() : Ok(spells);
         }
 

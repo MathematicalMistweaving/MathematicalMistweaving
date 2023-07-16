@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Mistweaver.Data.Common
 {
-    public class SpellNames
+    public static class SpellNames
     {
         #region Heals
 
@@ -63,7 +63,7 @@ namespace Mistweaver.Data.Common
 
     }
 
-    public class TalentNames
+    public static class TalentNames
     {
         #region Casted Spells
         public const string ManaTea = "Mana Tea";
@@ -76,6 +76,7 @@ namespace Mistweaver.Data.Common
         #endregion
 
         #region Effects / Buffs
+        public const string CloudedFocus = "Clouded Focus";
         public const string AwakenedFaeline = "Awakened Faeline";
         public const string AncientTeachings = "Ancient Teachings";
         public const string RisingMist = "Rising Mist";
