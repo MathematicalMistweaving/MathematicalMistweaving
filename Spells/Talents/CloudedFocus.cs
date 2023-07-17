@@ -14,12 +14,11 @@ namespace Mistweaver.Data.Talents
 {
     public class CloudedFocus : TalentBase
     {
-        public CloudedFocus(ISpellBook spellBook, IProfile profile) : base(spellBook, profile)
+        public CloudedFocus()
         {
             
             Name = TalentNames.CloudedFocus;
             Tier = TalentTier.Tier2;
-            AffectedSpells = new List<string>{ SpellNames.Vivify, SpellNames.VivifyCleave, SpellNames.EnvelopingMist, SpellNames.EnvelopingBreath };
             MaxRank = 1;
             HasUniqueEffect = true;
             Ranks = new List<TalentRankData>()
@@ -32,7 +31,6 @@ namespace Mistweaver.Data.Talents
                         new TalentEffect()
                         {
                             Type = TalentEffectTypes.Coefficient,
-                            Spells = this.AffectedSpells,
                             Value = 0.20m
                         }
                     }
@@ -47,19 +45,6 @@ namespace Mistweaver.Data.Talents
             return 1;
             
             //throw new NotImplementedException();
-        }
-
-        public override decimal CalculateHps<T>(ISpellBook spellBook, IProfile profile)
-        {
-            decimal hps = 0m;
-            //TODO: Implement standard effect 
-            Type spell = typeof(T);
-            ModifyProperties<T, CloudedFocus>((T)(object)spell);
-            //THEN
-
-            if (HasUniqueEffect) { CalculateUniqueEffect<T>(); }
-
-            return hps;
         }
     }
 }

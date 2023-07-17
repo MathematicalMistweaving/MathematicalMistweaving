@@ -46,14 +46,5 @@ namespace Mistweaver.Data.SpellModels
                 MasteryTrigger = false;
             }
         }
-
-        public decimal TotalVivifyCoefficient()
-        {
-            var spells = new List<HealBase> {
-               new VivifyPrimary(),
-               new VivifyCleave(),
-            };
-            return 0.1m;//GetTotalCoefficient(spells);
-        }
     }
 }

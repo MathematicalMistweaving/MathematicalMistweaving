@@ -40,7 +40,7 @@ namespace MathematicalMistweavingTests.MathTests
         [TestMethod] 
         public void TalentBase_CalculateUniqueEffect_Implemented()
         {
-            CloudedFocus cf = new CloudedFocus(_spellBook, _profile);
+            CloudedFocus cf = new CloudedFocus();
             Assert.AreEqual(1, cf.CalculateUniqueEffect<Vivify.VivifyPrimary>());
         }
 
@@ -48,18 +48,17 @@ namespace MathematicalMistweavingTests.MathTests
         [ExpectedException(typeof(NotImplementedException))]
         public void InheritedClass_ModifyProperties_Abstraction_Implemented()
         {
-            AncientConcordance ac = new AncientConcordance(_spellBook, _profile);
             var bok = _spellBook.BlackoutKick();
-            ac.ModifyProperties<DamageBase, AncientConcordance>(bok);
+            _math?.ModifyProperties<BlackoutKick, AncientConcordance>();
+            Assert.AreEqual(3, bok?.MaxTargets);
         }
 
         [TestMethod]
         public void TalentBase_VirtualBaseMethod_Implemented()
         {
-            var iv = new ImprovedVivify(_spellBook, _profile);
             var viv = _spellBook.Vivify();
-            iv.ModifyProperties<HealBase, ImprovedVivify>(viv);
-            Assert.AreEqual((decimal)141m*1.2m, viv.Coefficient);
+            _math?.ModifyProperties<Vivify, ImprovedVivify>();
+            Assert.AreEqual((decimal)141m*1.2m, viv?.Coefficient);
         }
     }
 }
