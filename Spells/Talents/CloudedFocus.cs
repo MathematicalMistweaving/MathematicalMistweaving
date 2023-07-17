@@ -37,14 +37,5 @@ namespace Mistweaver.Data.Talents
                 }
             };
         }
-
-        public override decimal CalculateUniqueEffect<T>()
-        {
-            ////TODO: Implement
-
-            return 1;
-            
-            //throw new NotImplementedException();
-        }
     }
 }

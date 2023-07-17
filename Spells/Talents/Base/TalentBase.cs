@@ -23,7 +23,6 @@ namespace Mistweaver.Data.Talents.Base
         public int MaxRank { get; set; }
         public List<TalentRankData>? Ranks { get; set; }
         public bool HasUniqueEffect { get; set; } = false;
-        public abstract decimal CalculateUniqueEffect<T>();
         #endregion
     }
 

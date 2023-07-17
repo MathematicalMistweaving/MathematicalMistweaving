@@ -13,5 +13,7 @@ namespace Mistweaver.Math.Interfaces
         public SpellResult GetSpellWithModifiers(string name);
 
         public void ModifyProperties<T, U>() where U : TalentBase;
+
+        public decimal CalculateUniqueEffect<T>();
     }
 }

@@ -41,7 +41,7 @@ namespace MathematicalMistweavingTests.MathTests
         public void TalentBase_CalculateUniqueEffect_Implemented()
         {
             CloudedFocus cf = new CloudedFocus();
-            Assert.AreEqual(1, cf.CalculateUniqueEffect<Vivify.VivifyPrimary>());
+            Assert.AreEqual(1, _math?.CalculateUniqueEffect<Vivify.VivifyPrimary>());
         }
 
         [TestMethod]

@@ -31,11 +31,15 @@ namespace Mistweaver.Math.Models
             return new SpellResult() { validResponse = result } ;
         }
 
-
         public T? CalculateModifiedCoefficient<T>(T spell, PlayerTalents talents)
         {
             // redo
             return default(T);
+        }
+
+        public virtual decimal CalculateUniqueEffect<T>()
+        {
+            throw new NotImplementedException();
         }
 
 
