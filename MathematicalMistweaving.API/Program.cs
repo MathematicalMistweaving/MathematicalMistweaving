@@ -4,12 +4,14 @@ using Mistweaver.Math.Interfaces;
 using Mistweaver.Math.Models;
 using Mistweaver.Data;
 using Mistweaver.Data.Interfaces;
+using Mistweaver.Data.Profile;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddSingleton<ISpellBook>(new SpellBook());
-builder.Services.AddSingleton<IMistweaverMath>(new MistweaverMath());
+builder.Services.AddSingleton<ISpellBook, SpellBook>();
+builder.Services.AddSingleton<IProfile, PlayerProfile>();
+builder.Services.AddSingleton<IMistweaverMath, MistweaverMath>();
 builder.Services.AddControllers();
 builder.Services.AddApiVersioning(delegate (ApiVersioningOptions options)
 {

@@ -11,7 +11,7 @@ namespace Mistweaver.Data.Common
     {
         #region Heals
 
-        public const string Vivify = "Vivify";
+        public const string Vivify = "Vivify Primary";
         public const string VivifyCleave = "Vivify Cleave";
         public const string RenewingMist = "Renewing Mist";
         public const string EssenceFont = "Essence Font";
@@ -76,6 +76,7 @@ namespace Mistweaver.Data.Common
         #endregion
 
         #region Effects / Buffs
+        public const string ImprovedVivify = "Improved Vivify";
         public const string CloudedFocus = "Clouded Focus";
         public const string AwakenedFaeline = "Awakened Faeline";
         public const string AncientTeachings = "Ancient Teachings";

@@ -45,6 +45,5 @@ namespace Mistweaver.Data.Common
         Tier2 = 2, 
         Tier3 = 3,
     }
-
 }
 
