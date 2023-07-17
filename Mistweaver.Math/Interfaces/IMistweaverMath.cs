@@ -14,6 +14,10 @@ namespace Mistweaver.Math.Interfaces
 
         public void ModifyProperties<T, U>() where U : TalentBase;
 
+        public void ModifyHealProperties<TBase, TMod>() where TMod : TalentBase where TBase : HealBase;
+
+        public void ModifyDamageProperties<TBase, TMod>() where TMod : TalentBase where TBase : DamageBase;
+
         public decimal CalculateUniqueEffect<T>();
     }
 }

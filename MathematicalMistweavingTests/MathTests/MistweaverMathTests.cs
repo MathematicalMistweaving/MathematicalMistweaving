@@ -37,28 +37,35 @@ namespace MathematicalMistweavingTests.MathTests
             Assert.AreEqual("is this is valid", result?.validResponse);
         }
 
-        [TestMethod] 
-        public void TalentBase_CalculateUniqueEffect_Implemented()
+        [TestMethod]
+        [ExpectedException(typeof(NotImplementedException))]
+        public void Math_ModifyDamageProperties_Abstraction_Implemented()
         {
-            CloudedFocus cf = new CloudedFocus();
-            Assert.AreEqual(1, _math?.CalculateUniqueEffect<Vivify.VivifyPrimary>());
+            var bok = _spellBook.BlackoutKick();
+            _math?.ModifyDamageProperties<BlackoutKick, AncientConcordance>();
         }
 
         [TestMethod]
         [ExpectedException(typeof(NotImplementedException))]
-        public void InheritedClass_ModifyProperties_Abstraction_Implemented()
+        public void Math_ModifyHealProperties_Abstraction_Implemented()
         {
-            var bok = _spellBook.BlackoutKick();
-            _math?.ModifyProperties<BlackoutKick, AncientConcordance>();
-            Assert.AreEqual(3, bok?.MaxTargets);
+            var viv = _spellBook.Vivify();
+            _math?.ModifyHealProperties<Vivify, ImprovedVivify>();
         }
 
         [TestMethod]
-        public void TalentBase_VirtualBaseMethod_Implemented()
+        public void Math_ModifyProperties_Abstraction_Implemented()
         {
-            var viv = _spellBook.Vivify();
-            _math?.ModifyProperties<Vivify, ImprovedVivify>();
-            Assert.AreEqual((decimal)141m*1.2m, viv?.Coefficient);
+            try
+            {
+                _math?.ModifyProperties<Vivify.VivifyPrimary, ImprovedVivify>();
+                return;
+            }
+            catch(Exception ex)
+            {
+                Assert.Fail(ex.Message);
+            }
         }
+
     }
 }

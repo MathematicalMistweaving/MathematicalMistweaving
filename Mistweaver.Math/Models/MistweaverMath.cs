@@ -49,17 +49,17 @@ namespace Mistweaver.Math.Models
              * then compute the change in property
              * and set the value on the spell (type TBase)
              */
-        public virtual void ModifyHealProperties<TBase, TMod>() where TMod: TalentBase where TBase : HealBase
+        public void ModifyHealProperties<TBase, TMod>() where TMod: TalentBase where TBase : HealBase
         {
             throw new NotImplementedException();
         }
 
-        public virtual void ModifyDamageProperties<TBase, TMod>() where TMod : TalentBase where TBase : DamageBase
+        public void ModifyDamageProperties<TBase, TMod>() where TMod : TalentBase where TBase : DamageBase
         {
             throw new NotImplementedException();
         }
 
-        public virtual void ModifyProperties<TBase, TMod>() where TMod : TalentBase
+        public void ModifyProperties<TBase, TMod>() where TMod : TalentBase
         {
             if (typeof(TBase) == typeof(HealBase))
                 ModifyHealProperties<HealBase, TalentBase>();
