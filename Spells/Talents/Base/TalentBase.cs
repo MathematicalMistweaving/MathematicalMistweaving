@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Diagnostics.Contracts;
 using System.Linq;
 using System.Reflection;
 using System.Text;
@@ -18,6 +19,7 @@ namespace Mistweaver.Data.Talents.Base
             _profilfe = profile;
         }
         public string? Name { get; set; }
+        public decimal Coefficient { get; set; } = 141.0m * 1.2m;
         public TalentTier Tier { get; set; }
         public List<string> AffectedSpells { get; set; } = new List<string>();
         public int MaxRank { get; set; }
@@ -36,12 +38,13 @@ namespace Mistweaver.Data.Talents.Base
              * then compute the change in property
              * and set the value on the spell (type TBase)
              */
+            var propName = spellProp.GetValue(spell, null).ToString();
             object talentValue;
-            PropertyInfo talentProp = typeof(TMod).GetProperty(spellProp.Name);
+            PropertyInfo talentProp = typeof(TMod).GetProperty(propName);
             if(talentProp != null)
             {
-                //test valid
-                talentValue = 141.0m * 1.2m;
+                
+                talentValue = talentProp.GetValue(typeof(TMod), null);
             }
             else
             {
@@ -49,7 +52,7 @@ namespace Mistweaver.Data.Talents.Base
             }
             //PropertyInfo talentProp = typeof(U).GetProperties().Where(x => x.Name == spellProp.Name).First();
             //            var newProp = spellProp.GetValue(spellProp) * (1 + talentProp.Name) 
-            spellProp.SetValue(spell, talentProp, null);
+            spellProp.SetValue(spell, talentValue, null);
         }
     }
 
