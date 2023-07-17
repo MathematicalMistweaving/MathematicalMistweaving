@@ -41,16 +41,18 @@ namespace MathematicalMistweavingTests.MathTests
         [ExpectedException(typeof(NotImplementedException))]
         public void Math_ModifyDamageProperties_Abstraction_Implemented()
         {
-            var bok = _spellBook.BlackoutKick();
-            _math?.ModifyDamageProperties<BlackoutKick, AncientConcordance>();
+            var ac = new AncientConcordance();
+            var bok = _spellBook?.BlackoutKick();
+            _math?.ModifyDamageProperties(bok, ac);
         }
 
         [TestMethod]
         [ExpectedException(typeof(NotImplementedException))]
         public void Math_ModifyHealProperties_Abstraction_Implemented()
         {
-            var viv = _spellBook.Vivify();
-            _math?.ModifyHealProperties<Vivify, ImprovedVivify>();
+            var improvedViv = new ImprovedVivify();
+            var viv = _spellBook?.Vivify();
+            _math?.ModifyHealProperties(viv, improvedViv);
         }
 
         [TestMethod]
@@ -58,7 +60,7 @@ namespace MathematicalMistweavingTests.MathTests
         {
             try
             {
-                _math?.ModifyProperties<Vivify.VivifyPrimary, ImprovedVivify>();
+                _math?.ApplyPlayerTalents();
                 return;
             }
             catch(Exception ex)

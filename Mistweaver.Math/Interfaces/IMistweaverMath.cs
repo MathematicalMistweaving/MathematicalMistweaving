@@ -10,13 +10,13 @@ namespace Mistweaver.Math.Interfaces
 {
     public interface IMistweaverMath
     {
+        public void ApplyPlayerTalents();
         public SpellResult GetSpellWithModifiers(string name);
 
-        public void ModifyProperties<T, U>() where U : TalentBase;
 
-        public void ModifyHealProperties<TBase, TMod>() where TMod : TalentBase where TBase : HealBase;
+        public void ModifyHealProperties(HealBase spell, TalentBase talent);
 
-        public void ModifyDamageProperties<TBase, TMod>() where TMod : TalentBase where TBase : DamageBase;
+        public void ModifyDamageProperties(DamageBase spell, TalentBase talent);
 
         public decimal CalculateUniqueEffect<T>();
     }

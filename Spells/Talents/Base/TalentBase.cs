@@ -13,13 +13,15 @@ namespace Mistweaver.Data.Talents.Base
 {
     public abstract class TalentBase
     {
-       #region Constructor
+        #region Constructor
         public TalentBase() { }
         #endregion
 
         #region Properties
         public string? Name { get; set; }
         public TalentTier Tier { get; set; }
+        public List<HealBase> AffectedHeals {get; set;}
+        public List<DamageBase> AffectedDamages { get; set; }
         public int MaxRank { get; set; }
         public List<TalentRankData>? Ranks { get; set; }
         public bool HasUniqueEffect { get; set; } = false;
