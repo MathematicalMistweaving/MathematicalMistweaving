@@ -19,5 +19,23 @@ namespace Mistweaver.Data.SpellModels.Base
         public int SpellBaseId { get; set; }
         public bool IsExtendable { get; set; } = true;
         public bool IsPandemic { get; set; } = true;
+        public void ModifyDuration(decimal newDuration)
+        {
+            this.Duration = newDuration;
+        }
+
+        public void AddDuration(decimal seconds)
+        {
+            this.Duration += seconds; 
+        }
+        public decimal HastedTickRate(decimal hasteMultiplier) 
+        {
+            if (this.TickRateHasted)
+                return this.TickRate = this.TickRate / hasteMultiplier;
+
+            return this.TickRate = this.TickRate;
+        }
     }
+
+    
 }

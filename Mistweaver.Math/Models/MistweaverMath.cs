@@ -24,12 +24,14 @@ namespace Mistweaver.Math.Models
             _profile = profile;
         }
 
+        //this should go in the application layer and call _math.modify...
         public void ApplyPlayerTalents()
         {
             if (_profile.PlayerTalents.Talents.Count > 0)
             {
                 foreach (TalentBase talent in _profile.PlayerTalents.Talents)
                 {
+                    
                     foreach (var affectedSpell in talent.AffectedHeals)
                     {
                         ModifyHealProperties(affectedSpell, talent);
@@ -42,6 +44,22 @@ namespace Mistweaver.Math.Models
             }
         }
 
+        public virtual decimal CalculateUniqueEffect<T>()
+        {
+            throw new NotImplementedException();
+        }
+        public void ModifyHealProperties(HealBase spell, TalentBase talent)
+        {
+            throw new NotImplementedException();
+
+            
+        }
+
+        public void ModifyDamageProperties(DamageBase spell, TalentBase talent)
+        {
+            throw new NotImplementedException();
+        }
+        
         public SpellResult GetSpellWithModifiers(string name)
         {
             var spell = _spellBook.Spells.Where(x => x.Name == name).FirstOrDefault();
@@ -50,24 +68,31 @@ namespace Mistweaver.Math.Models
             return new SpellResult() { validResponse = result } ;
         }
 
-        public T? CalculateModifiedCoefficient<T>(T spell, PlayerTalents talents)
+        public decimal CalculateModifiedCoefficient(SpellBase spell, TalentEffect talent)
         {
-            // redo
-            return default(T);
+            if (talent.Type != TalentEffectTypes.Coefficient)
+                return spell.Coefficient * (1 + talent.Value);
+
+            else
+                throw new Exception("Talent does not modify coefficient");
         }
 
-        public virtual decimal CalculateUniqueEffect<T>()
-        {
-            throw new NotImplementedException();
-        }
-        public void ModifyHealProperties(HealBase spell, TalentBase talent)
-        {
-            throw new NotImplementedException();
-        }
+        //public int CalulateModifiedDuration<T>(T spell, TalentEffect talent)
+        //{
+        //    if(talent.Type == TalentEffectTypes.Duration)
+        //    {
+        //       switch (spell)
+        //        {
+        //            case HealBase heal:
+        //                break;
+        //            case DamageBase damage:
+        //                break;
+        //            default:
+        //                new Exception(" Type T spell is an Invalid input type");
+        //                break;
+        //        }
+        //    }
+        //}
 
-        public void ModifyDamageProperties(DamageBase spell, TalentBase talent)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

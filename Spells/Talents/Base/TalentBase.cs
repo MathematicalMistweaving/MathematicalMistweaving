@@ -20,11 +20,12 @@ namespace Mistweaver.Data.Talents.Base
         #region Properties
         public string? Name { get; set; }
         public TalentTier Tier { get; set; }
-        public List<HealBase> AffectedHeals {get; set;}
-        public List<DamageBase> AffectedDamages { get; set; }
+        
         public int MaxRank { get; set; }
         public List<TalentRankData>? Ranks { get; set; }
         public bool HasUniqueEffect { get; set; } = false;
+        public List<HealBase>? AffectedHeals {get; set;}
+        public List<DamageBase>? AffectedDamages { get; set; }
         #endregion
     }
 

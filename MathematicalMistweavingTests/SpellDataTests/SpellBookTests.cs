@@ -2,7 +2,6 @@
 using Mistweaver.Data.Interfaces;
 using Mistweaver.Data.SpellModels;
 using Mistweaver.Data.Common;
-using static MathematicalMistweaving.API.Models.RevivalRestoralDto;
 
 namespace MathematicalMistweavingTests.SpellDataTests
 {
