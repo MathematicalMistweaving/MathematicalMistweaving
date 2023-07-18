@@ -1,5 +1,6 @@
 ﻿using Mistweaver.Data;
 using Mistweaver.Data.Interfaces;
+using Mistweaver.Data.SpellModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,7 +28,7 @@ namespace MathematicalMistweavingTests.SpellDataTests
         {
             var env = _spellBook.EnvelopingMist();
             decimal mistwrap = 1m;
-            env.HotInfo.AddDuration(mistwrap);
+            env?.HotInfo?.AddDuration(mistwrap);
             Assert.AreEqual(7m, env.HotInfo.Duration);
         }
 
@@ -37,6 +38,14 @@ namespace MathematicalMistweavingTests.SpellDataTests
             var envB = _spellBook.EnvelopingBreath();
             decimal hastedTickRate = envB.HotInfo.HastedTickRate(1.25m);
             Assert.AreEqual(1m / 1.25m, hastedTickRate);
+        }
+
+        [TestMethod]
+        public void HotInfo_HastedDuration()
+        {
+            var rjw = _spellBook.RefreshingJadeWind();
+            decimal hastedDuration = rjw.HotInfo.HastedDuration(rjw, 1.25m);
+            Assert.AreEqual(15m / 1.25m, hastedDuration);
         }
     }
 }

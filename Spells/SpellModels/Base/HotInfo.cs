@@ -26,7 +26,9 @@ namespace Mistweaver.Data.SpellModels.Base
 
         public void AddDuration(decimal seconds)
         {
-            this.Duration += seconds; 
+            if(this.IsExtendable)
+                this.Duration += seconds; 
+                
         }
         public decimal HastedTickRate(decimal hasteMultiplier) 
         {
@@ -34,6 +36,15 @@ namespace Mistweaver.Data.SpellModels.Base
                 return this.TickRate = this.TickRate / hasteMultiplier;
 
             return this.TickRate = this.TickRate;
+        }
+
+        /**Primarily for unique spells with hasted channels like Refreshing Jade wind**/
+        public decimal HastedDuration(HealBase spell, decimal hasteMultiplier)
+        {
+            if (spell.IsChannel)
+                return this.Duration = this.Duration / hasteMultiplier;
+
+            return this.Duration;
         }
     }
 
