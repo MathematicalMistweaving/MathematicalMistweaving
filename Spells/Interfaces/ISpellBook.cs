@@ -13,7 +13,7 @@ namespace Mistweaver.Data.Interfaces
 
         #region Heal Fetches
         public HealBase? GetHeal(string name);
-        public HealBase? Vivify(bool cleave = false) ;
+        public HealBase? Vivify(bool cleave = false);
         public HealBase? RenewingMist();
         public HealBase? EssenceFont(bool hot = false);
         public HealBase? Revival(string activeTalent = "");
