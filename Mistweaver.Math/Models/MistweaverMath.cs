@@ -62,14 +62,6 @@ namespace Mistweaver.Math.Models
             throw new NotImplementedException();
         }
         
-        public SpellResult GetSpellWithModifiers(string name)
-        {
-            var spell = _spellBook.Spells.Where(x => x.Name == name).FirstOrDefault();
-            //var talent = _profile.Talents
-            var result = name + " is valid";
-            return new SpellResult() { validResponse = result } ;
-        }
-
         public decimal CalculateModifiedCoefficient(SpellBase spell, TalentEffect talent)
         {
             if (talent.Type != TalentEffectTypes.Coefficient)

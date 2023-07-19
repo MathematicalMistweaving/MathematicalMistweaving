@@ -12,7 +12,6 @@ namespace Mistweaver.Math.Interfaces
     public interface IMistweaverMath
     {
         public void ApplyPlayerTalents();
-        public SpellResult GetSpellWithModifiers(string name);
 
 
         public void ModifyHealProperties(HealBase spell, SelectedTalent talent);

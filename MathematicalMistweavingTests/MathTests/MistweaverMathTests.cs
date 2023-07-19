@@ -31,13 +31,6 @@ namespace MathematicalMistweavingTests.MathTests
         }
 
         [TestMethod]
-        public void MathInterface_Returns_Valid()
-        {
-            var result = _math?.GetSpellWithModifiers("is this");
-            Assert.AreEqual("is this is valid", result?.validResponse);
-        }
-
-        [TestMethod]
         [ExpectedException(typeof(NotImplementedException))]
         public void Math_ModifyDamageProperties_Abstraction_Implemented()
         {

@@ -22,12 +22,6 @@ namespace MathematicalMistweaving.API.Controllers
             _spellBook = spellBook;
             _math = math;
         }
-
-        [HttpGet("")]
-        public ActionResult<SpellResult> GetModifiedSpell(string name)
-        {
-            return _math.GetSpellWithModifiers(name);
-        }
     }
 
 }
