@@ -15,6 +15,7 @@ namespace Mistweaver.Data.Talents
             Name = TalentNames.AncientConcordance;
             Tier = TalentTier.Tier3;
             MaxRank = 2;
+            AffectedDamages = new List<string>() { SpellNames.BlackoutKick };
             Ranks = new List<TalentRankData>()
             {
                 new TalentRankData() 

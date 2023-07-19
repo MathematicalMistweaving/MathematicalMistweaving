@@ -15,6 +15,7 @@ namespace Mistweaver.Data.Talents
             Name = TalentNames.ImprovedVivify;
             Tier = TalentTier.Tier1;
             MaxRank = 2;
+            AffectedHeals = new List<string> { SpellNames.Vivify, SpellNames.Vivify };
             Ranks = new List<TalentRankData>()
             {
                 new TalentRankData()

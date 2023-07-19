@@ -24,8 +24,8 @@ namespace Mistweaver.Data.Talents.Base
         public int MaxRank { get; set; }
         public List<TalentRankData>? Ranks { get; set; }
         public bool HasUniqueEffect { get; set; } = false;
-        public List<HealBase>? AffectedHeals {get; set;}
-        public List<DamageBase>? AffectedDamages { get; set; }
+        public List<string> AffectedHeals {get; set;} = new List<string>();
+        public List<string>? AffectedDamages { get; set; } = new List<string>();
         #endregion
     }
 
@@ -39,21 +39,5 @@ namespace Mistweaver.Data.Talents.Base
     {
         public TalentEffectTypes Type { get; set; }
         public decimal Value { get; set; }
-    }
-    public enum TalentEffectTypes
-    {
-        Coefficient = 1,
-        HealingIncrease = 2,
-        Targets = 3,
-        ManaCost = 4,
-        StatIncrease = 5,
-        PercentTransfer = 6,
-        CastTime = 7,
-        Cooldown = 8,
-        Duration = 9,
-        ProcChance = 10,
-        ApplySpell = 11,
-        Unique = 12,
-
     }
 }

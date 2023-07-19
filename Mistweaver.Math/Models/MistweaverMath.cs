@@ -1,4 +1,5 @@
-﻿using Mistweaver.Data.Helpers;
+﻿using Mistweaver.Data.Common;
+using Mistweaver.Data.Helpers;
 using Mistweaver.Data.Interfaces;
 using Mistweaver.Data.Profile;
 using Mistweaver.Data.Talents;
@@ -27,19 +28,20 @@ namespace Mistweaver.Math.Models
         //this should go in the application layer and call _math.modify...
         public void ApplyPlayerTalents()
         {
-            if (_profile.PlayerTalents.Talents.Count > 0)
+            if (_profile.PlayerTalents.SelectedTalents.Count > 0)
             {
-                foreach (TalentBase talent in _profile.PlayerTalents.Talents)
+                foreach (SelectedTalent talent in _profile.PlayerTalents.SelectedTalents)  // _profile.PlayerTalents.Talents will be a collection from the front end that only contains a single talent rank data for each talent based on what was selected
                 {
                     
                     foreach (var affectedSpell in talent.AffectedHeals)
                     {
-                        ModifyHealProperties(affectedSpell, talent);
+                        ModifyHealProperties(_spellBook.GetHeal(affectedSpell), talent);
                     }
                     foreach (var affectedSpell in talent.AffectedDamages)
                     {
-                        ModifyDamageProperties(affectedSpell, talent);
+                        ModifyDamageProperties(_spellBook.GetDamage(affectedSpell), talent);
                     }
+                    //TODO: apply talents that affect other talents i.e. ancient concordance making teachings of the monastery 20/25% reset chance instead of 15%
                 }
             }
         }
@@ -48,14 +50,14 @@ namespace Mistweaver.Math.Models
         {
             throw new NotImplementedException();
         }
-        public void ModifyHealProperties(HealBase spell, TalentBase talent)
+        public void ModifyHealProperties(HealBase spell, SelectedTalent talent)
         {
             throw new NotImplementedException();
 
-            
+
         }
 
-        public void ModifyDamageProperties(DamageBase spell, TalentBase talent)
+        public void ModifyDamageProperties(DamageBase spell, SelectedTalent talent)
         {
             throw new NotImplementedException();
         }
@@ -77,22 +79,10 @@ namespace Mistweaver.Math.Models
                 throw new Exception("Talent does not modify coefficient");
         }
 
-        //public int CalulateModifiedDuration<T>(T spell, TalentEffect talent)
-        //{
-        //    if(talent.Type == TalentEffectTypes.Duration)
-        //    {
-        //       switch (spell)
-        //        {
-        //            case HealBase heal:
-        //                break;
-        //            case DamageBase damage:
-        //                break;
-        //            default:
-        //                new Exception(" Type T spell is an Invalid input type");
-        //                break;
-        //        }
-        //    }
-        //}
+        public void ApplyStatScaling(SpellBase spell)
+        {
+            throw new NotImplementedException();
+        }
 
     }
 }

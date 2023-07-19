@@ -42,8 +42,9 @@ namespace MathematicalMistweavingTests.MathTests
         public void Math_ModifyDamageProperties_Abstraction_Implemented()
         {
             var ac = new AncientConcordance();
+            var acRank = new SelectedTalent(ac, 2);
             var bok = _spellBook?.BlackoutKick();
-            _math?.ModifyDamageProperties(bok, ac);
+            _math?.ModifyDamageProperties(bok, acRank);
         }
 
         [TestMethod]
@@ -51,8 +52,9 @@ namespace MathematicalMistweavingTests.MathTests
         public void Math_ModifyHealProperties_Abstraction_Implemented()
         {
             var improvedViv = new ImprovedVivify();
+            var ivRank = new SelectedTalent(improvedViv, 2); 
             var viv = _spellBook?.Vivify();
-            _math?.ModifyHealProperties(viv, improvedViv);
+            _math?.ModifyHealProperties(viv, ivRank);
         }
 
         [TestMethod]

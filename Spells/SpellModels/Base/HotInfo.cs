@@ -24,6 +24,11 @@ namespace Mistweaver.Data.SpellModels.Base
             this.Duration = newDuration;
         }
 
+        public decimal PandemicDuration()
+        {
+            return this.Duration * (1 + GlobalValues.Pandemic);
+        }
+
         public void AddDuration(decimal seconds)
         {
             if(this.IsExtendable)
@@ -41,7 +46,7 @@ namespace Mistweaver.Data.SpellModels.Base
         /**Primarily for unique spells with hasted channels like Refreshing Jade wind**/
         public decimal HastedDuration(HealBase spell, decimal hasteMultiplier)
         {
-            if (spell.IsChannel)
+            if (spell.IsChannel && spell.Id == this.SpellBaseId)
                 return this.Duration = this.Duration / hasteMultiplier;
 
             return this.Duration;

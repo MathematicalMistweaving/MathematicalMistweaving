@@ -10,11 +10,11 @@ namespace Mistweaver.Data.Profile
 {
     public class PlayerTalents
     {
-        public PlayerTalents() { Talents = new List<TalentBase>(); }
-        public PlayerTalents(List<TalentBase> selectedTalents) 
+        public PlayerTalents() { SelectedTalents = new List<SelectedTalent>(); }
+        public PlayerTalents(List<SelectedTalent> selectedTalents) 
         {
-            this.Talents = selectedTalents;
+            this.SelectedTalents = selectedTalents;
         }
-        public List<TalentBase> Talents { get; set; }
+        public List<SelectedTalent> SelectedTalents { get; set; }
     }
 }

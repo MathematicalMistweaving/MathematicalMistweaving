@@ -34,6 +34,8 @@ namespace Mistweaver.Data
         public HealBase? YulonsWhisper() => GetSpellByName<HealBase>(SpellNames.YulonsWhisper);
         public HealBase? RisingMist() => GetSpellByName<HealBase>(TalentNames.RisingMist);
         public HealBase? HealingElixir() => GetSpellByName<HealBase>(TalentNames.HealingElixir);
+
+        public HealBase? GetHeal(string name) => GetSpellByName<HealBase>(name);
         #endregion
 
         #region Damage Fetch Methods
@@ -45,6 +47,7 @@ namespace Mistweaver.Data
         public DamageBase? TouchOfDeath() => GetSpellByName<DamageBase>(SpellNames.TouchOfDeath);
         public DamageBase? CracklingJadeLightning() => GetSpellByName<DamageBase>(SpellNames.CracklingJadeLightning);
         public DamageBase? ResonantFists() => GetSpellByName<DamageBase>(TalentNames.ResonantFists);
+        public DamageBase? GetDamage(string name) => GetSpellByName<DamageBase>(name);
 
         #endregion
 

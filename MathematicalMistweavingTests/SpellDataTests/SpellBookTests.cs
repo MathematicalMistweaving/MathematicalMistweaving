@@ -48,6 +48,36 @@ namespace MathematicalMistweavingTests.SpellDataTests
         }
 
         [TestMethod]
+        public void SpellBook_GetHeal_Valid()
+        {
+            var vivCleave = _spellBook.GetHeal(SpellNames.VivifyCleave);
+            Assert.IsTrue(vivCleave is HealBase);
+            Assert.AreEqual(vivCleave.Name, SpellNames.VivifyCleave);
+        }
+
+        [TestMethod]
+        [ExpectedException (typeof(InvalidOperationException))]
+        public void SpellBook_GetHeal_Invalid()
+        {
+            var cloudedFocus = _spellBook.GetHeal(TalentNames.CloudedFocus);
+        }
+
+        [TestMethod]
+        public void SpellBook_GetDamage_Valid()
+        {
+            var bok = _spellBook.GetDamage(SpellNames.BlackoutKick);
+            Assert.IsTrue(bok is DamageBase);
+            Assert.AreEqual(bok.Name, SpellNames.BlackoutKick);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(InvalidOperationException))]
+        public void SpellBook_GetDamage_Invalid()
+        {
+            var ac = _spellBook.GetDamage(TalentNames.AncientConcordance);
+        }
+
+        [TestMethod]
         public void SpellBook_Celestial_TalentChoice()
         {
             var ccchiji = _spellBook.ChiCocoon(SpellNames.ChiCocoon_ChiJi);
