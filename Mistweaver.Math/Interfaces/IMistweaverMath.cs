@@ -19,7 +19,6 @@ namespace Mistweaver.Math.Interfaces
 
         public void ModifyDamageProperties(DamageBase spell, SelectedTalent talent);
 
-        public PlayerStats
         public void ApplyStatScaling(SpellBase spell);
 
         public decimal CalculateUniqueEffect<T>();
