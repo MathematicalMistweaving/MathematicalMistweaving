@@ -2,7 +2,6 @@
 using Mistweaver.Data.Interfaces;
 using Mistweaver.Data.SpellModels;
 using Mistweaver.Data.Common;
-using static MathematicalMistweaving.API.Models.RevivalRestoralDto;
 
 namespace MathematicalMistweavingTests.SpellDataTests
 {
@@ -46,6 +45,36 @@ namespace MathematicalMistweavingTests.SpellDataTests
             Assert.IsTrue(cbh is HealBase);
             Assert.AreEqual(typeof(ChiBurstHeal), cbh.GetType());
 
+        }
+
+        [TestMethod]
+        public void SpellBook_GetHeal_Valid()
+        {
+            var vivCleave = _spellBook.GetHeal(SpellNames.VivifyCleave);
+            Assert.IsTrue(vivCleave is HealBase);
+            Assert.AreEqual(vivCleave.Name, SpellNames.VivifyCleave);
+        }
+
+        [TestMethod]
+        [ExpectedException (typeof(InvalidOperationException))]
+        public void SpellBook_GetHeal_Invalid()
+        {
+            var cloudedFocus = _spellBook.GetHeal(TalentNames.CloudedFocus);
+        }
+
+        [TestMethod]
+        public void SpellBook_GetDamage_Valid()
+        {
+            var bok = _spellBook.GetDamage(SpellNames.BlackoutKick);
+            Assert.IsTrue(bok is DamageBase);
+            Assert.AreEqual(bok.Name, SpellNames.BlackoutKick);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(InvalidOperationException))]
+        public void SpellBook_GetDamage_Invalid()
+        {
+            var ac = _spellBook.GetDamage(TalentNames.AncientConcordance);
         }
 
         [TestMethod]

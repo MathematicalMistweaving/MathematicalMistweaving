@@ -3,31 +3,42 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Mistweaver.Data.Interfaces;
+using Mistweaver.Data.Talents.Base;
 
-namespace Mistweaver.Data.Talents.Talents
+namespace Mistweaver.Data.Talents
 {
     public class AncientConcordance : TalentBase
     {
-        public AncientConcordance() 
+        public AncientConcordance()
         {
             Name = TalentNames.AncientConcordance;
             Tier = TalentTier.Tier3;
-            AffectedSpells = new string[] { SpellNames.BlackoutKick, TalentNames.TeachingsOfTheMonastery };
             MaxRank = 2;
+            AffectedDamages = new List<string>() { SpellNames.BlackoutKick };
             Ranks = new List<TalentRankData>()
             {
                 new TalentRankData() 
                 { 
                     Rank = 1, 
-                    SpellAndValues = new Dictionary<string, decimal>(){ { this.AffectedSpells[0], 2 }, { this.AffectedSpells[1], .05m } } 
+                    Effects = new List<TalentEffect>()
+                    {
+                        new TalentEffect() { Type = TalentEffectTypes.Targets, Value = 2 },
+                        new TalentEffect() { Type = TalentEffectTypes.ProcChance, Value = .05m }
+                    },
+                    
                 },
                 new TalentRankData() 
                 { 
-                    Rank = 1, 
-                    SpellAndValues = new Dictionary<string, decimal>(){ { this.AffectedSpells[0], 3 }, { this.AffectedSpells[1], .10m } } 
+                    Rank = 2,
+                    Effects = new List<TalentEffect>()
+                    {
+                        new TalentEffect() { Type = TalentEffectTypes.Targets,  Value = 3 },
+                        new TalentEffect() { Type = TalentEffectTypes.ProcChance,  Value = .10m }
+                    },
                 }
             };
-        }
-
+        } 
+        
     }
 }

@@ -11,7 +11,7 @@ namespace Mistweaver.Data.Common
     {
         #region Heals
 
-        public const string Vivify = "Vivify";
+        public const string Vivify = "Vivify Primary";
         public const string VivifyCleave = "Vivify Cleave";
         public const string RenewingMist = "Renewing Mist";
         public const string EssenceFont = "Essence Font";
@@ -76,6 +76,7 @@ namespace Mistweaver.Data.Common
         #endregion
 
         #region Effects / Buffs
+        public const string ImprovedVivify = "Improved Vivify";
         public const string CloudedFocus = "Clouded Focus";
         public const string AwakenedFaeline = "Awakened Faeline";
         public const string AncientTeachings = "Ancient Teachings";
@@ -90,4 +91,20 @@ namespace Mistweaver.Data.Common
         public const string ResonantFists = "Resonant Fists";
         #endregion
     }
+    public static class GlobalValues
+    {
+        public const decimal Pandemic = 0.30m;
+        public const decimal ArmorReduction = 0.30m;
+        public const decimal MysthicTouch = 0.05m;
+    }
+
+    public static class Stats
+    {
+        public const string Crit = "Crit";
+        public const string Haste = "Haste";
+        public const string Mastery = "Mastery";
+        public const string Vers = "Vers";
+        public const string Leech = "Leech";
+    }
+    
 }

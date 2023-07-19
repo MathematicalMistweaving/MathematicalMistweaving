@@ -44,7 +44,22 @@ namespace Mistweaver.Data.Common
         Tier1 = 1,
         Tier2 = 2, 
         Tier3 = 3,
-    }
+    }    
+    public enum TalentEffectTypes
+    {
+        Coefficient = 1,
+        HealingIncrease = 2,
+        Targets = 3,
+        ManaCost = 4,
+        StatIncrease = 5,
+        PercentTransfer = 6,
+        CastTime = 7,
+        Cooldown = 8,
+        Duration = 9,
+        ProcChance = 10,
+        ApplySpell = 11,
+        Unique = 12,
 
+    }
 }
 

@@ -28,7 +28,8 @@ namespace Mistweaver.Data.SpellModels
                 Duration = 15,
                 TickRate = .75m,
                 IsExtendable = false,
-                IsPandemic = false
+                IsPandemic = false,
+                SpellBaseId = this.Id
             };
             StatScaling = new StatScaling()
             {

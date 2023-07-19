@@ -1,4 +1,5 @@
 ﻿using Mistweaver.Data.Talents;
+using Mistweaver.Data.Talents.Base;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,10 +10,11 @@ namespace Mistweaver.Data.Profile
 {
     public class PlayerTalents
     {
-        public PlayerTalents(List<TalentBase> selectedTalents) 
+        public PlayerTalents() { SelectedTalents = new List<SelectedTalent>(); }
+        public PlayerTalents(List<SelectedTalent> selectedTalents) 
         {
-            this.Talents = selectedTalents;
+            this.SelectedTalents = selectedTalents;
         }
-        public List<TalentBase> Talents { get; set; }
+        public List<SelectedTalent> SelectedTalents { get; set; }
     }
 }

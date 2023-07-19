@@ -17,7 +17,23 @@ namespace Mistweaver.Data.SpellModels.Base
         public bool TickRateHasted { get; set; } = false;
 
         public int SpellBaseId { get; set; }
-        //public virtual SpellBase SpellBase { get; set; } = new SpellBase();
+        public void ModifyDuration(decimal newDuration)
+        {
+            this.Duration = newDuration;
+        }
 
+        public void AddDuration(decimal seconds)
+        {
+            this.Duration += seconds;
+
+        }
+        public decimal HastedTickRate(decimal hasteMultiplier)
+        {
+            if (this.TickRateHasted)
+                return this.TickRate = this.TickRate / hasteMultiplier;
+
+            return this.TickRate = this.TickRate;
+        }
+        
     }
 }

@@ -12,7 +12,8 @@ namespace Mistweaver.Data.Interfaces
         #endregion
 
         #region Heal Fetches
-        public HealBase? Vivify(bool cleave = false) ;
+        public HealBase? GetHeal(string name);
+        public HealBase? Vivify(bool cleave = false);
         public HealBase? RenewingMist();
         public HealBase? EssenceFont(bool hot = false);
         public HealBase? Revival(string activeTalent = "");
@@ -36,6 +37,7 @@ namespace Mistweaver.Data.Interfaces
 
 
         #region Damage Fetches
+        public DamageBase? GetDamage(string name);
         public DamageBase? RisingSunKick();
         public DamageBase? BlackoutKick();
         public DamageBase? TigerPalm();

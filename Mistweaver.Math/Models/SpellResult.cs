@@ -10,6 +10,6 @@ namespace Mistweaver.Math.Models
     public class SpellResult
     {
         public SpellResult() { }
-        public string validResponse { get; set; }
+        public string? validResponse { get; set; }
     }
 }
