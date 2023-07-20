@@ -7,11 +7,19 @@ using Mistweaver.Data.Interfaces;
 using Mistweaver.Data.Profile;
 
 var builder = WebApplication.CreateBuilder(args);
-
+var allowedOrigins = "_myAllowedOrigins";
 // Add services to the container.
 builder.Services.AddSingleton<ISpellBook, SpellBook>();
 builder.Services.AddSingleton<IProfile, PlayerProfile>();
 builder.Services.AddSingleton<IMistweaverMath, MistweaverMath>();
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(name: allowedOrigins,
+        policy =>
+        {
+            policy.WithOrigins("http://localhost:3000");
+        });
+});
 builder.Services.AddControllers();
 builder.Services.AddApiVersioning(delegate (ApiVersioningOptions options)
 {
@@ -34,7 +42,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-
+app.UseCors(allowedOrigins);
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
