@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import '../index.css';
 
-const APICallButton = () => {
+const HealingSpells = () => {
     const [data, setData] = useState<any>([]);
-    const spellName = "Vivify";
     const requestURL = `https://localhost:7062/api/v1/SpellData/healing/`;
     useEffect(() => {
         fetch(requestURL)
@@ -38,4 +37,4 @@ const APICallButton = () => {
     );
 }
 
-export default APICallButton;
+export default HealingSpells;
