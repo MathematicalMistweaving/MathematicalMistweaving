@@ -21,14 +21,25 @@ const HealingSpells = () => {
     }, []);
 
     return (
-        <div className="App App-header">
+        <div>
             {
                 data.map((property: { [x: string]: any; }) => {
                     return (
-                        <>
-                            <span>Name: {property['name']} </span>
-                            <span>Spellpower: {property['coefficient']}%</span><br/>
-                        </>
+                        property['coefficient'] ?
+                            <div className="responsive-column">
+                                <span><b>{property['name']}</b></span>
+                                <span>Sp: <b>{property['coefficient']}%</b>
+                                {
+                                    property['hotInfo'] ?
+                                        <span>,  Duration: <b>{property['hotInfo']['duration']}s</b></span>
+                                        : 
+                                        <></>
+                                }</span>
+                                <span>Mana: <b>{Number(property['manaCost'] * 100).toPrecision(2)}%</b></span>
+                                
+                            </div>
+                            :
+                            <></>
                     )
                 }
             )
