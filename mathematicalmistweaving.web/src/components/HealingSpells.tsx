@@ -28,7 +28,7 @@ const HealingSpells = () => {
                 data.map((property: { [x: string]: any; }) => {
                     return (
                         property['coefficient'] ?
-                            <div className="responsive-column">
+                            <div className="responsive-column-3">
                                 <span><b>{property['name']}</b></span>
                                 <span>Sp: <b>{property['coefficient']}%</b>
                                 {

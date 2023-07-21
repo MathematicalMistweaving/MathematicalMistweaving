@@ -61,10 +61,31 @@ div {
     padding: 1rem;
 }
 
-.responsive-column {
+.responsive-column-3 {
     padding-left: 10rem;
     display: grid;
     grid-auto-rows: 1fr;
     grid-template-columns: 1fr 1fr 1fr;
     font-size: calc(10px + 1.5vmin);
+}
+
+.responsive-column-2 {
+    padding-left: 10rem;
+    display: grid;
+    grid-auto-rows: 1fr;
+    grid-template-columns: 1fr 1fr;
+    font-size: calc(10px + 1.5vmin);
+}
+
+label {
+    width: 50%;
+    float: left;
+    
+}
+
+input {
+    margin: 5px;
+    width: 50%;
+    float:right;
+
 }

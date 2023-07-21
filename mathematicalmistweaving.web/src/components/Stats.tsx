@@ -10,7 +10,7 @@ const Stats = () => {
         <>
             <h3 className="App">Enter Your Stats:</h3>
             <form onSubmit={handleSubmit} className="App">
-            <div>
+            <div className="responsive-column-2">
                 <label>Intellect: <input type="number" /></label>
                 <label>Critical Strike: <input type="number" /></label>
                 <label>Haste: <input type="number" /></label>
