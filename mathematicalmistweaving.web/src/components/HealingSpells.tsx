@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
+import { makeRequestUrl, REQUEST_URLS } from '../common/constants';
 import '../index.css';
 
 const HealingSpells = () => {
     const [data, setData] = useState<any>([]);
-    const requestURL = `https://localhost:7062/api/v1/SpellData/healing/`;
+    const requestURL = makeRequestUrl(REQUEST_URLS.HealingSpells);
     useEffect(() => {
         fetch(requestURL)
             .then((response) => {
@@ -22,6 +23,7 @@ const HealingSpells = () => {
 
     return (
         <div>
+            <h3 className="App">Healing Spells</h3>
             {
                 data.map((property: { [x: string]: any; }) => {
                     return (

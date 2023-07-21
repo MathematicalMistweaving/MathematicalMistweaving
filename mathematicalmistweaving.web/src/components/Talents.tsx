@@ -1,14 +1,12 @@
+import { DEFAULTS } from "../common/constants";
 
 
 
 function TalentTree() {
-    let talentString;
-    if (!talentString) {
-        talentString = `B4QAAAAAAAAAAAAAAAAAAAAAA0CFkIRpoRIlQSKRJRatAAAAAAAAAAAAASaSKhEJJaFQLJpBJAAIA`;
+    let srcUrl;
+    if (!srcUrl) {
+        srcUrl = DEFAULTS.Talents.Url + DEFAULTS.Talents.TalentString + DEFAULTS.Talents.Options;
     }
-    const iframeUrl = "https://www.raidbots.com/simbot/render/talents/";
-    const options = "?width=1400&height=500&level=70&bgcolor=3e3e42";
-    let srcUrl = iframeUrl + talentString + options;
     return (
         <div>
         <div className="iframe">
