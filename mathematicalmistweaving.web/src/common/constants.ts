@@ -4,11 +4,6 @@ export const REQUEST_URLS = {
     HealingSpells: "SpellData/healing/",
 };
 
-
-export function makeRequestUrl(requestString: string) {
-    return baseURL + requestString;
-}
-
 export const DEFAULTS = {
     Talents: {
         Url: "https://www.raidbots.com/simbot/render/talents/",
@@ -22,3 +17,6 @@ export const DEFAULTS = {
     Versatility: 2100,
 }
 
+export function makeRequestUrl(requestString: string) {
+    return baseURL + requestString;
+}
