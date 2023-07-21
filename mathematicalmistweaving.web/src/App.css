@@ -2,6 +2,14 @@
   text-align: center;
 }
 
+.Left {
+    text-align: left;
+}
+
+.Right {
+    text-align: right;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
