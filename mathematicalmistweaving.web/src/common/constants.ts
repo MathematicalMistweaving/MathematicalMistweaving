@@ -6,9 +6,16 @@ export const REQUEST_URLS = {
 
 export const DEFAULTS = {
     Talents: {
+
+        //Icy Veins Embed
+        /*Url: "https://www.icy-veins.com/wow/dragonflight-talent-calculator",
+        TalentString: "#10--270$nqmPDDppsG1rv0u1xB1CCji0hMMFEELLKzzy+jMDPzp1KbEuuGiO1y0F0CCxe0N1r1I0JJllmo0a1*",
+        Options: ""*/
+
+        //Raidbots embed
         Url: "https://www.raidbots.com/simbot/render/talents/",
         TalentString: "B4QAAAAAAAAAAAAAAAAAAAAAA0CFkIRpoRIlQSKRJRatAAAAAAAAAAAAASaSKhEJJaFQLJpBJAAIA",
-        Options: "?width=1400&height=500&level=70&bgcolor=3e3e42", 
+        Options: "?width=1400&height=500&level=70&bgcolor=3e3e42",
     },
     Intellect: 12000,
     CriticalStrike: 3500,

@@ -79,7 +79,8 @@ div {
     padding-left: 10rem;
     display: grid;
     grid-auto-rows: 1fr;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(4, 0fr);
+    grid-column-gap: 10px;
     font-size: calc(10px + 1.5vmin);
 }
 
@@ -89,10 +90,15 @@ label {
     
 }
 
+label small {
+    display: inline-block;
+    margin:auto;
+}
+
 input {
-    margin: 5px;
-    width: 50%;
-    float:right;
+    display: inline-block;
+    margin:auto;
+    width: 85px;
 
 }
 
