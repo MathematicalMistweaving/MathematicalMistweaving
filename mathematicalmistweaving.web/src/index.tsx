@@ -16,8 +16,6 @@ root.render(
         <Stats />
         <TalentTree/>
         <HealingSpells />
-        
-    
   </React.StrictMode>
 );
 
