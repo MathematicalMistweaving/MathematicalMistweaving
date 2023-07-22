@@ -1,15 +1,16 @@
 import { ChangeEvent, useRef, useState } from "react";
+import { DEFAULTS as statDefault } from "../common/constants";
 
 const Stats = () => {
     const ref = useRef();
     const [stat, setStat] = useState({
-        intellect: 12000,
-        crit: 3500,
-        haste: 5200,
-        mastery: 500,
-        vers: 2700,
-        leech: 972,
-        stamina: 27000,
+        intellect: statDefault.Intellect,
+        crit: statDefault.CriticalStrike,
+        haste: statDefault.Haste,
+        mastery: statDefault.Mastery,
+        vers: statDefault.Versatility,
+        leech: statDefault.Leech,
+        stamina: statDefault.Stamina,
     });
 
     const handleStatChange = (e: ChangeEvent<HTMLInputElement>) => {

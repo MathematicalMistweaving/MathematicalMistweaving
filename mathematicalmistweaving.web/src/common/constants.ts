@@ -12,9 +12,11 @@ export const DEFAULTS = {
     },
     Intellect: 12000,
     CriticalStrike: 3500,
-    Haste: 5139,
+    Haste: 5200,
     Mastery: 500,
     Versatility: 2100,
+    Leech: 972,
+    Stamina: 27000,
 }
 
 export function makeRequestUrl(requestString: string) {
