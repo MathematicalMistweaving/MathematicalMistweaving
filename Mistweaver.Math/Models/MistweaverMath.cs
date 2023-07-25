@@ -46,6 +46,13 @@ namespace Mistweaver.Math.Models
             }
         }
 
+        public decimal GetStatPercent(int statRating, string statName)
+        {
+            //calculate stat DR
+            var ratingPerPercent = GetStatPointPerPercent(statName);
+            return CalculateStatDiminishingReturns(statRating, ratingPerPercent) + GetBaseStat(statName);
+        }
+
         public virtual decimal CalculateUniqueEffect<T>()
         {
             throw new NotImplementedException();
@@ -74,6 +81,59 @@ namespace Mistweaver.Math.Models
         public void ApplyStatScaling(SpellBase spell)
         {
             throw new NotImplementedException();
+        }
+
+        private decimal CalculateStatDiminishingReturns(int rating, int ratingPerPercent)
+        {
+            double[] statTiers = { 30, 39, 47, 54, 66 };
+            var initial = rating/ ratingPerPercent;
+            var result = 0m;
+            if(initial > 30)
+            {
+                //do DR Things 
+            }
+            else
+            {
+                result = initial;
+            }
+            return result;
+        }
+
+        private int GetStatPointPerPercent(string name)
+        {
+            switch (name) 
+            {
+                case Stats.Crit:
+                case Stats.Mastery:
+                    return 180;
+                case Stats.Haste:
+                    return 170;
+                case Stats.Vers:
+                    return 205;
+                case Stats.Leech:
+                    return 148;
+                default:
+                    return -1;
+            }
+        }
+
+        private decimal GetBaseStat(string name)
+        {
+            switch (name)
+            {
+                case Stats.Crit:
+                    return 5.00m;
+                case Stats.Mastery:
+                    return 33.60m;
+                case Stats.Haste:
+                    return 0m; ;
+                case Stats.Vers:
+                    return 0m; ;
+                case Stats.Leech:
+                    return 0m; ;
+                default:
+                    return -1;
+            }
         }
 
     }

@@ -2,6 +2,7 @@
 const baseURL = "https://localhost:7062/api/v1/"
 export const REQUEST_URLS = {
     HealingSpells: "SpellData/healing/",
+    StatPercent: "Math/stat",
 };
 
 export const DEFAULTS = {
@@ -17,13 +18,13 @@ export const DEFAULTS = {
         TalentString: "B4QAAAAAAAAAAAAAAAAAAAAAA0CFkIRpoRIlQSKRJRatAAAAAAAAAAAAASaSKhEJJaFQLJpBJAAIA",
         Options: "?width=1400&height=500&level=70&bgcolor=3e3e42",
     },
-    Intellect: 12000,
-    CriticalStrike: 3500,
-    Haste: 5200,
-    Mastery: 500,
-    Versatility: 2100,
-    Leech: 972,
-    Stamina: 27000,
+    Intellect: { name: "Intellect", rating: 12000 },
+    CriticalStrike: { name: "Crit", rating: 3500 },
+    Haste: { name: "Haste", rating: 5200 },
+    Mastery: { name: "Mastery", rating: 500 },
+    Versatility: { name: "Vers", rating: 2100 },
+    Leech: { name: "Leech", rating: 972 },
+    Stamina: { name: "Stamina", rating: 27000 },
 }
 
 export function makeRequestUrl(requestString: string) {
