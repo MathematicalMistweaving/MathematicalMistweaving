@@ -8,6 +8,7 @@ using Mistweaver.Math.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Data;
 using System.Linq;
 using System.Reflection;
 using System.Text;
@@ -85,18 +86,52 @@ namespace Mistweaver.Math.Models
 
         private decimal CalculateStatDiminishingReturns(int rating, int ratingPerPercent)
         {
-            double[] statTiers = { 30, 39, 47, 54, 66 };
-            var initial = rating/ ratingPerPercent;
-            var result = 0m;
-            if(initial > 30)
+            decimal percentReductionPerTier = .1m;
+            decimal[] statTiers = { 30, 39, 47, 54, 66 };
+            var ratingTiers = new List<decimal>();
+            decimal result = 0m;
+            for(int i = 0;  i < statTiers.Length; i++)
             {
-                //do DR Things 
+                ratingTiers.Add(statTiers[i] * ratingPerPercent * (1m+(percentReductionPerTier * i)));
+            } 
+            
+            if(rating <= ratingTiers[0])
+            {
+                result += rating;
             }
             else
             {
-                result = initial;
+                result += ratingTiers[0];
             }
-            return result;
+           
+            for(int i = 0; i < statTiers.Length; i++)
+            {
+               
+                if (rating > ratingTiers[i])
+                {
+                    var tierRating = 0m;
+                    if(i == statTiers.Length-1)
+                    {
+                        tierRating = rating - ratingTiers[i];
+                        result += tierRating * (1 - percentReductionPerTier * (i + 1));
+                    }
+                    else
+                    {
+                        if (rating > ratingTiers[i + 1])
+                        {
+                           
+                            tierRating = ratingTiers[i + 1] - ratingTiers[i];
+                            result += tierRating * (1 - percentReductionPerTier * (i + 1));
+                        }
+                        else
+                        {
+                            tierRating = rating - ratingTiers[i];
+                            result += tierRating * (1 - percentReductionPerTier * (i + 1));
+                        }
+                    }  
+                }
+            }
+            return decimal.Round(result/ratingPerPercent, 2);
         }
 
         private int GetStatPointPerPercent(string name)

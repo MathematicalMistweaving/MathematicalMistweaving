@@ -29,6 +29,97 @@ namespace MathematicalMistweavingTests.MathTests
             _profile = new PlayerProfile();
             _math = new MistweaverMath(_spellBook, _profile);
         }
+        #region Stat Diminishing Return Tests
+
+        #region Crit
+        [TestMethod]
+        public void StatDR_Crit_30()
+        {
+            var result = _math?.GetStatPercent(5400, "Crit");
+            Assert.AreEqual(35.00m, result);
+        }
+
+        [TestMethod]
+        public void StatDR_Crit_39()
+        {
+            var result = _math?.GetStatPercent(5833, "Crit");
+            Assert.AreEqual(37.16m, result);
+        }
+
+        [TestMethod]
+        public void StatDR_Crit_47()
+        {
+            var result = _math?.GetStatPercent(8500, "Crit");
+            Assert.AreEqual(50.07m, result);
+        }
+
+        [TestMethod]
+        public void StatDR_Crit_54()
+        {
+            var result = _math?.GetStatPercent(12000, "Crit");
+            Assert.AreEqual(64.60m, result);
+        }
+        #endregion
+
+        #region Haste
+        [TestMethod]
+        public void StatDR_Haste_30()
+        {
+            var result = _math?.GetStatPercent(5100, "Haste");
+            Assert.AreEqual(30.00m, result);
+        }
+
+        [TestMethod]
+        public void StatDR_Haste_39()
+        {
+            var result = _math?.GetStatPercent(5833, "Haste");
+            Assert.AreEqual(33.88m, result);
+        }
+
+        [TestMethod]
+        public void StatDR_Haste_47()
+        {
+            var result = _math?.GetStatPercent(8500, "Haste");
+            Assert.AreEqual(47.29m, result);
+        }
+
+        [TestMethod]
+        public void StatDR_Haste_54()
+        {
+            var result = _math?.GetStatPercent(11000, "Haste");
+            Assert.AreEqual(58.22m, result);
+        }
+        #endregion
+        #region Versatility
+        [TestMethod]
+        public void StatDR_Vers_30()
+        {
+            var result = _math?.GetStatPercent(6150, "Vers");
+            Assert.AreEqual(30.00m, result);
+        }
+
+        [TestMethod]
+        public void StatDR_Vers_39()
+        {
+            var result = _math?.GetStatPercent(7500, "Vers");
+            Assert.AreEqual(35.93m, result);
+        }
+
+        [TestMethod]
+        public void StatDR_Vers_47()
+        {
+            var result = _math?.GetStatPercent(10000, "Vers");
+            Assert.AreEqual(46.31m, result);
+        }
+
+        [TestMethod]
+        public void StatDR_Vers_54()
+        {
+            var result = _math?.GetStatPercent(12000, "Vers");
+            Assert.AreEqual(53.91m, result);
+        }
+        #endregion
+        #endregion
 
         [TestMethod]
         [ExpectedException(typeof(NotImplementedException))]
