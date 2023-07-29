@@ -9,11 +9,11 @@ import Stats from "./Stats";
 class Profile extends Component {
     render() {
         return (
-            <p>
-            <Race/>
-            <Stats />
-            <MiscOptions />
-            </p>
+            <React.Fragment>
+                <Race/>
+                <Stats />
+                <MiscOptions />
+            </React.Fragment>
         );
     } 
         

@@ -25,6 +25,7 @@ export const DEFAULTS = {
     Versatility: { name: "Vers", rating: 2100 },
     Leech: { name: "Leech", rating: 972 },
     Stamina: { name: "Stamina", rating: 27000 },
+    StatMaxLength: 5,
 }
 
 export function makeRequestUrl(requestString: string) {

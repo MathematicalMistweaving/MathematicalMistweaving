@@ -1,3 +1,4 @@
+import React from "react";
 import { ChangeEvent, useEffect, useRef, useState } from "react";
 import { DEFAULTS as statDefault, makeRequestUrl, REQUEST_URLS } from "../common/constants";
 
@@ -14,10 +15,21 @@ const Stats = () => {
     });
 
     const handleStatChange = (e: ChangeEvent<HTMLInputElement>) => {
-        setStat({
-            ...stat,
-            [e.target?.name]: e.target?.value
-        });
+        if (e.target?.value.length > statDefault.StatMaxLength) {
+            var value = Number(e.target?.value.substring(0, statDefault.StatMaxLength));
+            setStat({
+                ...stat,
+                [e.target?.name]: value
+            });
+        }
+        else {
+            setStat({
+                ...stat,
+                [e.target?.name]: e.target?.value
+            });
+        }
+            
+       
     };
 
     const handleSubmit = (e: { preventDefault: () => void; }) => {
@@ -30,7 +42,7 @@ const Stats = () => {
         const [stat, setStatPercent] = useState();
         const url = makeRequestUrl(REQUEST_URLS.StatPercent) + "?name=" + name + "&rating=" + value;
         useEffect(() => {
-            fetch(url).then((response) => {
+            const getStat = async() => fetch(url).then((response) => {
                 if (!response.ok) {
                     throw response;
                 }
@@ -40,7 +52,14 @@ const Stats = () => {
             }).then(data => {
                 setStatPercent(data);
             }).catch((error) => { console.log(error); })
-        },);
+
+            const timerId = setTimeout(() => {
+                getStat();
+            }, 750);
+            return () => {
+                clearTimeout(timerId);
+            }
+        }, [url]);
 
         return (
             <small>
@@ -54,7 +73,7 @@ const Stats = () => {
             <form onSubmit={handleSubmit} className="App">
                 <div className="responsive-column-2">
                     <label>Intellect <input name="intellect" type="number" value={stat.intellect} onChange={handleStatChange} /></label>
-                    <label>Crit <input name="crit" type="number" value={stat.crit} onChange={handleStatChange} />{StatPercent(stat.crit, statDefault.CriticalStrike.name)}</label>
+                    <label>Crit <input  name="crit" type="number" value={stat.crit} onChange={handleStatChange} />{StatPercent(stat.crit, statDefault.CriticalStrike.name)}</label>
                     <label>Haste <input name="haste" type="number" value={stat.haste} onChange={handleStatChange} />{StatPercent(stat.haste, statDefault.Haste.name)}</label>
                     <label>Mastery <input name="mastery" type="number" value={stat.mastery} onChange={handleStatChange} />{StatPercent(stat.mastery, statDefault.Mastery.name)}</label>
                     <label>Versatility <input name="vers" type="number" value={stat.vers} onChange={handleStatChange} />{StatPercent(stat.vers, statDefault.Versatility.name)}</label>
@@ -67,11 +86,11 @@ const Stats = () => {
 
 
     return (
-        <>
+        <React.Fragment>
             <h3 className="App">Enter Your Stats:</h3>
             {renderStatInputs()}
             
-        </>
+        </React.Fragment>
     );
 }
 
