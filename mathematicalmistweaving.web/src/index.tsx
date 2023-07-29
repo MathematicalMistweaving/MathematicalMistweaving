@@ -5,7 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import HealingSpells from './components/HealingSpells';
 import TalentTree from './components/Talents';
-import Stats from './components/Stats';
+import Profile from './components/Profile';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -13,7 +13,7 @@ const root = ReactDOM.createRoot(
 root.render(
     <React.StrictMode>
         <App />
-        <Stats />
+        <Profile />
         <TalentTree/>
         <HealingSpells />
   </React.StrictMode>
