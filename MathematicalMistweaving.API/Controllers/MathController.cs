@@ -22,6 +22,13 @@ namespace MathematicalMistweaving.API.Controllers
             _spellBook = spellBook;
             _math = math;
         }
+
+        [HttpGet("stat")]
+        public IActionResult GetStatPercent(string name, int rating) 
+        {
+
+            return Ok(_math.GetStatPercent(rating, name));
+        }
     }
 
 }

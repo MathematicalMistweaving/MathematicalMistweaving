@@ -13,6 +13,8 @@ namespace Mistweaver.Math.Interfaces
     {
         public void ApplyPlayerTalents();
 
+        public decimal GetStatPercent(int statRating, string statName);
+
 
         public void ModifyHealProperties(HealBase spell, SelectedTalent talent);
 

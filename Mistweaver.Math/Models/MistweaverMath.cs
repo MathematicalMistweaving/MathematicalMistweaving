@@ -4,10 +4,12 @@ using Mistweaver.Data.Interfaces;
 using Mistweaver.Data.Profile;
 using Mistweaver.Data.Talents;
 using Mistweaver.Data.Talents.Base;
+using Mistweaver.Math.Helpers;
 using Mistweaver.Math.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Data;
 using System.Linq;
 using System.Reflection;
 using System.Text;
@@ -44,6 +46,13 @@ namespace Mistweaver.Math.Models
                     //TODO: apply talents that affect other talents i.e. ancient concordance making teachings of the monastery 20/25% reset chance instead of 15%
                 }
             }
+        }
+
+        public decimal GetStatPercent(int statRating, string statName)
+        {
+            //calculate stat DR
+            var stat = StatHelper.GetStatByName(statName);
+            return (StatHelper.CalculateStatDiminishingReturns(statRating, stat) + StatHelper.GetBaseStat(statName));
         }
 
         public virtual decimal CalculateUniqueEffect<T>()

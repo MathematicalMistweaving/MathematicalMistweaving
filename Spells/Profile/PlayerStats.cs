@@ -32,13 +32,13 @@ namespace Mistweaver.Data.Profile
         public StatMultipliers Multipliers { get; set; }
         public class StatMultipliers
         {
-            public StatMultipliers(int critValue, int hasteValue, int masteryValue, int versValue, int leechValue)
+            public StatMultipliers(decimal critMulti, decimal hasteMulti, decimal masteryMulti, decimal versMulti, decimal leechMulti)
             {
-                Crit = StatHelper.CalculateStatDr(critValue, Stats.Crit);
-                Haste = StatHelper.CalculateStatDr(hasteValue, Stats.Haste);
-                Mastery = StatHelper.CalculateStatDr(masteryValue, Stats.Mastery);
-                Versatility = StatHelper.CalculateStatDr(versValue, Stats.Vers);
-                Leech = StatHelper.CalculateStatDr(leechValue, Stats.Leech);
+                Crit = critMulti;
+                Haste = hasteMulti;
+                Mastery = masteryMulti;
+                Versatility = versMulti;
+                Leech = leechMulti;
             }
             public decimal Crit { get; set; }
             public decimal Haste { get; set; }

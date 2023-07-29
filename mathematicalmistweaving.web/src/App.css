@@ -1,0 +1,117 @@
+.App {
+  text-align: center;
+}
+
+.Center {
+    text-align: center;
+    justify-content: center;
+    align-content: center;
+}
+
+.Left {
+    text-align: left;
+}
+
+.Right {
+    text-align: right;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  align-items: center;
+  justify-content: center;
+
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: translate3d();
+  }
+  to {
+    transform: translate();
+  }
+}
+
+.iframe {
+    display: block;
+    margin: auto;
+    text-align: center;
+    justify-content: center;
+}
+
+div {
+    background-color: #282c34;
+    font-size: calc(10px + 2vmin);
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.OneThird {
+    float: left;
+    width: 33.33%;
+    padding: 1rem;
+}
+
+.responsive-column-3 {
+    padding-left: 10rem;
+    display: grid;
+    grid-auto-rows: 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    font-size: calc(10px + 1.5vmin);
+}
+
+.responsive-column-2 {
+    padding-left: 10rem;
+    display: grid;
+    grid-auto-rows: 1fr;
+    grid-template-columns: repeat(4, 0fr);
+    grid-column-gap: 10px;
+    font-size: calc(10px + 1.5vmin);
+}
+
+label {
+    width: 50%;
+    float: left;
+    
+}
+
+label small {
+    display: inline-block;
+    margin:auto;
+    font-size: medium;
+}
+
+input {
+    display: inline-block;
+    margin:auto;
+    width: 85px;
+
+}
+
+div button {
+    display: block;
+    margin: auto;
+    width: 100px;
+    height: 50px;
+    border-radius: 5px 5px;
+    background-color: aquamarine;
+}
+
+button input {
+
+}
