@@ -93,6 +93,7 @@ label {
 label small {
     display: inline-block;
     margin:auto;
+    font-size: medium;
 }
 
 input {
