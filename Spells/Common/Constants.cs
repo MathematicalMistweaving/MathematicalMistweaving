@@ -97,6 +97,6 @@ namespace Mistweaver.Data.Common
     {
         public const decimal Pandemic = 0.30m;
         public const decimal ArmorReduction = 0.30m;
-        public const decimal MysthicTouch = 0.05m;
+        public const decimal MysticTouch = 0.05m;
     }
 }
