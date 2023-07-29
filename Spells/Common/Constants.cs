@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Reflection.Metadata;
+using System.Runtime.ConstrainedExecution;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -97,14 +99,4 @@ namespace Mistweaver.Data.Common
         public const decimal ArmorReduction = 0.30m;
         public const decimal MysthicTouch = 0.05m;
     }
-
-    public static class Stats
-    {
-        public const string Crit = "Crit";
-        public const string Haste = "Haste";
-        public const string Mastery = "Mastery";
-        public const string Vers = "Vers";
-        public const string Leech = "Leech";
-    }
-    
 }

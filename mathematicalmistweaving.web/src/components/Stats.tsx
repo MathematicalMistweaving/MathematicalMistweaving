@@ -25,10 +25,10 @@ const Stats = () => {
         alert(ref);
     };
 
-    function CritPercent(crit: number) 
+    function StatPercent(value: any, name: any) 
     {
         const [stat, setStatPercent] = useState();
-        const url = makeRequestUrl(REQUEST_URLS.StatPercent) + "?name=" + statDefault.CriticalStrike.name +"&rating="+crit;
+        const url = makeRequestUrl(REQUEST_URLS.StatPercent) + "?name=" + name + "&rating=" + value;
         useEffect(() => {
             fetch(url).then((response) => {
                 if (!response.ok) {
@@ -42,7 +42,11 @@ const Stats = () => {
             }).catch((error) => { console.log(error); })
         },);
 
-        return stat;
+        return (
+            <small>
+                ({stat}%)
+            </small>
+        );
     }
 
     const renderStatInputs = () => {
@@ -50,22 +54,14 @@ const Stats = () => {
             <form onSubmit={handleSubmit} className="App">
                 <div className="responsive-column-2">
                     <label>Intellect <input name="intellect" type="number" value={stat.intellect} onChange={handleStatChange} /></label>
-                    <label>Crit <input name="crit" type="number" value={stat.crit} onChange={handleStatChange} />{renderCrit()}</label>
-                    <label>Haste <input name="haste" type="number" value={stat.haste} onChange={handleStatChange} /></label>
-                    <label>Mastery <input name="mastery" type="number" value={stat.mastery} onChange={handleStatChange} /></label>
-                    <label>Versatility <input name="vers" type="number" value={stat.vers} onChange={handleStatChange} /></label>
-                    <label>Leech <input name="leech" type="number" value={stat.leech} onChange={handleStatChange} /></label>
+                    <label>Crit <input name="crit" type="number" value={stat.crit} onChange={handleStatChange} />{StatPercent(stat.crit, statDefault.CriticalStrike.name)}</label>
+                    <label>Haste <input name="haste" type="number" value={stat.haste} onChange={handleStatChange} />{StatPercent(stat.haste, statDefault.Haste.name)}</label>
+                    <label>Mastery <input name="mastery" type="number" value={stat.mastery} onChange={handleStatChange} />{StatPercent(stat.mastery, statDefault.Mastery.name)}</label>
+                    <label>Versatility <input name="vers" type="number" value={stat.vers} onChange={handleStatChange} />{StatPercent(stat.vers, statDefault.Versatility.name)}</label>
+                    <label>Leech <input name="leech" type="number" value={stat.leech} onChange={handleStatChange} />{StatPercent(stat.leech, statDefault.Leech.name)}</label>
                     <label>Stamina <input name="stamina" type="number" value={stat.stamina} onChange={handleStatChange} /></label>
                 </div>
             </form>
-        );
-    }
-
-    const renderCrit = () => {
-        return (
-            <small>
-                ({CritPercent(stat.crit)}%)
-            </small>
         );
     }
 

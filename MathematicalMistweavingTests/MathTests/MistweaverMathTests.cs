@@ -90,6 +90,37 @@ namespace MathematicalMistweavingTests.MathTests
             Assert.AreEqual(58.22m, result);
         }
         #endregion
+
+        #region Mastery
+        [TestMethod]
+        public void StatDR_Mastery_30()
+        {
+            var result = _math?.GetStatPercent(5400, "Mastery");
+            Assert.AreEqual(159.60m, result);
+        }
+
+        [TestMethod]
+        public void StatDR_Mastery_39()
+        {
+            var result = _math?.GetStatPercent(5833, "Mastery");
+            Assert.AreEqual(168.69m, result);
+        }
+
+        [TestMethod]
+        public void StatDR_Mastery_47()
+        {
+            var result = _math?.GetStatPercent(8500, "Mastery");
+            Assert.AreEqual(222.88m, result);
+        }
+
+        [TestMethod]
+        public void StatDR_Mastery_54()
+        {
+            var result = _math?.GetStatPercent(12000, "Mastery");
+            Assert.AreEqual(283.91m, result);
+        }
+        #endregion
+
         #region Versatility
         [TestMethod]
         public void StatDR_Vers_30()
@@ -117,6 +148,16 @@ namespace MathematicalMistweavingTests.MathTests
         {
             var result = _math?.GetStatPercent(12000, "Vers");
             Assert.AreEqual(53.91m, result);
+        }
+        #endregion
+
+
+        #region Leech
+        [TestMethod]
+        public void StatDR_Leech_10()
+        {
+            var result = _math?.GetStatPercent(1500, "Leech");
+            Assert.AreEqual(10.12m, result);
         }
         #endregion
         #endregion

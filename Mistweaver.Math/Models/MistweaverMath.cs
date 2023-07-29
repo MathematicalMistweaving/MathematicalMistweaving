@@ -4,6 +4,7 @@ using Mistweaver.Data.Interfaces;
 using Mistweaver.Data.Profile;
 using Mistweaver.Data.Talents;
 using Mistweaver.Data.Talents.Base;
+using Mistweaver.Math.Helpers;
 using Mistweaver.Math.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -50,8 +51,8 @@ namespace Mistweaver.Math.Models
         public decimal GetStatPercent(int statRating, string statName)
         {
             //calculate stat DR
-            var ratingPerPercent = GetStatPointPerPercent(statName);
-            return CalculateStatDiminishingReturns(statRating, ratingPerPercent) + GetBaseStat(statName);
+            var stat = StatHelper.GetStatByName(statName);
+            return (StatHelper.CalculateStatDiminishingReturns(statRating, stat) + StatHelper.GetBaseStat(statName));
         }
 
         public virtual decimal CalculateUniqueEffect<T>()
@@ -82,93 +83,6 @@ namespace Mistweaver.Math.Models
         public void ApplyStatScaling(SpellBase spell)
         {
             throw new NotImplementedException();
-        }
-
-        private decimal CalculateStatDiminishingReturns(int rating, int ratingPerPercent)
-        {
-            decimal percentReductionPerTier = .1m;
-            decimal[] statTiers = { 30, 39, 47, 54, 66 };
-            var ratingTiers = new List<decimal>();
-            decimal result = 0m;
-            for(int i = 0;  i < statTiers.Length; i++)
-            {
-                ratingTiers.Add(statTiers[i] * ratingPerPercent * (1m+(percentReductionPerTier * i)));
-            } 
-            
-            if(rating <= ratingTiers[0])
-            {
-                result += rating;
-            }
-            else
-            {
-                result += ratingTiers[0];
-            }
-           
-            for(int i = 0; i < statTiers.Length; i++)
-            {
-               
-                if (rating > ratingTiers[i])
-                {
-                    var tierRating = 0m;
-                    if(i == statTiers.Length-1)
-                    {
-                        tierRating = rating - ratingTiers[i];
-                        result += tierRating * (1 - percentReductionPerTier * (i + 1));
-                    }
-                    else
-                    {
-                        if (rating > ratingTiers[i + 1])
-                        {
-                           
-                            tierRating = ratingTiers[i + 1] - ratingTiers[i];
-                            result += tierRating * (1 - percentReductionPerTier * (i + 1));
-                        }
-                        else
-                        {
-                            tierRating = rating - ratingTiers[i];
-                            result += tierRating * (1 - percentReductionPerTier * (i + 1));
-                        }
-                    }  
-                }
-            }
-            return decimal.Round(result/ratingPerPercent, 2);
-        }
-
-        private int GetStatPointPerPercent(string name)
-        {
-            switch (name) 
-            {
-                case Stats.Crit:
-                case Stats.Mastery:
-                    return 180;
-                case Stats.Haste:
-                    return 170;
-                case Stats.Vers:
-                    return 205;
-                case Stats.Leech:
-                    return 148;
-                default:
-                    return -1;
-            }
-        }
-
-        private decimal GetBaseStat(string name)
-        {
-            switch (name)
-            {
-                case Stats.Crit:
-                    return 5.00m;
-                case Stats.Mastery:
-                    return 33.60m;
-                case Stats.Haste:
-                    return 0m; ;
-                case Stats.Vers:
-                    return 0m; ;
-                case Stats.Leech:
-                    return 0m; ;
-                default:
-                    return -1;
-            }
         }
 
     }
