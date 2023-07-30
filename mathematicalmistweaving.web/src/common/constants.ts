@@ -5,7 +5,7 @@ export const REQUEST_URLS = {
     StatPercent: "Math/stat",
 };
 
-export const DEFAULTS = {
+export const Defaults = {
     Talents: {
 
         //Icy Veins Embed
@@ -19,13 +19,15 @@ export const DEFAULTS = {
         Options: "?width=1400&height=500&level=70&bgcolor=3e3e42",
     },
     Intellect: { name: "Intellect", rating: 12000 },
-    CriticalStrike: { name: "Crit", rating: 3500 },
+    CriticalStrike: { name: "Crit", rating: 4500 },
     Haste: { name: "Haste", rating: 5200 },
     Mastery: { name: "Mastery", rating: 500 },
-    Versatility: { name: "Vers", rating: 2100 },
+    Versatility: { name: "Vers", rating: 1900},
     Leech: { name: "Leech", rating: 972 },
     Stamina: { name: "Stamina", rating: 27000 },
     StatMaxLength: 5,
+    TFTSpell: "Renewing Mist",
+    Race: "Night Elf"
 }
 
 export const ThunderFocusTeaSpells = [

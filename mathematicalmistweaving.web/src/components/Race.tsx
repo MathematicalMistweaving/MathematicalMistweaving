@@ -2,6 +2,7 @@ import { AutocompleteRenderInputParams, TextField } from "@mui/material";
 import React from "react";
 import { Races } from "../common/constants";
 import StyledAutocomplete from "../common/StyledAutoComplete";
+import { Defaults } from "../common/constants";
 
 
 
@@ -11,6 +12,7 @@ const Race = () => {
          <React.Fragment>
             <div className="App Left header">Character Race:</div>
             <StyledAutocomplete
+                defaultValue={Defaults.Race}
                 disablePortal
                 id="TFT_Spell"
                 options={Races}

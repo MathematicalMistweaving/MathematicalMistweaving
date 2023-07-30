@@ -1,11 +1,11 @@
-import { DEFAULTS } from "../common/constants";
+import { Defaults } from "../common/constants";
 
 
 
 function TalentTree() {
     let srcUrl;
     if (!srcUrl) {
-        srcUrl = DEFAULTS.Talents.Url + DEFAULTS.Talents.TalentString + DEFAULTS.Talents.Options;
+        srcUrl = Defaults.Talents.Url + Defaults.Talents.TalentString + Defaults.Talents.Options;
     }
     return (
         <div className="App">

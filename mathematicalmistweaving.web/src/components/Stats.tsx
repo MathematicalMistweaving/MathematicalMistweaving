@@ -1,7 +1,7 @@
 import React from "react";
 import { FilledInput, Input, InputLabel, OutlinedInput } from "@mui/material";
 import { ChangeEvent, useEffect, useRef, useState } from "react";
-import { DEFAULTS as statDefault, makeRequestUrl, REQUEST_URLS } from "../common/constants";
+import { Defaults as statDefault, makeRequestUrl, REQUEST_URLS } from "../common/constants";
 
 const Stats = () => {
     const ref = useRef();

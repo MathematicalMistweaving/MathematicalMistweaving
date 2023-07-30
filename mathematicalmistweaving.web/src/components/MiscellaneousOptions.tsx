@@ -1,6 +1,6 @@
 import * as React from 'react';
 import TextField from '@mui/material/TextField';
-import { ThunderFocusTeaSpells } from '../common/constants';
+import { ThunderFocusTeaSpells, Defaults } from '../common/constants';
 import StyledAutocomplete from '../common/StyledAutoComplete';
 import { AutocompleteRenderInputParams} from '@mui/material';
 
@@ -10,6 +10,7 @@ function MiscOptions() {
         <React.Fragment>
             <div className="App Left header">Misc. Options:</div>
             <StyledAutocomplete
+                defaultValue={Defaults.TFTSpell}
                 disablePortal
                 id="TFT_Spell"
                 options={ThunderFocusTeaSpells}
