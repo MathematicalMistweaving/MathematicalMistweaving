@@ -1,4 +1,5 @@
 import React from "react";
+import { FilledInput, Input, InputLabel, OutlinedInput } from "@mui/material";
 import { ChangeEvent, useEffect, useRef, useState } from "react";
 import { DEFAULTS as statDefault, makeRequestUrl, REQUEST_URLS } from "../common/constants";
 
@@ -15,21 +16,12 @@ const Stats = () => {
     });
 
     const handleStatChange = (e: ChangeEvent<HTMLInputElement>) => {
-        if (e.target?.value.length > statDefault.StatMaxLength) {
-            var value = Number(e.target?.value.substring(0, statDefault.StatMaxLength));
-            setStat({
-                ...stat,
-                [e.target?.name]: value
-            });
-        }
-        else {
-            setStat({
-                ...stat,
-                [e.target?.name]: e.target?.value
-            });
-        }
-            
-       
+        setStat({
+            ...stat,
+            [e.target?.name]: (e.target?.value.length > statDefault.StatMaxLength)
+                ? Number(e.target?.value.substring(0, statDefault.StatMaxLength))
+                : e.target?.value
+        });
     };
 
     const handleSubmit = (e: { preventDefault: () => void; }) => {
@@ -70,24 +62,23 @@ const Stats = () => {
 
     const renderStatInputs = () => {
         return (
-            <form onSubmit={handleSubmit} className="App">
-                <div className="responsive-column-2">
-                    <label>Intellect <input name="intellect" type="number" value={stat.intellect} onChange={handleStatChange} /></label>
-                    <label>Crit <input  name="crit" type="number" value={stat.crit} onChange={handleStatChange} />{StatPercent(stat.crit, statDefault.CriticalStrike.name)}</label>
-                    <label>Haste <input name="haste" type="number" value={stat.haste} onChange={handleStatChange} />{StatPercent(stat.haste, statDefault.Haste.name)}</label>
-                    <label>Mastery <input name="mastery" type="number" value={stat.mastery} onChange={handleStatChange} />{StatPercent(stat.mastery, statDefault.Mastery.name)}</label>
-                    <label>Versatility <input name="vers" type="number" value={stat.vers} onChange={handleStatChange} />{StatPercent(stat.vers, statDefault.Versatility.name)}</label>
-                    <label>Leech <input name="leech" type="number" value={stat.leech} onChange={handleStatChange} />{StatPercent(stat.leech, statDefault.Leech.name)}</label>
-                    <label>Stamina <input name="stamina" type="number" value={stat.stamina} onChange={handleStatChange} /></label>
+            <form onSubmit={handleSubmit}>
+                <div className="responsive-column-3">
+                    <InputLabel>Intellect <Input name="intellect" type="number" value={stat.intellect} onChange={handleStatChange} /></InputLabel>
+                    <InputLabel>Critical Strike <Input  name="crit" type="number" value={stat.crit} onChange={handleStatChange} />{StatPercent(stat.crit, statDefault.CriticalStrike.name)}</InputLabel>
+                    <InputLabel>Haste <Input name="haste" type="number" value={stat.haste} onChange={handleStatChange} />{StatPercent(stat.haste, statDefault.Haste.name)}</InputLabel>
+                    <InputLabel>Mastery <Input name="mastery" type="number" value={stat.mastery} onChange={handleStatChange} />{StatPercent(stat.mastery, statDefault.Mastery.name)}</InputLabel>
+                    <InputLabel>Versatility <Input name="vers" type="number" value={stat.vers} onChange={handleStatChange} />{StatPercent(stat.vers, statDefault.Versatility.name)}</InputLabel>
+                    <InputLabel>Leech <Input name="leech" type="number" value={stat.leech} onChange={handleStatChange} />{StatPercent(stat.leech, statDefault.Leech.name)}</InputLabel>
+                    <InputLabel>Stamina <Input name="stamina" type="number" value={stat.stamina} onChange={handleStatChange} /></InputLabel>
                 </div>
             </form>
         );
     }
 
-
     return (
         <React.Fragment>
-            <h3 className="App">Enter Your Stats:</h3>
+            <div className="App Left header">Stats:</div>
             {renderStatInputs()}
             
         </React.Fragment>

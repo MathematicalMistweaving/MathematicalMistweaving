@@ -28,6 +28,39 @@ export const DEFAULTS = {
     StatMaxLength: 5,
 }
 
+export const ThunderFocusTeaSpells = [
+    "Renewing Mist",
+    "Rising Sun Kick",
+    "Vivify",
+    "Essence Font",
+    "Enveloping Mist",
+];
+
+export const Races = [
+    "Goblin",
+    "Night Elf",
+    "Blood Elf",
+    "Pandaren",
+    "Human",
+    "Dwarf",
+    "Orc",
+    "Vulpera",
+    "Undead",
+    "Dark Iron Dwarf",
+    "Void Elf",
+    "Tauren",
+    "Gnome",
+    "Troll",
+    "Highmountain Tauren",
+    "Maghar Orc",    
+    "Draenei",
+    "Mechagnome",
+    "Dracthyr",
+    "Nightborne",
+    "Zandalari Troll",
+    "Kultiran Human",
+];
+
 export function makeRequestUrl(requestString: string) {
     return baseURL + requestString;
 }
