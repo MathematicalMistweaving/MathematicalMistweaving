@@ -4,7 +4,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import HealingSpells from './components/HealingSpells';
-import TalentTree from './components/Talents';
+import TalentTree from './components/Talents/Talents';
 import Profile from './components/Profile';
 
 const root = ReactDOM.createRoot(
@@ -14,7 +14,6 @@ root.render(
         <React.Fragment>  
         <App />
         <Profile />
-        <TalentTree/>
         <HealingSpells />
         </React.Fragment>
   
