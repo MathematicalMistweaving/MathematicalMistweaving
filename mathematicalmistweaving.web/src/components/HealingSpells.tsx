@@ -27,19 +27,18 @@ const HealingSpells = () => {
             {
                 data.map((property: { [x: string]: any; }) => {
                     return (
-                        property['coefficient'] &&
+                        property['coefficient'] > 0 &&
                         <div key={property['id']} className="responsive-column-2">
-                                <span><b>{property['name']}</b></span>
-                                <span>Sp: <b>{property['coefficient']}%</b>
+                            <span><b>{property['name']}</b></span>
+                            <span>Sp: <b>{property['coefficient']}%</b>
                                 {
                                     property['hotInfo'] ?
                                         <span>,  Duration: <b>{property['hotInfo']['duration']}s</b></span>
-                                        : 
+                                        :
                                         <></>
                                 }</span>
-                                <span>Mana: <b>{Number(property['manaCost'] * 100).toPrecision(2)}%</b></span>
-                                
-                            </div>
+                            <span>Mana: <b>{Number(property['manaCost'] * 100).toPrecision(2)}%</b></span>
+                        </div>
                     )
                 }
             )
