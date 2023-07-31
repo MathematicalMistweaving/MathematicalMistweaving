@@ -10,14 +10,14 @@ function App() {
         <h3>
          Welcome to Mathematical Mistweaving
         </h3>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Get Started
-        </a>
+        {/*<a*/}
+        {/*  className="App-link"*/}
+        {/*  href="https://reactjs.org"*/}
+        {/*  target="_blank"*/}
+        {/*  rel="noopener noreferrer"*/}
+        {/*>*/}
+        {/*  Get Started*/}
+        {/*</a>*/}
       </header>
     </div>
   );

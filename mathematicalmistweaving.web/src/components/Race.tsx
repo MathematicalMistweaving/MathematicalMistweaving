@@ -9,7 +9,7 @@ import { Defaults } from "../common/constants";
 const Race = () => {
     return (
        
-         <React.Fragment>
+        <React.Fragment>
             <div className="App Left header">Character Race:</div>
             <StyledAutocomplete
                 defaultValue={Defaults.Race}

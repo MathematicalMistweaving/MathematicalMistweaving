@@ -2,15 +2,11 @@
 import Grid  from "@mui/material/Unstable_Grid2";
 import { Box } from "@mui/system";
 import { Defaults } from "../../common/constants";
+import { LayoutItem } from "../Styled/Item";
 import TalentNode, { ChoiceNode, Node } from "./TalentNode";
 
 
 function TalentTree() {
-    let srcUrl;
-    if (!srcUrl) {
-        srcUrl = Defaults.Talents.Url + Defaults.Talents.TalentString + Defaults.Talents.Options;
-    }
-
     let basicNode: Node = {
         name: "Enveloping Mist",
         row: 1,
@@ -52,21 +48,16 @@ function TalentTree() {
         tierActive: true
     }
     return (
-        <div className="App">
-            <h3 >Select Talents:</h3>
+        <LayoutItem>
+        <div className="App">Select Talents:</div>
             <Box sx={{ flexGrow: 1, ml: '15px'}}>
                 <Grid container spacing={9} rowSpacing={0} columnSpacing={1.5} >
                     <TalentNode node={basicNode} />
                     <TalentNode node={multiRankNode}/>
                     <ChoiceNode node={choiceOne} nodeTwo={choiceTwo} />
                 </Grid>
-            </Box>
-            <button type="submit" className="Center"><strong>Calculate</strong></button>
-            <div className="iframe">
-                <iframe title="talentIframe" src={srcUrl} allowFullScreen={true} height="1000" width="1400" ></iframe>
-            </div>
-
-        </div>
+                </Box>
+        </LayoutItem>
     );
 }
 

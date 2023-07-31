@@ -31,7 +31,7 @@ const TalentNode = ({
             <Item>
                 <StyledFormControlLabel sx={{ ml: 0 }} control={<Checkbox defaultChecked={node.selectedRank === 1} disabled={!node.prereqNodes?.some((node) => node.selectedRank === node.maxRank) && !node.tierActive} />} label={node.name} />
                 </Item>
-                :
+            :
             <Item sx={{ height: '100%' }}>
                 <StyledFormControlLabel control={<Checkbox defaultChecked={node.selectedRank >= 1} disabled={!node.prereqNodes?.some((node) => node.selectedRank === node.maxRank) && !node.tierActive} />} label={node.name} />
                 <StyledFormControlLabel sx={{ml: 0}} control={<Checkbox size="small" defaultChecked={node.selectedRank >= 1} disabled={!node.prereqNodes?.some((node) => node.selectedRank === node.maxRank) && !node.tierActive} />} label="1" />

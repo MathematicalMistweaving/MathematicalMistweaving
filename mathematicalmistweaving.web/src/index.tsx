@@ -4,8 +4,8 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import HealingSpells from './components/HealingSpells';
-import TalentTree from './components/Talents/Talents';
 import Profile from './components/Profile';
+import { TalentIFrame } from './components/Talents/TalentIFrame';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -14,6 +14,7 @@ root.render(
         <React.Fragment>  
         <App />
         <Profile />
+        <TalentIFrame/>
         <HealingSpells />
         </React.Fragment>
   

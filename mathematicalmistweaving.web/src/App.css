@@ -6,8 +6,8 @@
 
 .Center {
     text-align: center;
-    justify-content: center;
-    align-content: center;
+    justify-content: center !important;
+    align-content: center !important;
 }
 
 .Left {
