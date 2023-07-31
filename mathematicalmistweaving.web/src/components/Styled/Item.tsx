@@ -11,7 +11,7 @@ export const Item = styled(Paper)(({ theme }) => ({
 }));
 
 export const LayoutItem = styled(Paper)(({ theme }) => ({
-    backgroundColor: '#282c34',
+    backgroundColor: '#1E222A',
     ...theme.typography.body2,
     padding: theme.spacing(1),
     textAlign: 'center',

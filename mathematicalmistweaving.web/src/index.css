@@ -4,7 +4,9 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     background-color: #282c34;
-    
+    background-image: url('./img/mathematicalmistweavinghome.jpg');
+    /*background-blend-mode: luminosity;*/
+    background-blend-mode: hard-light;
 }
 
 code {

@@ -14,7 +14,6 @@ root.render(
         <React.Fragment>  
         <App />
         <Profile />
-        <TalentIFrame/>
         <HealingSpells />
         </React.Fragment>
   
