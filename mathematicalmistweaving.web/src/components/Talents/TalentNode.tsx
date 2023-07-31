@@ -1,8 +1,9 @@
-import { Checkbox, Radio, RadioGroup } from "@mui/material";
+import { RadioGroup } from "@mui/material";
 import { useState } from "react";
 import React from "react";
 import { StyledFormControlLabel } from "../Styled/StyledFormControlLabel";
 import { Item } from "../Styled/Item";
+import { StyledCheckbox, StyledRadio } from "../Styled/StyledInputs";
 
 
 export type Node = {
@@ -28,14 +29,14 @@ const TalentNode = ({
     return (
        
         (node.maxRank === 1) ?
-            <Item>
-                <StyledFormControlLabel sx={{ ml: 0 }} control={<Checkbox defaultChecked={node.selectedRank === 1} disabled={!node.prereqNodes?.some((node) => node.selectedRank === node.maxRank) && !node.tierActive} />} label={node.name} />
+            <Item className="box-shadow">
+                <StyledFormControlLabel sx={{ ml: 0 }} control={<StyledCheckbox defaultChecked={node.selectedRank === 1} disabled={!node.prereqNodes?.some((node) => node.selectedRank === node.maxRank) && !node.tierActive} />} label={node.name} />
                 </Item>
             :
-            <Item sx={{ height: '100%' }}>
-                <StyledFormControlLabel control={<Checkbox defaultChecked={node.selectedRank >= 1} disabled={!node.prereqNodes?.some((node) => node.selectedRank === node.maxRank) && !node.tierActive} />} label={node.name} />
-                <StyledFormControlLabel sx={{ml: 0}} control={<Checkbox size="small" defaultChecked={node.selectedRank >= 1} disabled={!node.prereqNodes?.some((node) => node.selectedRank === node.maxRank) && !node.tierActive} />} label="1" />
-                <StyledFormControlLabel control={<Checkbox size="small" defaultChecked={node.selectedRank === node.maxRank} disabled={!node.prereqNodes?.some((node) => node.selectedRank === node.maxRank) && !node.tierActive} />} label="2" />
+            <Item sx={{ height: '100%' }} className="box-shadow">
+                <StyledFormControlLabel control={<StyledCheckbox defaultChecked={node.selectedRank >= 1} disabled={!node.prereqNodes?.some((node) => node.selectedRank === node.maxRank) && !node.tierActive} />} label={node.name} />
+                <StyledFormControlLabel sx={{ ml: 0 }} control={<StyledCheckbox size="small" defaultChecked={node.selectedRank >= 1} disabled={!node.prereqNodes?.some((node) => node.selectedRank === node.maxRank) && !node.tierActive} />} label="1" />
+                <StyledFormControlLabel control={<StyledCheckbox size="small" defaultChecked={node.selectedRank === node.maxRank} disabled={!node.prereqNodes?.some((node) => node.selectedRank === node.maxRank) && !node.tierActive} />} label="2" />
             </Item>
     );
 };
@@ -45,7 +46,6 @@ export const ChoiceNode = ({
     nodeTwo,
 }: Props) => {
     const [value, setValue] = useState("");
-
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         setValue((event.target as HTMLInputElement).value);
     }
@@ -57,10 +57,10 @@ export const ChoiceNode = ({
             name="controlled-radio-buttons-group"
             value={value}
             onChange={handleChange}
-        > <Item>
-                <StyledFormControlLabel value={"none"} control={<Radio checked={value === "none"} size="small" />} disabled={!(node.tierActive && node.tierActive)} label={"None"} />
-                <StyledFormControlLabel value={node.name} control={<Radio checked={value === node.name} size="small" />} disabled={!(node.tierActive && node.tierActive)} label={node.name} />
-                <StyledFormControlLabel value={nodeTwo?.name} control={<Radio checked={value === nodeTwo?.name} size="small" />} disabled={!(node.tierActive && node.tierActive)} label={nodeTwo?.name} />
+        > <Item className="box-shadow">
+                <StyledFormControlLabel value={"none"} control={<StyledRadio checked={value === "none"} size="small" />} disabled={!(node.tierActive && node.tierActive)} label={"None"} />
+                <StyledFormControlLabel value={node.name} control={<StyledRadio checked={value === node.name} size="small" />} disabled={!(node.tierActive && node.tierActive)} label={node.name} />
+                <StyledFormControlLabel value={nodeTwo?.name} control={<StyledRadio checked={value === nodeTwo?.name} size="small" />} disabled={!(node.tierActive && node.tierActive)} label={nodeTwo?.name} />
           </Item>
         </RadioGroup>
        

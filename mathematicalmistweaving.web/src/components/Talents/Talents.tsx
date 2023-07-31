@@ -48,8 +48,8 @@ function TalentTree() {
         tierActive: true
     }
     return (
-        <LayoutItem>
-        <div className="App">Select Talents:</div>
+        <LayoutItem className="box-shadow">
+        <div className="App header">Talents:</div>
             <Box sx={{ flexGrow: 1, ml: '15px'}}>
                 <Grid container spacing={9} rowSpacing={0} columnSpacing={1.5} >
                     <TalentNode node={basicNode} />

@@ -15,6 +15,10 @@
     padding-left: 2rem;
 }
 
+.Left-no-pad {
+    text-align: left;
+}
+
 .Right {
     text-align: right;
 }
@@ -56,14 +60,13 @@
     justify-content: center;
 }
 
-div {
-    background-color: #282c34;
+div {   
     font-size: calc(10px + 2vmin);
     color: white !important;
 }
 
 .header {
-    margin: 15px 0 15px 0;
+    margin: 0 0 15px 0;
 }
 
 .OneThird {
@@ -101,7 +104,7 @@ input {
 }
 
 label {
-    color:white !important;
+    color: white !important;
     width: 300px;
 }
 
@@ -109,6 +112,15 @@ label div {
     width: 100px;
     float: left;
 }
+
+.box-shadow {
+    box-shadow: 0px 5px 4px -1px rgba(0,0,0,0.2), 0px 5px 4px 0px rgba(0,0,0,0.14), 0px 5px 4px 0px rgba(0,0,0,0.12);
+}
+
+.box-shadow:hover {
+    box-shadow: 0px 10px 13px -6px rgba(0,0,0,0.2), 0px 20px 31px 3px rgba(0,0,0,0.14), 0px 8px 38px 7px rgba(0,0,0,0.12);
+}
+
 
 .label {
     width: 250px;

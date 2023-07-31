@@ -81,7 +81,6 @@ const Stats = () => {
         <React.Fragment>
             <div className="App Left header">Stats:</div>
             {renderStatInputs()}
-            
         </React.Fragment>
     );
 }

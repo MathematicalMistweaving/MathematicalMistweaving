@@ -2,7 +2,7 @@ import { styled } from "@mui/material/styles";
 import Paper from "@mui/material/Paper";
 
 export const Item = styled(Paper)(({ theme }) => ({
-    backgroundColor: '#3E3E42',
+    backgroundColor: '#2D4444',
     ...theme.typography.body2,
     padding: theme.spacing(1),
     textAlign: 'center',
@@ -17,5 +17,5 @@ export const LayoutItem = styled(Paper)(({ theme }) => ({
     textAlign: 'center',
     color: "white",
     width: "auto",
-    margin: "5px 5px 5px 5px"
+    margin: "5px 5px 5px 5px",
 }));

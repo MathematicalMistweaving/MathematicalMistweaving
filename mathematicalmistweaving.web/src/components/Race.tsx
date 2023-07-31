@@ -10,7 +10,7 @@ const Race = () => {
     return (
        
         <React.Fragment>
-            <div className="App Left header">Character Race:</div>
+            <div className="App Left header">Race:</div>
             <StyledAutocomplete
                 defaultValue={Defaults.Race}
                 disablePortal
