@@ -1,16 +1,10 @@
 import React from 'react';
+import TalentNode, { Node } from './TalentNode';
 
-
-type Talent = {
-    name: string;
-    node: { row: number, column: number };
-    tier: number;
-    selected: boolean;
-}
 
 type TalentTier = {
     tier: number;
-    talents: Talent[];
+    talents: Node[];
     selectedCount: number;//talents.selected == true count
     requiredCount: number; 
 }
