@@ -36,10 +36,10 @@ function TalentTree() {
         row: 2,
         column: 1,
         prereqNodes: undefined,
-        selectedRank: 0,
+        selectedRank: 1,
         choiceNode: true,
         maxRank: 1,
-        tierActive: false
+        tierActive: true
     };
     let choiceTwo: Node = {
         name: "Ancient Teachings",
@@ -49,18 +49,16 @@ function TalentTree() {
         selectedRank: 0,
         choiceNode: true,
         maxRank: 1,
-        tierActive: false
+        tierActive: true
     }
     return (
         <div className="App">
             <h3 >Select Talents:</h3>
-            <Box sx={{ flexGrow: 1 }}>
-                <Grid container spacing={9} rowSpacing={0} columnSpacing={1.25} >
-                <Grid xs={1.25}>
+            <Box sx={{ flexGrow: 1, ml: '15px'}}>
+                <Grid container spacing={9} rowSpacing={0} columnSpacing={1.5} >
                     <TalentNode node={basicNode} />
-                </Grid>
-            <TalentNode node={multiRankNode}/>
-                <ChoiceNode node={choiceOne} nodeTwo={choiceTwo} />
+                    <TalentNode node={multiRankNode}/>
+                    <ChoiceNode node={choiceOne} nodeTwo={choiceTwo} />
                 </Grid>
             </Box>
             <button type="submit" className="Center"><strong>Calculate</strong></button>
