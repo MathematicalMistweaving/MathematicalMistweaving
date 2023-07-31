@@ -1,7 +1,7 @@
 import * as React from 'react';
 import TextField from '@mui/material/TextField';
 import { ThunderFocusTeaSpells, Defaults } from '../common/constants';
-import StyledAutocomplete from '../common/StyledAutoComplete';
+import StyledAutocomplete from './Styled/StyledAutoComplete';
 import { AutocompleteRenderInputParams} from '@mui/material';
 
 function MiscOptions() {

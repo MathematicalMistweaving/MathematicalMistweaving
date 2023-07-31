@@ -1,7 +1,7 @@
 import { AutocompleteRenderInputParams, TextField } from "@mui/material";
 import React from "react";
 import { Races } from "../common/constants";
-import StyledAutocomplete from "../common/StyledAutoComplete";
+import StyledAutocomplete from "./Styled/StyledAutoComplete";
 import { Defaults } from "../common/constants";
 
 

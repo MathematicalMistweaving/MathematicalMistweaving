@@ -1,6 +1,10 @@
-import { Checkbox, FormControl, FormControlLabel, Radio, RadioGroup } from "@mui/material";
+import { Checkbox, FormControlLabel, Radio, RadioGroup } from "@mui/material";
 import { Box } from "@mui/system";
 import { useState } from "react";
+import Paper from "@mui/material/Paper";
+import { styled } from "@mui/material/styles";
+import React from "react";
+import { StyledFormControlLabel } from "../Styled/StyledFormControlLabel";
 
 
 export type Node = {
@@ -20,22 +24,35 @@ type Props = {
     nodeTwo?: Node;
 };
 
+
+const Item = styled(Paper)(({ theme }) => ({
+    backgroundColor: '#3E3E42',
+    ...theme.typography.body2,
+    padding: theme.spacing(1),
+    textAlign: 'center',
+    margin: "15px 5px 5px 5px",
+    color: "white",
+}));
+
+
+
 const TalentNode = ({
     node,
 }: Props) => {
     return (
+       
         (node.maxRank === 1) ?
-            <FormControlLabel control={<Checkbox defaultChecked={node.selectedRank === 1} disabled={!node.prereqNodes?.some((node) => node.selectedRank === node.maxRank) && !node.tierActive} />} label={node.name} />
-            :
-            <div className="Center">
-            <FormControlLabel control={<Checkbox defaultChecked={node.selectedRank >= 1} disabled={!node.prereqNodes?.some((node) => node.selectedRank === node.maxRank) && !node.tierActive} />} label={node.name}/>
-            <Box  sx={{ display: 'flex', flexDirection: 'column', ml:"45%",  justifyItems: 'center' }}>
-            <FormControlLabel control={<Checkbox size="small" defaultChecked={node.selectedRank >= 1} disabled={!node.prereqNodes?.some((node) => node.selectedRank === node.maxRank) && !node.tierActive} />} label="Rank 1" />
-            <FormControlLabel control={<Checkbox size="small" defaultChecked={node.selectedRank === node.maxRank} disabled={!node.prereqNodes?.some((node) => node.selectedRank === node.maxRank) && !node.tierActive} />} label="Rank 2" />
-                </Box>
-            </div>
-                
-            
+            <Item>
+                <StyledFormControlLabel sx={{ ml: 0 }} control={<Checkbox defaultChecked={node.selectedRank === 1} disabled={!node.prereqNodes?.some((node) => node.selectedRank === node.maxRank) && !node.tierActive} />} label={node.name} />
+                </Item>
+                :
+            <Item sx={{ height: '100%' }}>
+                <StyledFormControlLabel control={<Checkbox defaultChecked={node.selectedRank >= 1} disabled={!node.prereqNodes?.some((node) => node.selectedRank === node.maxRank) && !node.tierActive} />} label={node.name} />
+               {/* <Box sx={{ display: 'flex', flexDirection: 'column', ml: "45%", backgroundColor: '#3E3E42', }}>*/}
+                <StyledFormControlLabel sx={{ml: 0}} control={<Checkbox size="small" defaultChecked={node.selectedRank >= 1} disabled={!node.prereqNodes?.some((node) => node.selectedRank === node.maxRank) && !node.tierActive} />} label="1" />
+                <StyledFormControlLabel control={<Checkbox size="small" defaultChecked={node.selectedRank === node.maxRank} disabled={!node.prereqNodes?.some((node) => node.selectedRank === node.maxRank) && !node.tierActive} />} label="2" />
+                    {/*</Box>*/}
+                </Item>
     );
 };
 

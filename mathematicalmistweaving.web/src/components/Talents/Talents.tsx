@@ -1,6 +1,8 @@
+
+import Grid  from "@mui/material/Unstable_Grid2";
+import { Box } from "@mui/system";
 import { Defaults } from "../../common/constants";
 import TalentNode, { ChoiceNode, Node } from "./TalentNode";
-
 
 
 function TalentTree() {
@@ -52,9 +54,15 @@ function TalentTree() {
     return (
         <div className="App">
             <h3 >Select Talents:</h3>
-            <TalentNode node={basicNode} />
+            <Box sx={{ flexGrow: 1 }}>
+                <Grid container spacing={9} rowSpacing={0} columnSpacing={1.25} >
+                <Grid xs={1.25}>
+                    <TalentNode node={basicNode} />
+                </Grid>
             <TalentNode node={multiRankNode}/>
-            <ChoiceNode node={choiceOne} nodeTwo={choiceTwo}/>
+                <ChoiceNode node={choiceOne} nodeTwo={choiceTwo} />
+                </Grid>
+            </Box>
             <button type="submit" className="Center"><strong>Calculate</strong></button>
             <div className="iframe">
                 <iframe title="talentIframe" src={srcUrl} allowFullScreen={true} height="1000" width="1400" ></iframe>
