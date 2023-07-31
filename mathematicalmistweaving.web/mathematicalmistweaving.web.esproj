@@ -14,4 +14,10 @@
   <ItemGroup>
     <Folder Include="src\img\" />
   </ItemGroup>
+  <ItemGroup>
+    <None Remove="src\common\simc.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="src\common\talentCalculator.js" />
+  </ItemGroup>
 </Project>
