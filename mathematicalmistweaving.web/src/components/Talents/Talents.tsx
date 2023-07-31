@@ -9,41 +9,52 @@ function TalentTree() {
         srcUrl = Defaults.Talents.Url + Defaults.Talents.TalentString + Defaults.Talents.Options;
     }
 
-    let firstNode: Node = {
+    let basicNode: Node = {
         name: "Enveloping Mist",
         row: 1,
         column: 3,
         prereqNodes: undefined,
-        selected: true,
+        selectedRank: 1,
         choiceNode: false,
-        ranks: 1,
+        maxRank: 1,
         tierActive: true
     };
-    let testNode: Node = {
+    let multiRankNode: Node = {
+        name: "Rapid Diffusion",
+        row: 4,
+        column: 7,
+        prereqNodes: undefined,
+        selectedRank: 0,
+        choiceNode: false,
+        maxRank: 2,
+        tierActive: true
+    };
+    let choiceOne: Node = {
         name: "Clouded Focus",
         row: 2,
         column: 1,
         prereqNodes: undefined,
-        selected: false,
+        selectedRank: 0,
         choiceNode: true,
-        ranks: 1,
+        maxRank: 1,
         tierActive: false
     };
-    let choiceTest: Node = {
+    let choiceTwo: Node = {
         name: "Ancient Teachings",
         row: 2,
         column: 1,
         prereqNodes: undefined,
-        selected: false,
+        selectedRank: 0,
         choiceNode: true,
-        ranks: 1,
+        maxRank: 1,
         tierActive: false
     }
     return (
         <div className="App">
             <h3 >Select Talents:</h3>
-            <TalentNode node={firstNode} />
-            <ChoiceNode node={testNode} nodeTwo={choiceTest}/>
+            <TalentNode node={basicNode} />
+            <TalentNode node={multiRankNode}/>
+            <ChoiceNode node={choiceOne} nodeTwo={choiceTwo}/>
             <button type="submit" className="Center"><strong>Calculate</strong></button>
             <div className="iframe">
                 <iframe title="talentIframe" src={srcUrl} allowFullScreen={true} height="1000" width="1400" ></iframe>

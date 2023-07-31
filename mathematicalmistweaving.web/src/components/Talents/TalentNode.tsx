@@ -1,4 +1,5 @@
 import { Checkbox, FormControl, FormControlLabel, Radio, RadioGroup } from "@mui/material";
+import { Box } from "@mui/system";
 import { useState } from "react";
 
 
@@ -7,8 +8,8 @@ export type Node = {
     row: number;
     column: number;
     prereqNodes: Node[] | undefined;
-    selected: boolean;
-    ranks: number;
+    selectedRank: number;
+    maxRank: number;
     choiceNode: boolean;
     tierActive: boolean;
 }
@@ -23,10 +24,18 @@ const TalentNode = ({
     node,
 }: Props) => {
     return (
-        (node.ranks === 1) ?
-            <FormControlLabel control={<Checkbox defaultChecked={node.selected} disabled={!node.prereqNodes?.some((node) => node.selected === true) && !node.tierActive} />} label={node.name} />
+        (node.maxRank === 1) ?
+            <FormControlLabel control={<Checkbox defaultChecked={node.selectedRank === 1} disabled={!node.prereqNodes?.some((node) => node.selectedRank === node.maxRank) && !node.tierActive} />} label={node.name} />
             :
-            <>This is a Multi-Rank Node</>
+            <div className="Center">
+            <FormControlLabel control={<Checkbox defaultChecked={node.selectedRank >= 1} disabled={!node.prereqNodes?.some((node) => node.selectedRank === node.maxRank) && !node.tierActive} />} label={node.name}/>
+            <Box  sx={{ display: 'flex', flexDirection: 'column', ml:"45%",  justifyItems: 'center' }}>
+            <FormControlLabel control={<Checkbox size="small" defaultChecked={node.selectedRank >= 1} disabled={!node.prereqNodes?.some((node) => node.selectedRank === node.maxRank) && !node.tierActive} />} label="Rank 1" />
+            <FormControlLabel control={<Checkbox size="small" defaultChecked={node.selectedRank === node.maxRank} disabled={!node.prereqNodes?.some((node) => node.selectedRank === node.maxRank) && !node.tierActive} />} label="Rank 2" />
+                </Box>
+            </div>
+                
+            
     );
 };
 
