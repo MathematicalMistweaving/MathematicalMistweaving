@@ -13,6 +13,11 @@
   </PropertyGroup>
   <ItemGroup>
     <Folder Include="src\img\" />
-    <Folder Include="src\common\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="src\common\simc.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="src\common\talentCalculator.js" />
   </ItemGroup>
 </Project>

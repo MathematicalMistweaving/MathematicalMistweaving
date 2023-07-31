@@ -4,19 +4,19 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import HealingSpells from './components/HealingSpells';
-import TalentTree from './components/Talents';
-import Stats from './components/Stats';
+import Profile from './components/Profile';
+import { TalentIFrame } from './components/Talents/TalentIFrame';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
-    <React.StrictMode>
+        <React.Fragment>  
         <App />
-        <Stats />
-        <TalentTree/>
+        <Profile />
         <HealingSpells />
-  </React.StrictMode>
+        </React.Fragment>
+  
 );
 
 // If you want to start measuring performance in your app, pass a function
