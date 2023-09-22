@@ -1,5 +1,4 @@
-﻿using Mistweaver.Data.Helpers;
-using Mistweaver.Math.Models;
+﻿using Mistweaver.Math.Models;
 
 namespace Mistweaver.Math.Helpers
 {
@@ -75,7 +74,7 @@ namespace Mistweaver.Math.Helpers
 
         public static decimal GetBaseStat(string name)
         {
-            var stat = Stats.All.FirstOrDefault(x => x.Name == name);
+            var stat = Stats.All.FirstOrDefault(x => x.Name.Equals(name, StringComparison.OrdinalIgnoreCase));
             return decimal.Round(stat.Base * stat.StatCoefficient, 2);
         }
     }
