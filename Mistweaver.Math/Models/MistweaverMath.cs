@@ -8,6 +8,7 @@ using Mistweaver.Math.Helpers;
 using Mistweaver.Math.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Configuration;
 using System.Data;
 using System.Linq;
@@ -48,6 +49,9 @@ namespace Mistweaver.Math.Models
         public decimal GetStatPercent(int statRating, string statName)
         {
             //calculate stat DR
+            if (!Stats.All.Any(x => x.Name.Equals(statName, StringComparison.OrdinalIgnoreCase)))
+                throw new ValidationException("Invalid Stat Name");
+
             var stat = StatHelper.GetStatByName(statName);
             return (StatHelper.CalculateStatDiminishingReturns(statRating, stat) + StatHelper.GetBaseStat(statName));
         }

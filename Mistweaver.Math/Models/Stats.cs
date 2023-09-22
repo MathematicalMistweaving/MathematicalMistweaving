@@ -20,7 +20,7 @@ namespace Mistweaver.Math.Models
 
         public static List<Stat> All = new List<Stat>()
         {
-            Crit, Haste, Mastery, Vers, Leech, Intellect,Stamina
+            Crit, Haste, Mastery, Vers, Leech, Intellect, Stamina
         };
     }
 

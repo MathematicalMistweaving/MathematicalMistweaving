@@ -1,4 +1,5 @@
-﻿using Mistweaver.Math.Models;
+﻿using Mistweaver.Data.Helpers;
+using Mistweaver.Math.Models;
 
 namespace Mistweaver.Math.Helpers
 {
@@ -68,7 +69,7 @@ namespace Mistweaver.Math.Helpers
 
         public static Stat GetStatByName(string name)
         {
-            var stat = Stats.All.FirstOrDefault(x => x.Name == name);
+            var stat = Stats.All.FirstOrDefault(x => x.Name.Equals(name, StringComparison.OrdinalIgnoreCase));
             return (stat == null) ? new Stat() : stat;
         }
 
