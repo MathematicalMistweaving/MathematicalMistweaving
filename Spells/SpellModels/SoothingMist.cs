@@ -14,7 +14,7 @@ namespace Mistweaver.Data.SpellModels
             
             SpellId = 115175;
             Name = SpellNames.SoothingMist;
-            Coefficient = 440m;
+            Coefficient = 616m;
             ManaCost = 0.032m;
             MaxTargets = 1;
             CastTime = 8;
@@ -44,7 +44,7 @@ namespace Mistweaver.Data.SpellModels
         public SoothingMist_Jss()
         {
             Name = SpellNames.SoothingMist_Jss;
-            Coefficient = 220m;
+            Coefficient = 308m;
             MaxTargets = 1;
             CastTime = 8;
             IsIndirect = true;

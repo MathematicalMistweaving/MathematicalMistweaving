@@ -30,7 +30,7 @@ namespace Mistweaver.Data.SpellModels
             public VivifyPrimary()
             {
                 Name = SpellNames.Vivify;
-                Coefficient = 141.00m;
+                Coefficient = 275.373m;
                 MaxTargets = 1;
                 MasteryTrigger = true;
             }
@@ -41,7 +41,7 @@ namespace Mistweaver.Data.SpellModels
             public VivifyCleave()
             {
                 Name = SpellNames.VivifyCleave;
-                Coefficient = 91.52m;
+                Coefficient = 114.4m;
                 MaxTargets = 20;
                 MasteryTrigger = false;
             }

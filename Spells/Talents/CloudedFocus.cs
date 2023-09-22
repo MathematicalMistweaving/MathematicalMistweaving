@@ -31,7 +31,7 @@ namespace Mistweaver.Data.Talents
                         new TalentEffect()
                         {
                             Type = TalentEffectTypes.Coefficient,
-                            Value = 0.20m
+                            Value = 0.15m
                         }
                     }
                 }
