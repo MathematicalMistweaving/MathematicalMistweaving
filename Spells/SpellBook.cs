@@ -88,6 +88,14 @@ namespace Mistweaver.Data
             return GetSpellByName<HealBase>(TalentNames.EyeOfTheTiger);
         }
 
+        public object ExpelHarm(bool damage = false)
+        {
+            if (damage)
+                return GetSpellByName<DamageBase>(SpellNames.ExpelHarm);
+
+            return GetSpellByName<HealBase>(SpellNames.ExpelHarm);
+        }
+
 
         public SpellBook()
         {
@@ -121,6 +129,7 @@ namespace Mistweaver.Data
                 new RisingMist(),
                 new EyeOfTheTigerHeal(),
                 new HealingElixir(),
+                new ExpelHarmHeal(),
 
                 //TODO: Break out spell casts/Talent effects that don't do healing 
                 new HealBase { SpellId = 388480, Name = "Unison", Coefficient = 100, CastTime = 0, MaxTargets = 1, IsIndirect = true },
@@ -140,6 +149,7 @@ namespace Mistweaver.Data
                 new EyeOfTheTigerDmg(),
                 new CracklingJadeLightning(),
                 new ResonantFists(),
+                new ExpelHarmDmg(),
                 
             };
             Spells.AddRange(DamageSpells);

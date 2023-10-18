@@ -6,17 +6,17 @@ using System.Threading.Tasks;
 
 namespace Mistweaver.Data.SpellModels
 {
-    public class ExpelHarm : HealBase
+    public class ExpelHarmHeal : HealBase
     {
-        public ExpelHarm(bool target) 
+        public ExpelHarmHeal() 
         {
-            SpellId = target ? 325214 : 322101;
+            SpellId = 322101;
             Name = SpellNames.ExpelHarm;
-            Coefficient = 120;
-            MaxTargets = target ? 2 : 1;
+            Coefficient = 780;
+            MaxTargets = 1;
             CastTime = 0;
             Cooldown = 15m;
-            ManaCost = 0.30m;
+            ManaCost = 0.014m;
             MasteryTrigger = true;
             StatScaling = new StatScaling()
             {
@@ -27,5 +27,19 @@ namespace Mistweaver.Data.SpellModels
             };
         }
 
+    }
+
+    public class ExpelHarmDmg : DamageBase
+    {
+        public ExpelHarmDmg()
+        {
+            SpellId = 115129;
+            Name = SpellNames.ExpelHarm;
+            Coefficient = 0.25m;
+            CastTime = 1.5m;
+            MaxTargets = 1;
+            Cooldown = 15m;
+            StatScaling = new StatScaling() { CriticalStrike = true, Haste = false, Mastery = false, Versatility = true };
+        }
     }
 }
