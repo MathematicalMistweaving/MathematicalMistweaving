@@ -13,7 +13,7 @@ namespace Mistweaver.Data.SpellModels
         {
             SpellId = 116849;
             Name = SpellNames.LifeCocoon;
-            Coefficient = 60.00m;
+            Coefficient = 80.00m;
             ManaCost = 0.024m;
             MaxTargets = 1;
             CastTime = 0;

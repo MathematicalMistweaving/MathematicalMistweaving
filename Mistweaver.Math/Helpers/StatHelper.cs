@@ -68,13 +68,13 @@ namespace Mistweaver.Math.Helpers
 
         public static Stat GetStatByName(string name)
         {
-            var stat = Stats.All.FirstOrDefault(x => x.Name == name);
+            var stat = Stats.All.FirstOrDefault(x => x.Name.Equals(name, StringComparison.OrdinalIgnoreCase));
             return (stat == null) ? new Stat() : stat;
         }
 
         public static decimal GetBaseStat(string name)
         {
-            var stat = Stats.All.FirstOrDefault(x => x.Name == name);
+            var stat = Stats.All.FirstOrDefault(x => x.Name.Equals(name, StringComparison.OrdinalIgnoreCase));
             return decimal.Round(stat.Base * stat.StatCoefficient, 2);
         }
     }

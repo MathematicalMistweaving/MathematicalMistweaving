@@ -8,6 +8,7 @@ using Mistweaver.Math.Helpers;
 using Mistweaver.Math.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Configuration;
 using System.Data;
 using System.Linq;
@@ -34,15 +35,12 @@ namespace Mistweaver.Math.Models
             {
                 foreach (SelectedTalent talent in _profile.PlayerTalents.SelectedTalents)  // _profile.PlayerTalents.Talents will be a collection from the front end that only contains a single talent rank data for each talent based on what was selected
                 {
+                    //VAR TALENT  =  GET TALENT BY NAME
+                    var talentBase = new ImprovedVivify();
+                    talentBase.ApplyTalent(_profile, _spellBook);
+
+
                     
-                    foreach (var affectedSpell in talent.AffectedHeals)
-                    {
-                        ModifyHealProperties(_spellBook.GetHeal(affectedSpell), talent);
-                    }
-                    foreach (var affectedSpell in talent.AffectedDamages)
-                    {
-                        ModifyDamageProperties(_spellBook.GetDamage(affectedSpell), talent);
-                    }
                     //TODO: apply talents that affect other talents i.e. ancient concordance making teachings of the monastery 20/25% reset chance instead of 15%
                 }
             }
@@ -51,10 +49,13 @@ namespace Mistweaver.Math.Models
         public decimal GetStatPercent(int statRating, string statName)
         {
             //calculate stat DR
+            if (!Stats.All.Any(x => x.Name.Equals(statName, StringComparison.OrdinalIgnoreCase)))
+                throw new ValidationException("Invalid Stat Name");
+
             var stat = StatHelper.GetStatByName(statName);
             return (StatHelper.CalculateStatDiminishingReturns(statRating, stat) + StatHelper.GetBaseStat(statName));
         }
-
+      
         public virtual decimal CalculateUniqueEffect<T>()
         {
             throw new NotImplementedException();
@@ -65,12 +66,7 @@ namespace Mistweaver.Math.Models
 
 
         }
-
-        public void ModifyDamageProperties(DamageBase spell, SelectedTalent talent)
-        {
-            throw new NotImplementedException();
-        }
-        
+       
         public decimal CalculateModifiedCoefficient(SpellBase spell, TalentEffect talent)
         {
             if (talent.Type != TalentEffectTypes.Coefficient)

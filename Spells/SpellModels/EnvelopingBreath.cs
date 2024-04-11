@@ -16,7 +16,7 @@ namespace Mistweaver.Data.SpellModels
             SpellId = 325209;
             Name = SpellNames.EnvelopingBreath;
             Coefficient = 162.00m;
-            MaxTargets = 6;
+            MaxTargets = 5;
             CastTime = 2;
             MasteryTrigger = false;
             IsIndirect = true;

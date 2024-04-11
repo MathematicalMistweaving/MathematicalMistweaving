@@ -45,5 +45,10 @@ namespace Mistweaver.Data.Talents
                 }
             };
         }
+
+        public override void ApplyTalent(IProfile profile, ISpellBook spellBook)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

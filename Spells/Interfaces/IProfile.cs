@@ -13,6 +13,5 @@ namespace Mistweaver.Data.Interfaces
         public PlayerTalents PlayerTalents { get; }
         public PlayerExternalMana ExternalMana { get; }
         public ProfileOptions Options { get; }
-        
     }
 }

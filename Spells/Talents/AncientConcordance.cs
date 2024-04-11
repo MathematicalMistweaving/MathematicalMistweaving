@@ -14,23 +14,13 @@ namespace Mistweaver.Data.Talents
         {
             Name = TalentNames.AncientConcordance;
             Tier = TalentTier.Tier3;
-            MaxRank = 2;
+            MaxRank = 1;
             AffectedDamages = new List<string>() { SpellNames.BlackoutKick };
             Ranks = new List<TalentRankData>()
             {
                 new TalentRankData() 
                 { 
-                    Rank = 1, 
-                    Effects = new List<TalentEffect>()
-                    {
-                        new TalentEffect() { Type = TalentEffectTypes.Targets, Value = 2 },
-                        new TalentEffect() { Type = TalentEffectTypes.ProcChance, Value = .05m }
-                    },
-                    
-                },
-                new TalentRankData() 
-                { 
-                    Rank = 2,
+                    Rank = 1,
                     Effects = new List<TalentEffect>()
                     {
                         new TalentEffect() { Type = TalentEffectTypes.Targets,  Value = 3 },
@@ -38,7 +28,13 @@ namespace Mistweaver.Data.Talents
                     },
                 }
             };
-        } 
-        
+        }
+
+
+        public override void ApplyTalent(IProfile profile, ISpellBook spellBook)
+        {
+            throw new NotImplementedException();
+        }
+
     }
 }

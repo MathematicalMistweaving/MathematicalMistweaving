@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Mistweaver.Data.Helpers
 {
-    public static class StringHelper
+    public class StringHelper
     {
         public static bool Like(string one, string two)
         {

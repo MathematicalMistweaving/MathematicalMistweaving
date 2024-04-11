@@ -26,6 +26,8 @@ namespace Mistweaver.Data.Talents.Base
         public bool HasUniqueEffect { get; set; } = false;
         public List<string> AffectedHeals {get; set;} = new List<string>();
         public List<string>? AffectedDamages { get; set; } = new List<string>();
+
+        public abstract void ApplyTalent(IProfile profile, ISpellBook spellBook);
         #endregion
     }
 

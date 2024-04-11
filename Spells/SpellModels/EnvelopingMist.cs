@@ -15,7 +15,7 @@ namespace Mistweaver.Data.SpellModels
         {
             SpellId = 124682;
             Name = SpellNames.EnvelopingMist;
-            Coefficient = 286.80m; 
+            Coefficient = 358.5m; 
             ManaCost = 0.048m;
             MaxTargets = 1;
             CastTime = 2;
