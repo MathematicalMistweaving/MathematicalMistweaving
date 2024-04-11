@@ -2,7 +2,6 @@ import React from "react";
 import { Input, InputLabel } from "@mui/material";
 import { ChangeEvent, useEffect, useRef, useState } from "react";
 import { Defaults as statDefault, makeRequestUrl, REQUEST_URLS } from "../common/constants";
-import { LayoutItem } from "./Styled/Item";
 
 const Stats = () => {
     const ref = useRef();
@@ -30,12 +29,11 @@ const Stats = () => {
         alert(ref);
     };
 
-    function StatPercent(value: any, name: any) 
-    {
+    function StatPercent(value: any, name: any) {
         const [stat, setStatPercent] = useState();
         const url = makeRequestUrl(REQUEST_URLS.StatPercent) + "?name=" + name + "&rating=" + value;
         useEffect(() => {
-            const getStat = async() => fetch(url).then((response) => {
+            const getStat = async () => fetch(url).then((response) => {
                 if (!response.ok) {
                     throw response;
                 }
@@ -66,7 +64,7 @@ const Stats = () => {
             <form onSubmit={handleSubmit}>
                 <div className="responsive-column-3">
                     <InputLabel>Intellect <Input name="intellect" type="number" value={stat.intellect} onChange={handleStatChange} /></InputLabel>
-                    <InputLabel>Critical Strike <Input  name="crit" type="number" value={stat.crit} onChange={handleStatChange} />{StatPercent(stat.crit, statDefault.CriticalStrike.name)}</InputLabel>
+                    <InputLabel>Critical Strike <Input name="crit" type="number" value={stat.crit} onChange={handleStatChange} />{StatPercent(stat.crit, statDefault.CriticalStrike.name)}</InputLabel>
                     <InputLabel>Haste <Input name="haste" type="number" value={stat.haste} onChange={handleStatChange} />{StatPercent(stat.haste, statDefault.Haste.name)}</InputLabel>
                     <InputLabel>Mastery <Input name="mastery" type="number" value={stat.mastery} onChange={handleStatChange} />{StatPercent(stat.mastery, statDefault.Mastery.name)}</InputLabel>
                     <InputLabel>Versatility <Input name="vers" type="number" value={stat.vers} onChange={handleStatChange} />{StatPercent(stat.vers, statDefault.Versatility.name)}</InputLabel>

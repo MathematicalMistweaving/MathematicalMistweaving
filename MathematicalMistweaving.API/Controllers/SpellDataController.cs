@@ -1,9 +1,7 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Mistweaver.Data;
 using Mistweaver.Data.Helpers;
 using Mistweaver.Data.Interfaces;
-using System.Runtime.Caching;
 
 namespace MathematicalMistweaving.API.Controllers
 {
