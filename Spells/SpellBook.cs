@@ -103,8 +103,6 @@ namespace Mistweaver.Data
                 new Vivify.VivifyPrimary(), 
                 new Vivify.VivifyCleave(), 
                 new RenewingMist(),
-                new EssenceFont.EssenceFontHit(), 
-                new EssenceFont.EssenceFontHot(),
                 new Revival(),
                 new Restoral(),
                 new EnvelopingMist(),
@@ -123,11 +121,8 @@ namespace Mistweaver.Data
                 new ChiWaveHeal(),
                 new ZenPulseHeal(),
                 new JadefireStompHeal(),
-                new JadefireStompHeal.JadefireStompEssenceFontHit(),
-                new JadefireStompHeal.JadefireStompEssenceFontHot(),
                 new YulonsWhisper(),
                 new RisingMist(),
-                new EyeOfTheTigerHeal(),
                 new HealingElixir(),
                 new ExpelHarmHeal(),
 
@@ -144,11 +139,8 @@ namespace Mistweaver.Data
                 new ChiBurstDmg(),
                 new ChiWaveDmg(),
                 new TouchOfDeath(),
-                new ZenPulseDmg(),
                 new JadefireStompDmg(),
-                new EyeOfTheTigerDmg(),
                 new CracklingJadeLightning(),
-                new ResonantFists(),
                 new ExpelHarmDmg(),
                 
             };
