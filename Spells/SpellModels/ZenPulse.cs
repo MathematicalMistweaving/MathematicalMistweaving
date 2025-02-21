@@ -21,18 +21,4 @@
             };
         }
     }
-    public class ZenPulseDmg : DamageBase
-    {
-        public ZenPulseDmg()
-        {
-            Type = AbilityType.Nature;
-            Name = SpellNames.ZenPulse;
-            SpellId = 405426;
-            Coefficient = 165.38m;
-            CastTime = 1.5m;
-            Cooldown = 30;
-            MaxTargets = int.MaxValue;
-            Cooldown = 30;
-        }
-    }
 }

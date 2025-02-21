@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading;
-
-namespace Mistweaver.Data.SpellModels.Base
+﻿namespace Mistweaver.Data.SpellModels.Base
 {
     public class HealBase : SpellBase
     {

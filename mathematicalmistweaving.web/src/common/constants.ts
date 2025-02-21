@@ -36,6 +36,7 @@ export const ThunderFocusTeaSpells = [
     "Vivify",
     "Essence Font",
     "Enveloping Mist",
+    "Expel Harm"
 ];
 
 export const Races = [

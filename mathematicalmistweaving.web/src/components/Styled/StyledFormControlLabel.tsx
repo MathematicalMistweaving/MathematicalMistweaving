@@ -4,5 +4,6 @@ import { styled } from "@mui/material/styles";
 export const StyledFormControlLabel = styled(FormControlLabel)(({ theme }) => ({
     ml: 0,
     color: "white",
-    width: "auto"
+    width: "auto",
+    labelPlacement: 'top'
 }));

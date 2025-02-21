@@ -1,11 +1,4 @@
-﻿using Mistweaver.Data.SpellModels;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MathematicalMistweaving.API.Models
+﻿namespace MathematicalMistweaving.API.Models
 {
     public class RenewingMistDto : BaseSpellDto
     {

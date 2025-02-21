@@ -30,7 +30,7 @@ namespace Mistweaver.Data
         public HealBase? SheilunsGift() => GetSpellByName<HealBase>(SpellNames.SheilunsGift);
         public HealBase? RefreshingJadeWind() => GetSpellByName<HealBase>(SpellNames.RefreshingJadeWind);
         public HealBase? SummonJadeSerpentStatue() => GetSpellByName<HealBase>(TalentNames.SummonJadeSerpentStatue);
-        public HealBase? FaelineStomp_EF(bool hot = false) => hot ? GetSpellByName<HealBase>(SpellNames.EssenceFont_FLS_HoT) : GetSpellByName<HealBase>(SpellNames.EssenceFont_FLS);
+        public HealBase? JadefireStomp_EF(bool hot = false) => hot ? GetSpellByName<HealBase>(SpellNames.EssenceFont_FLS_HoT) : GetSpellByName<HealBase>(SpellNames.EssenceFont_FLS);
         public HealBase? YulonsWhisper() => GetSpellByName<HealBase>(SpellNames.YulonsWhisper);
         public HealBase? RisingMist() => GetSpellByName<HealBase>(TalentNames.RisingMist);
         public HealBase? HealingElixir() => GetSpellByName<HealBase>(TalentNames.HealingElixir);
@@ -73,12 +73,12 @@ namespace Mistweaver.Data
 
             return GetSpellByName<HealBase>(SpellNames.ZenPulse);
         }
-        public object FaelineStomp(bool damage = false)
+        public object JadefireStomp(bool damage = false)
         {
             if (damage)
-                return GetSpellByName<DamageBase>(SpellNames.FaelineStomp);
+                return GetSpellByName<DamageBase>(SpellNames.JadefireStomp);
 
-            return GetSpellByName<HealBase>(SpellNames.FaelineStomp);
+            return GetSpellByName<HealBase>(SpellNames.JadefireStomp);
         }
         public object EyeOfTheTiger(bool damage = false)
         {
@@ -122,9 +122,9 @@ namespace Mistweaver.Data
                 new ChiBurstHeal(),
                 new ChiWaveHeal(),
                 new ZenPulseHeal(),
-                new FaelineStompHeal(),
-                new FaelineStompHeal.FaelineStompEssenceFontHit(),
-                new FaelineStompHeal.FaelineStompEssenceFontHot(),
+                new JadefireStompHeal(),
+                new JadefireStompHeal.JadefireStompEssenceFontHit(),
+                new JadefireStompHeal.JadefireStompEssenceFontHot(),
                 new YulonsWhisper(),
                 new RisingMist(),
                 new EyeOfTheTigerHeal(),
@@ -145,7 +145,7 @@ namespace Mistweaver.Data
                 new ChiWaveDmg(),
                 new TouchOfDeath(),
                 new ZenPulseDmg(),
-                new FaelineStompDmg(),
+                new JadefireStompDmg(),
                 new EyeOfTheTigerDmg(),
                 new CracklingJadeLightning(),
                 new ResonantFists(),

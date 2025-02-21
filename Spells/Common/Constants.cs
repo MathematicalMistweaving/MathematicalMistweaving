@@ -1,13 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Reflection.Metadata;
-using System.Runtime.ConstrainedExecution;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Mistweaver.Data.Common
+﻿namespace Mistweaver.Data.Common
 {
     public static class SpellNames
     {
@@ -18,8 +9,8 @@ namespace Mistweaver.Data.Common
         public const string RenewingMist = "Renewing Mist";
         public const string EssenceFont = "Essence Font";
         public const string EssenceFontHoT = "Essence Font (Hot)";
-        public const string EssenceFont_FLS = "Essence Font - Faeline Stomp";
-        public const string EssenceFont_FLS_HoT = "Essence Font - Faeline Stomp (Hot)";
+        public const string EssenceFont_FLS = "Essence Font - Jadefire Stomp";
+        public const string EssenceFont_FLS_HoT = "Essence Font - Jadefire Stomp (Hot)";
         public const string Revival = "Revival";
         public const string Restoral = "Restoral";
         public const string EnvelopingMist = "Enveloping Mist";
@@ -56,7 +47,7 @@ namespace Mistweaver.Data.Common
         public const string ChiBurst = "Chi Burst";
         public const string ZenPulse = "Zen Pulse";
         public const string LessonOfAnger = "Lesson of Anger";
-        public const string FaelineStomp = "Faeline Stomp";
+        public const string JadefireStomp = "Jadefire Stomp";
 
 
         #endregion
@@ -80,7 +71,7 @@ namespace Mistweaver.Data.Common
         #region Effects / Buffs
         public const string ImprovedVivify = "Improved Vivify";
         public const string CloudedFocus = "Clouded Focus";
-        public const string AwakenedFaeline = "Awakened Faeline";
+        public const string AwakenedJadefire = "Awakened Jadefire";
         public const string AncientTeachings = "Ancient Teachings";
         public const string RisingMist = "Rising Mist";
         public const string Unison = "Unison";

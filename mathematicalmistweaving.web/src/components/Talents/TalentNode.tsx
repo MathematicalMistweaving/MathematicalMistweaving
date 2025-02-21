@@ -34,9 +34,9 @@ const TalentNode = ({
                 </Item>
             :
             <Item sx={{ height: '100%' }} className="box-shadow">
-                <StyledFormControlLabel control={<StyledCheckbox defaultChecked={node.selectedRank >= 1} disabled={!node.prereqNodes?.some((node) => node.selectedRank === node.maxRank) && !node.tierActive} />} label={node.name} />
-                <StyledFormControlLabel sx={{ ml: 0 }} control={<StyledCheckbox size="small" defaultChecked={node.selectedRank >= 1} disabled={!node.prereqNodes?.some((node) => node.selectedRank === node.maxRank) && !node.tierActive} />} label="1" />
-                <StyledFormControlLabel control={<StyledCheckbox size="small" defaultChecked={node.selectedRank === node.maxRank} disabled={!node.prereqNodes?.some((node) => node.selectedRank === node.maxRank) && !node.tierActive} />} label="2" />
+                <StyledFormControlLabel labelPlacement="top" control={<StyledCheckbox defaultChecked={node.selectedRank >= 1} disabled={!node.prereqNodes?.some((node) => node.selectedRank === node.maxRank) && !node.tierActive} />} label={node.name} />
+                <StyledFormControlLabel labelPlacement="top" sx={{ ml: 0 }} control={<StyledCheckbox size="small" defaultChecked={node.selectedRank >= 1} disabled={!node.prereqNodes?.some((node) => node.selectedRank === node.maxRank) && !node.tierActive} />} label="1" />
+                <StyledFormControlLabel labelPlacement='top' control={<StyledCheckbox size="small" defaultChecked={node.selectedRank === node.maxRank} disabled={!node.prereqNodes?.some((node) => node.selectedRank === node.maxRank) && !node.tierActive} />} label="2" />
             </Item>
     );
 };

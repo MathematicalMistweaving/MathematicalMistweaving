@@ -1,12 +1,6 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Mistweaver.Math.Interfaces;
-using Mistweaver.Math.Models;
-using Mistweaver.Data;
-using Mistweaver.Data.Helpers;
+﻿using Microsoft.AspNetCore.Mvc;
 using Mistweaver.Data.Interfaces;
-using System.Runtime.Caching;
-using Mistweaver.Data.Profile;
+using Mistweaver.Math.Interfaces;
 
 namespace MathematicalMistweaving.API.Controllers
 {
@@ -25,7 +19,7 @@ namespace MathematicalMistweaving.API.Controllers
         }
 
         [HttpGet]
-        public IActionResult Go([FromBody] object profile)
+        public IActionResult Go()
         {
             return Ok();
         }

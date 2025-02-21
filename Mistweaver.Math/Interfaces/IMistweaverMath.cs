@@ -11,13 +11,13 @@ namespace Mistweaver.Math.Interfaces
 {
     public interface IMistweaverMath
     {
-        public void ApplyPlayerTalents();
+        void ApplyPlayerTalents();
 
-        public decimal GetStatPercent(int statRating, string statName);
+        decimal GetStatPercent(int statRating, string statName);
 
        
-        public void ApplyStatScaling(SpellBase spell);
+        void ApplyStatScaling(SpellBase spell);
 
-        public decimal CalculateUniqueEffect<T>();
+        decimal CalculateUniqueEffect<T>();
     }
 }

@@ -1,20 +1,10 @@
 ﻿using Mistweaver.Data.Common;
-using Mistweaver.Data.Helpers;
 using Mistweaver.Data.Interfaces;
-using Mistweaver.Data.Profile;
 using Mistweaver.Data.Talents;
 using Mistweaver.Data.Talents.Base;
 using Mistweaver.Math.Helpers;
 using Mistweaver.Math.Interfaces;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Configuration;
-using System.Data;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Mistweaver.Math.Models
 {

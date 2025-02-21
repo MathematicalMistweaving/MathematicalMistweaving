@@ -28,7 +28,7 @@ namespace Mistweaver.Data.Interfaces
         public HealBase? RefreshingJadeWind();
         public HealBase? SummonJadeSerpentStatue();
 
-        public HealBase? FaelineStomp_EF(bool hot = false);
+        public HealBase? JadefireStomp_EF(bool hot = false);
         public HealBase? YulonsWhisper();
         public HealBase? RisingMist();
         public HealBase? HealingElixir();
@@ -50,7 +50,7 @@ namespace Mistweaver.Data.Interfaces
         #region Hybrid Fetches
         public object ChiBurst(bool damage = false);
         public object ChiWave(bool damage = false);
-        public object FaelineStomp(bool damage = false);
+        public object JadefireStomp(bool damage = false);
         public object EyeOfTheTiger(bool damage = false);
         #endregion
     }

@@ -1,10 +1,10 @@
 using Microsoft.AspNetCore.Mvc.ApiExplorer;
 using Microsoft.AspNetCore.Mvc.Versioning;
-using Mistweaver.Math.Interfaces;
-using Mistweaver.Math.Models;
 using Mistweaver.Data;
 using Mistweaver.Data.Interfaces;
 using Mistweaver.Data.Profile;
+using Mistweaver.Math.Interfaces;
+using Mistweaver.Math.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 var allowedOrigins = "_myAllowedOrigins";

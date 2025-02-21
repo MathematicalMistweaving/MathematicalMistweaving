@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Mistweaver.Data.Common
+﻿namespace Mistweaver.Data.Common
 {
     public enum AbilityType
     {
@@ -34,8 +28,8 @@ namespace Mistweaver.Data.Common
 
     public enum ManaPotions
     {
-        AeratedManaPotion = 1,
-        PotionOfFrozenFocus = 2,
+        Instant = 1,
+        Sleep = 2,
         None = 3,
     }
 

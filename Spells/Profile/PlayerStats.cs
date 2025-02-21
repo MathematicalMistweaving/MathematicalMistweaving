@@ -1,11 +1,4 @@
-﻿using Mistweaver.Data.Helpers;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Mistweaver.Data.Profile
+﻿namespace Mistweaver.Data.Profile
 {
     public class PlayerStats
     {
@@ -29,24 +22,26 @@ namespace Mistweaver.Data.Profile
         public int Mastery { get; set; }
         public int Versatility { get; set; }
         public int Leech { get; set; }
-        public StatMultipliers Multipliers { get; set; }
-        public class StatMultipliers
+        public StatMultipliers Multipliers { get; set; } = new();
+        
+    }
+    public class StatMultipliers
+    {
+        public StatMultipliers() { }
+        public StatMultipliers(decimal critMulti, decimal hasteMulti, decimal masteryMulti, decimal versMulti, decimal leechMulti)
         {
-            public StatMultipliers(decimal critMulti, decimal hasteMulti, decimal masteryMulti, decimal versMulti, decimal leechMulti)
-            {
-                Crit = critMulti;
-                Haste = hasteMulti;
-                Mastery = masteryMulti;
-                Versatility = versMulti;
-                Leech = leechMulti;
-            }
-            public decimal Crit { get; set; }
-            public decimal Haste { get; set; }
-            public decimal Mastery { get; set; }
-            public decimal Versatility { get; set; }
-            public decimal Leech { get; set;}
+            Crit = critMulti;
+            Haste = hasteMulti;
+            Mastery = masteryMulti;
+            Versatility = versMulti;
+            Leech = leechMulti;
         }
-    } 
+        public decimal Crit { get; set; } = 1.0m;
+        public decimal Haste { get; set; } = 1.0m;
+        public decimal Mastery { get; set; } = 1.0m;
+        public decimal Versatility { get; set; } = 1.0m;
+        public decimal Leech { get; set; } = 1.0m;
+    }
 }
 
     

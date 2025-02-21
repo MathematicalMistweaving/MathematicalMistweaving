@@ -1,10 +1,4 @@
-﻿using Mistweaver.Data.Talents;
-using Mistweaver.Data.Talents.Base;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Mistweaver.Data.Talents.Base;
 
 namespace Mistweaver.Data.Profile
 {
